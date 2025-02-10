@@ -100,6 +100,7 @@
 // };
 
 // export default Header;
+import { NavLink } from "react-router-dom";
 
 import { useState } from "react";
 //import { useDispatch, useSelector } from "react-redux";
@@ -128,7 +129,9 @@ const Header = ({ darkMode, setDarkMode }) => {
   return (
     <motion.div className="flex justify-between items-center mb-8 md:mr-3 lg:bg-none md:bg-transparent bg-gray-200 dark:md:bg-transparent dark:bg-gray-800 text-black dark:text-white p-4 ">
       {/* Large Screen: Search Bar */}
-<h1 className="font-bold text-3xl md:block hidden dark:text-[#24aebb] mr-5 lg:mr-52">Dashboard</h1>
+      <h1 className="font-bold text-3xl md:block hidden dark:text-[#24aebb] mr-5 lg:mr-52">
+        Dashboard
+      </h1>
       <div className="hidden sm:flex items-center bg-gray-200 dark:bg-gray-700 p-2 rounded flex-1">
         <FaSearch className="text-gray-500 dark:text-gray-300 mr-2" />
         <input
@@ -182,7 +185,7 @@ const Header = ({ darkMode, setDarkMode }) => {
 
       {/* Mobile Dropdown Menu (h-screen but doesn't cover navbar) */}
       {dropdownOpen && (
-        <motion.div className="absolute left-0 right-0 top-14 h-screen bg-white dark:bg-gray-800 p-4 shadow-md z-50 sm:hidden flex flex-col justify-between pb-16">
+        <motion.div className="absolute left-0 right-0 top-14 h-screen bg-gray-100 dark:bg-gray-800 p-4 shadow-md z-50 sm:hidden flex flex-col justify-between pb-16">
           <motion.div>
             <div className="relative mb-6">
               <input
@@ -213,7 +216,10 @@ const Header = ({ darkMode, setDarkMode }) => {
               whileHover={{ scale: 1.1 }}
               animate={{ rotate: darkMode ? 180 : 0 }}
               transition={{ type: "spring", stiffness: 300 }}
-              onClick={() => setDarkMode(!darkMode)}
+              onClick={() => {
+                setDarkMode(!darkMode);
+                setDropdownOpen(!dropdownOpen);
+              }}
               className="w-[24px]">
               {darkMode ? (
                 <Sun size={24} className="dark:text-[#0085A8]" />
@@ -221,11 +227,19 @@ const Header = ({ darkMode, setDarkMode }) => {
                 <Moon size={24} className="text-[#1F1619]" />
               )}
             </motion.button>
-            <button className="flex items-center space-x-2 p-2 w-full hover:bg-gray-200 dark:hover:bg-gray-700">
-              <FaCog /> <span>Settings</span>
+            <button className=" space-x-2 p-2 w-full hover:bg-gray-200 dark:hover:bg-gray-700">
+              <NavLink
+                to="/settings"
+                onClick={() => {
+                  
+                  setDropdownOpen(!dropdownOpen);
+                }}
+                className="flex items-center">
+                <FaCog className="mr-3" /> <span>Settings</span>
+              </NavLink>
             </button>
           </motion.div>
-          <button className="flex items-center space-x-2 p-2 w-full hover:bg-gray-200 dark:hover:bg-gray-700">
+          <button className="flex items-center space-x-2 p-2 w-full  hover:bg-gray-200 dark:hover:bg-gray-700">
             <FaSignOutAlt /> <span>Logout</span>
           </button>
         </motion.div>
