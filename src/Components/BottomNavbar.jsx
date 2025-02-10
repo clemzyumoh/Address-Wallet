@@ -69,7 +69,7 @@ const BottomNavbar = () => {
           className={({ isActive }) =>
             `flex flex-col items-center p-2 rounded transition ${
               isActive
-                ? " hover:scale-110 hover:bg-[#1E7E8E] dark:text-white text-neutral-900 shadow-[2px_2px_2px_#24aebb,-2px_-2px_2px_#24aebb] "
+                ? " hover:scale-110  dark:text-white text-neutral-900 shadow-[2px_2px_2px_#24aebb,-2px_-2px_2px_#24aebb] "
                 : "hover:bg-gray-200 hover:scale-105 dark:hover:bg-gray-800  "
             }`
           }>
