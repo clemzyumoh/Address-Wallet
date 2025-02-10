@@ -15,7 +15,7 @@ const Swap = () => {
 
   return (
     <motion.div
-      className="p-6 bg-white shadow-lg rounded-lg max-w-md mx-auto"
+      className="p-6 bg-white  rounded-lg dark:bg-gray-800 dark:shadow-[#24aebb] shadow-[2px_2px_2px_#24aebb] max-w-md mx-auto"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}>
@@ -73,7 +73,7 @@ const Swap = () => {
 
       {/* Swap Button */}
       <button
-        className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition"
+        className="w-full hover:scale-105 text-neutral-700  shadow-[2px_2px_2px_#24aebb] hover:shadow-[2px_2px_2px_#24aebb,-2px_-2px_2px_#24aebb] bg-transparent font-bold dark:text-neutral-300 p-2 rounded transition"
         onClick={handleSwap}>
         Swap
       </button>

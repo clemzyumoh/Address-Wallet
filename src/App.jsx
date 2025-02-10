@@ -1,4 +1,5 @@
-import { useSelector } from "react-redux";
+//import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "../src/Components/SideBar";
 import Home from "../src/Sections/Home/Home";
@@ -13,32 +14,77 @@ import "../src/index.css";
 import BottomNavbar from "./Components/BottomNavbar";
 
 const App = () => {
-  const { darkMode } = useSelector((state) => state.settings);
+  //const { darkMode } = useSelector((state) => state.settings);
+  const [darkMode, setDarkMode] = useState(true); // Default to dark mode
 
- return (
-   <>
-    
-     <div className={darkMode ? "dark" : ""}>
-       <div className="flex bg-white dark:bg-gray-900 text-black dark:text-white min-h-screen">
-         <Sidebar />
-         <div className="flex-1">
-            <Header /> 
-           
-           <Routes>
-             <Route path="/" element={<Home />} />
-             <Route path="/swap" element={<Swap />} />
-             <Route path="/foundation" element={<Foundation />} />
-             <Route path="/launchpad" element={<Launchpad />} />
-             <Route path="/discover" element={<Discover />} />
-             <Route path="/settings" element={<Settings />} />
-           </Routes>
-         </div>
-       </div>
-     </div>
-     <BottomNavbar/>
-   </>
- );
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme === "light") {
+      setDarkMode(false);
+    } else {
+      setDarkMode(true);
+    }
+  }, []);
 
+  useEffect(() => {
+    console.log("Dark Mode:", darkMode);
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
+
+  return (
+    <main className="dark:bg-[#24AEBB]">
+      <div>
+        <div className="flex bg-gray-300  dark:bg-[#0B090D] text-black dark:text-white min-h-screen">
+          <Sidebar />
+          <div className="flex-1">
+            <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+
+            <Routes>
+              <Route
+                path="/"
+                element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />}
+              />
+              <Route
+                path="/swap"
+                element={<Swap darkMode={darkMode} setDarkMode={setDarkMode} />}
+              />
+              <Route
+                path="/foundation"
+                element={
+                  <Foundation darkMode={darkMode} setDarkMode={setDarkMode} />
+                }
+              />
+              <Route
+                path="/launchpad"
+                element={
+                  <Launchpad darkMode={darkMode} setDarkMode={setDarkMode} />
+                }
+              />
+              <Route
+                path="/discover"
+                element={
+                  <Discover darkMode={darkMode} setDarkMode={setDarkMode} />
+                }
+              />
+              <Route
+                path="/settings"
+                element={
+                  <Settings darkMode={darkMode} setDarkMode={setDarkMode} />
+                }
+              />
+            </Routes>
+          </div>
+        </div>
+      </div>
+      <BottomNavbar />
+    </main>
+  );
 };
 
 export default App;

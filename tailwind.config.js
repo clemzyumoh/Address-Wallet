@@ -12,7 +12,7 @@ export default {
       colors: {
         primary: "#243978", // Deep blue
         secondary: "#0085A8", // Bright blue
-        accent: "#AC5635", // Warm brown
+        bgcolor: "#AC5635", // Warm brown
         highlight: "#FF440F", // Bright orange
         purple: "#694972", // Muted purple
         pink: "#9D5966", // Dark pink

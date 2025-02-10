@@ -32,7 +32,7 @@ const Launchpad = () => {
   const [filter, setFilter] = useState("Active");
 
   return (
-    <div className="p-6">
+    <div className="p-6 bg-gray-100 dark:bg-gray-800 rounded-2xl md:mr-8">
       <motion.h2
         className="text-2xl font-bold mb-4"
         initial={{ opacity: 0, y: -10 }}
@@ -47,7 +47,9 @@ const Launchpad = () => {
           <button
             key={status}
             className={`px-4 py-2 rounded ${
-              filter === status ? "bg-blue-500 text-white" : "bg-gray-200"
+              filter === status
+                ? "bg-[#24AEBB] hover:scale-105 hover:bg-[#1E7E8E] text-white dark:bg-[#149FB2]  dark:hover:bg-[#1E7E8E]"
+                : "hover:bg-gray-200 hover:scale-105 dark:hover:bg-gray-800 shadow-[2px_2px_2px_#24aebb] hover:shadow-[2px_2px_2px_#24aebb,-2px_-2px_2px_#24aebb]"
             }`}
             onClick={() => setFilter(status)}>
             {status} Projects
@@ -62,11 +64,11 @@ const Launchpad = () => {
           .map((project) => (
             <motion.div
               key={project.id}
-              className="p-4 bg-white shadow-lg rounded-lg"
+              className="p-4 bg-neutral-200 dark:bg-gray-700 text-neutral-900 dark:text-neutral-200 shadow-lg rounded-lg"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 100 }}>
               <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
-              <p className="text-gray-600">{project.description}</p>
+              <p className="">{project.description}</p>
             </motion.div>
           ))}
       </div>

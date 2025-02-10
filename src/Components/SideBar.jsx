@@ -57,12 +57,12 @@ import { FaCog, FaSignOutAlt } from "react-icons/fa";
 
 const Sidebar = () => {
   return (
-    <div className="w-64 min-h-screen hidden md:block bg-gray-100 dark:bg-gray-800 text-black dark:text-white p-6">
+    <div className="w-64 rounded-2xl mr-8 relative hidden md:block bg-gray-100 dark:bg-gray-800  text-black dark:text-white p-6">
       {/* Logo */}
-      <h1 className="text-2xl font-bold mb-6">Deeproots</h1>
+      <h1 className="text-2xl font-bold text-[#24aebb] mb-6">Deeproots</h1>
 
       {/* Navigation Links */}
-      <nav className="space-y-4">
+      <nav className="space-y-8 font-bold ">
         {[
           { to: "/", label: "Home" },
           { to: "/swap", label: "Swap" },
@@ -76,8 +76,8 @@ const Sidebar = () => {
             className={({ isActive }) =>
               `block p-2 rounded transition ${
                 isActive
-                  ? "bg-blue-500 text-white dark:bg-blue-700"
-                  : "hover:bg-gray-200 dark:hover:bg-gray-700"
+                  ? "bg-[#24AEBB] hover:scale-105 hover:bg-[#1E7E8E] text-white dark:bg-[#149FB2]  dark:hover:bg-[#1E7E8E]"
+                  : "hover:bg-gray-200 hover:scale-105 dark:hover:bg-gray-800 shadow-[2px_2px_2px_#24aebb] hover:shadow-[2px_2px_2px_#24aebb,-2px_-2px_2px_#24aebb]"
               }`
             }>
             {item.label}
@@ -86,19 +86,19 @@ const Sidebar = () => {
       </nav>
 
       {/* Bottom Section */}
-      <div className="absolute bottom-6 left-6 space-y-4">
+      <div className="absolute bottom-6 left-6 font-bold space-y-4">
         <NavLink
           to="/settings"
           className={({ isActive }) =>
             `flex items-center space-x-2 p-2 rounded transition ${
               isActive
-                ? "bg-blue-500 text-white dark:bg-blue-700"
-                : "hover:bg-gray-200 dark:hover:bg-gray-700"
+                ? "bg-[#24AEBB] hover:scale-105 hover:bg-[#1E7E8E] text-white dark:bg-[#149FB2]  dark:hover:bg-[#1E7E8E]"
+                : "hover:bg-gray-200 dark:hover:bg-gray-800 shadow-[2px_2px_2px_#24aebb] hover:shadow-[2px_2px_2px_#24aebb,-2px_-2px_2px_#24aebb]"
             }`
           }>
           <FaCog /> <span>Settings</span>
         </NavLink>
-        <button className="flex items-center space-x-2 p-2 rounded hover:bg-red-500 dark:hover:bg-red-700">
+        <button className="flex items-center space-x-2 p-2 dark:hover:bg-gray-800  rounded shadow-[2px_2px_2px_#24aebb] hover:shadow-[2px_2px_2px_#24aebb,-2px_-2px_2px_#24aebb] hover:scale-105 hover:bg-gray-200 ">
           <FaSignOutAlt /> <span>Logout</span>
         </button>
       </div>

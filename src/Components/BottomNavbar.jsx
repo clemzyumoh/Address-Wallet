@@ -35,24 +35,32 @@ import { FiHome, FiShuffle, FiLayers, FiZap, FiCompass } from "react-icons/fi";
 
 const BottomNavbar = () => {
   return (
-    <nav className="fixed bottom-0 left-0 w-full bg-white dark:bg-gray-900 shadow-lg p-4 flex justify-around md:hidden">
+    <nav className="fixed bottom-0 left-0 w-full bg-gray-100 dark:bg-gray-800 shadow-lg p-4 pb-6 flex justify-around md:hidden">
       {[
-        { to: "/", label: "Home", icon: <FiHome className="text-xl" /> },
-        { to: "/swap", label: "Swap", icon: <FiShuffle className="text-xl" /> },
+        {
+          to: "/",
+          label: "Home",
+          icon: <FiHome className="text-xl dark:text-neutral-200" />,
+        },
+        {
+          to: "/swap",
+          label: "Swap",
+          icon: <FiShuffle className="text-xl dark:text-neutral-200" />,
+        },
         {
           to: "/foundation",
           label: "Foundation",
-          icon: <FiLayers className="text-xl" />,
+          icon: <FiLayers className=" dark:text-neutral-200 text-xl" />,
         },
         {
           to: "/launchpad",
           label: "Launchpad",
-          icon: <FiZap className="text-xl" />,
+          icon: <FiZap className="text-xl dark:text-neutral-200" />,
         },
         {
           to: "/discover",
           label: "Discover",
-          icon: <FiCompass className="text-xl" />,
+          icon: <FiCompass className="text-xl dark:text-neutral-200" />,
         },
       ].map((item) => (
         <NavLink
@@ -61,12 +69,12 @@ const BottomNavbar = () => {
           className={({ isActive }) =>
             `flex flex-col items-center p-2 rounded transition ${
               isActive
-                ? "bg-blue-500 text-white dark:bg-blue-700"
-                : "hover:bg-gray-200 dark:hover:bg-gray-700"
+                ? " hover:scale-110 hover:bg-[#1E7E8E] dark:text-white text-neutral-900 shadow-[2px_2px_2px_#24aebb,-2px_-2px_2px_#24aebb] "
+                : "hover:bg-gray-200 hover:scale-105 dark:hover:bg-gray-800  "
             }`
           }>
           {item.icon}
-          <span className="text-xs">{item.label}</span>
+          <span className="text-xs dark:text-neutral-200">{item.label}</span>
         </NavLink>
       ))}
     </nav>

@@ -64,12 +64,12 @@ const Discover = () => {
           filteredProjects.map((project) => (
             <motion.div
               key={project.id}
-              className="p-4 bg-white shadow-lg rounded-lg"
+              className="p-4 bg-white dark:bg-gray-800 text-neutral-900 dark:text-neutral-200 shadow-lg rounded-lg"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 100 }}>
               <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
-              <p className="text-gray-500 text-sm">{project.category}</p>
-              <p className="text-gray-600">{project.description}</p>
+              <p className=" text-sm">{project.category}</p>
+              <p className="">{project.description}</p>
             </motion.div>
           ))
         ) : (
