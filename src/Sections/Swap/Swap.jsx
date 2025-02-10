@@ -15,7 +15,7 @@ const Swap = () => {
 
   return (
     <motion.div
-      className="p-6 bg-white  rounded-lg dark:bg-gray-800 dark:shadow-[#24aebb] shadow-[2px_2px_2px_#24aebb] max-w-md mx-auto"
+      className="p-6 bg-white mx-5 rounded-lg dark:bg-gray-800 dark:shadow-[#24aebb] shadow-[2px_2px_2px_#24aebb] max-w-md md:mx-auto"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}>

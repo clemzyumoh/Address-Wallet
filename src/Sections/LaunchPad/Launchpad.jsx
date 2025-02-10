@@ -32,7 +32,7 @@ const Launchpad = () => {
   const [filter, setFilter] = useState("Active");
 
   return (
-    <div className="p-6 bg-gray-100 dark:bg-gray-800 rounded-2xl md:mr-8">
+    <div className="p-6 bg-gray-100 dark:bg-gray-800 rounded-2xl mx-5 md:mr-8">
       <motion.h2
         className="text-2xl font-bold mb-4"
         initial={{ opacity: 0, y: -10 }}
