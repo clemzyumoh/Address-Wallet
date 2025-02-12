@@ -57,9 +57,11 @@ import { FaCog, FaSignOutAlt } from "react-icons/fa";
 
 const Sidebar = () => {
   return (
-    <div className="w-64 rounded-2xl mr-8 relative hidden md:block bg-gray-100 dark:bg-gray-800  text-black dark:text-white p-6">
+    <div className="w-64 rounded-2xl mr-8 hidden lg:block bg-gray-400 dark:bg-[#000026] fixed left-0 top-0 h-screen  text-black dark:text-white p-6">
       {/* Logo */}
-      <h1 className="text-2xl font-bold text-[#24aebb] mb-6">Deeproots</h1>
+      <h1 className="text-2xl font-bold text-[#040f4c] dark:text-[#ecb705] mb-6">
+        Deeproots
+      </h1>
 
       {/* Navigation Links */}
       <nav className="space-y-8 font-bold ">
@@ -76,8 +78,8 @@ const Sidebar = () => {
             className={({ isActive }) =>
               `block p-2 rounded transition ${
                 isActive
-                  ? "bg-[#24AEBB] hover:scale-105 hover:bg-[#1E7E8E] text-white dark:bg-[#149FB2]  dark:hover:bg-[#1E7E8E]"
-                  : "hover:bg-gray-200 hover:scale-105 dark:hover:bg-gray-800 shadow-[2px_2px_2px_#24aebb] hover:shadow-[2px_2px_2px_#24aebb,-2px_-2px_2px_#24aebb]"
+                  ? "bg-[#040f4c] hover:scale-105 hover:border hover:border-[#040f4c] text-white dark:bg-[#ecb705]  hover:bg-transparent dark:hover:border dark:hover:border-[#ecb705]"
+                  : " hover:scale-105 hover:bg-transparent shadow-[2px_2px_2px_#040f4c] hover:border hover:border-[#040f4c] text-[#040f4c] dark:text-gray-100 dark:hover:border-[#ecb705]"
               }`
             }>
             {item.label}
@@ -90,15 +92,15 @@ const Sidebar = () => {
         <NavLink
           to="/settings"
           className={({ isActive }) =>
-            `flex items-center space-x-2 p-2 rounded transition ${
+            `flex items-center space-x-2 py-4 px-8 rounded transition ${
               isActive
-                ? "bg-[#24AEBB] hover:scale-105 hover:bg-[#1E7E8E] text-white dark:bg-[#149FB2]  dark:hover:bg-[#1E7E8E]"
-                : "hover:bg-gray-200 dark:hover:bg-gray-800 shadow-[2px_2px_2px_#24aebb] hover:shadow-[2px_2px_2px_#24aebb,-2px_-2px_2px_#24aebb]"
+                ? "bg-[#040f4c] hover:scale-105  text-white dark:bg-[#ecb705]  "
+                : " bg-transparent text-[#040f4c]  dark:text-gray-100 shadow-[2px_2px_2px_#040f4c] hover:border hover:border-[#040f4c] dark:hover:border-[#ecb705]"
             }`
           }>
           <FaCog /> <span>Settings</span>
         </NavLink>
-        <button className="flex items-center space-x-2 p-2 dark:hover:bg-gray-800  rounded shadow-[2px_2px_2px_#24aebb] hover:shadow-[2px_2px_2px_#24aebb,-2px_-2px_2px_#24aebb] hover:scale-105 hover:bg-gray-200 ">
+        <button className="flex items-center space-x-2 py-4 px-8 rounded shadow-[2px_2px_2px_#040f4c] text-[#040f4c] dark:text-gray-100 hover:border hover:border-[#040f4c] dark:hover:border-[#ecb705] hover:scale-105 ">
           <FaSignOutAlt /> <span>Logout</span>
         </button>
       </div>

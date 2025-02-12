@@ -35,7 +35,7 @@ import { FiHome, FiShuffle, FiLayers, FiZap, FiCompass } from "react-icons/fi";
 
 const BottomNavbar = () => {
   return (
-    <nav className="fixed bottom-0 left-0 w-full bg-gray-100 dark:bg-gray-800 shadow-lg p-4 pb-6 flex justify-around md:hidden">
+    <nav className="fixed bottom-0 left-0 w-full z-40 bg-gray-400 border border-[#040f4c] dark:bg-[#040f4c] shadow-lg p-2 gap-4 pb-6 flex justify-around lg:hidden">
       {[
         {
           to: "/",
@@ -69,7 +69,7 @@ const BottomNavbar = () => {
           className={({ isActive }) =>
             `flex flex-col items-center p-2 rounded transition ${
               isActive
-                ? " hover:scale-110  dark:text-white text-neutral-900 shadow-[2px_2px_2px_#24aebb,-2px_-2px_2px_#24aebb] "
+                ? " hover:scale-110  dark:text-white text-neutral-900 dark:shadow-[2px_2px_2px_#ecb705,-2px_-2px_2px_#ecb705] shadow-[2px_2px_2px_#040f4c,-2px_-2px_2px_#040f4c]"
                 : "hover:bg-gray-200 hover:scale-105 dark:hover:bg-gray-800  "
             }`
           }>

@@ -127,27 +127,27 @@ const Header = ({ darkMode, setDarkMode }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <motion.div className="flex justify-between items-center mb-8 md:mr-3 lg:bg-none md:bg-transparent bg-gray-200 dark:md:bg-transparent dark:bg-gray-800 text-black dark:text-white p-4 ">
+    <motion.div className="flex fixed top-0 justify-between lg:justify-around items-center w-full z-40 lg:w-[80vw] bg-gray-400  dark:bg-[#000116] text-black dark:text-white p-4 ">
       {/* Large Screen: Search Bar */}
-      <h1 className="font-bold text-3xl md:block hidden dark:text-[#24aebb] mr-5 lg:mr-52">
+      <h1 className="font-bold text-3xl lg:block hidden text-[#040f4c] dark:text-[#ecb705] mr-5 lg:mr-52">
         Dashboard
       </h1>
-      <div className="hidden sm:flex items-center bg-gray-200 dark:bg-gray-700 p-2 rounded flex-1">
-        <FaSearch className="text-gray-500 dark:text-gray-300 mr-2" />
+      <div className="hidden lg:flex items-center bg-gray-500 dark:bg-gray-700 p-2 rounded flex-1">
+        <FaSearch className="text-gray-400 dark:text-gray-300 mr-2" />
         <input
           type="text"
           placeholder="Search..."
-          className="bg-transparent focus:outline-none w-full text-black dark:text-white"
+          className="bg-transparent focus:outline-none w-full text-white"
         />
       </div>
 
       {/* Mobile: User Icon on the Left */}
-      <div className="block sm:hidden">
-        <FaUser className="text-gray-500 dark:text-gray-300 md:mx-10 text-xl" />
+      <div className="block lg:hidden">
+        <FaUser className="text-gray-950 dark:text-gray-300  md:text-3xl text-xl" />
       </div>
 
       {/* Large Screen: Dark Mode & User Icon on the Right */}
-      <motion.div className="hidden sm:flex items-center ml-20 space-x-4">
+      <motion.div className="hidden lg:flex items-center ml-20 space-x-4">
         {/* <button
           onClick={() => dispatch(toggleDarkMode())}
           className="p-2 rounded-full bg-gray-200 dark:bg-gray-600">
@@ -166,26 +166,26 @@ const Header = ({ darkMode, setDarkMode }) => {
           onClick={() => setDarkMode(!darkMode)}
           className="w-[24px]">
           {darkMode ? (
-            <Sun size={24} className="dark:text-[#149fb2]" />
+            <Sun size={24} className="dark:text-[#ecb705]" />
           ) : (
-            <Moon size={24} className="text-[#1F1619]" />
+            <Moon size={24} className="text-[#040f4c]" />
           )}
         </motion.button>
         <FaUser className="text-gray-500 dark:text-gray-300 text-xl" />
       </motion.div>
 
       {/* Mobile: Menu Icon on the Right */}
-      <div className="block sm:hidden">
+      <div className="block lg:hidden">
         <button
           onClick={() => setDropdownOpen(!dropdownOpen)}
           className="text-xl">
-          {dropdownOpen ? <FaTimes /> : <FaBars />}
+          {dropdownOpen ? <FaTimes className="text-xl text-gray-950 dark:text-gray-100 md:text-3xl"/> : <FaBars className="md:text-3xl text-gray-950 dark:text-gray-100 text-xl"/>}
         </button>
       </div>
 
       {/* Mobile Dropdown Menu (h-screen but doesn't cover navbar) */}
       {dropdownOpen && (
-        <motion.div className="absolute left-0 right-0 top-14 h-screen bg-gray-100 dark:bg-gray-800 p-4 shadow-md z-50 sm:hidden flex flex-col justify-between pb-16">
+        <motion.div className="absolute left-0 right-0 top-14 h-screen bg-gray-100 dark:bg-gray-800 p-4 shadow-md z-50 lg:hidden flex flex-col justify-between pb-16">
           <motion.div>
             <div className="relative mb-6">
               <input
