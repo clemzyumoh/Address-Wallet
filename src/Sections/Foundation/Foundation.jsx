@@ -1,6 +1,7 @@
 // img from "../../assets/sec2.png"
+//import Roadmap from "../../Components/Roadmap";
 import FoundationRewards from "./Section1";
-import Section1 from "./Section1";
+//import Section1 from "./Section1";
 import Section2 from "./Section2";
 import Section3 from "./Section3";
 
@@ -13,7 +14,7 @@ const Foundation = () => {
 
       <Section4 />
 
-      <Section3/>
+      <Section3 />
     </div>
   );
 };

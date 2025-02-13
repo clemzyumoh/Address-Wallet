@@ -63,7 +63,7 @@ const Home = ({darkMode, setDarkMode}) => {
   return (
     <div className="dark:bg-[#0B090D] px-3 md:mr-8">
       {/* Wallet Card */}
-      <div className="bg-gray-100 mb-8 dark:bg-gray-800  dark:shadow-[#24aebb] shadow-[2px_2px_2px_#24aebb] p-6 rounded-lg ">
+      <div className="bg-gray-100 mb-8 dark:bg-gray-800  mt-10 p-6 rounded-lg ">
         {/* Wallet Selector */}
         <select
           className=" p-2 bg-gray-200 dark:bg-gray-700  text-black dark:text-white rounded-md focus:outline-none"
@@ -121,8 +121,8 @@ const Home = ({darkMode, setDarkMode}) => {
             key={tab}
             className={`px-8 py-3 rounded ${
               activeTab === tab
-                ? "bg-[#24AEBB] hover:scale-105 hover:bg-[#1E7E8E] text-white dark:bg-[#149FB2]  dark:hover:bg-[#1E7E8E]"
-                : "bg-gray-200 hover:scale-105 text-neutral-700  shadow-[2px_2px_2px_#24aebb] hover:shadow-[2px_2px_2px_#24aebb,-2px_-2px_2px_#24aebb]"
+                ? " hover:scale-105  text-white bg-green-500  hover:bg-green-600"
+                : "bg-gray-200 hover:scale-105 text-neutral-700 hover:border-2 hover:bg-transparent hover:border-green-500 "
             }`}
             onClick={() => dispatch(setActiveTab(tab))}>
             {tab}

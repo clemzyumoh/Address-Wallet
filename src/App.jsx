@@ -40,7 +40,7 @@ const App = () => {
   return (
     <main className="  overflow-x-hidden">
       <div>
-        <div className="flex bg-gray-400 relative pt-20 lg:pl-72 dark:bg-[#000116] text-black dark:text-white min-h-screen">
+        <div className="flex bg-gray-300 relative pt-10 lg:pl-72 dark:bg-[#000116] text-black dark:text-white min-h-screen">
           <Sidebar />
           <div className="flex-1">
             <Header darkMode={darkMode} setDarkMode={setDarkMode} />

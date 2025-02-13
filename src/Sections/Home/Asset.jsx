@@ -1,5 +1,11 @@
+// CurvedRectangleWithCircle from "../../Components/CircleCurve";
+
 const Asset = () => {
-  return <div className="">Asset Section Content</div>;
+  return (
+    <main className="">
+    <h1 className="">Assets</h1>
+    </main>
+  );
 };
 
 export default Asset;

@@ -35,7 +35,7 @@ import { FiHome, FiShuffle, FiLayers, FiZap, FiCompass } from "react-icons/fi";
 
 const BottomNavbar = () => {
   return (
-    <nav className="fixed bottom-0 left-0 w-full z-40 bg-gray-400 border border-[#040f4c] dark:bg-[#040f4c] shadow-lg p-2 gap-4 pb-6 flex justify-around lg:hidden">
+    <nav className="fixed bottom-0 left-0 w-full z-40 bg-gray-200 border border-[#040f4c] dark:bg-[#181c33] shadow-lg p-2 gap-4 pb-6 flex justify-around lg:hidden">
       {[
         {
           to: "/",

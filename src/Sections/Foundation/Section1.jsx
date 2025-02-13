@@ -173,11 +173,11 @@ const FoundationRewards = () => {
       {/* Card */}
       <div className="bg-[#000026]  dark:bg-gray-800 rounded-2xl shadow-lg p-6">
         {/* Card Header */}
-        <div className="md:flex justify-between hidden items-center border-b border-gray-200 dark:border-gray-700 pb-2 mb-4">
+        <div className="flex justify-between  items-center border-b border-gray-200 dark:border-gray-700 pb-2 mb-4">
           <span className="font-semibold text-gray-300">
             Projects
           </span>
-          <span className="font-semibold ml-10 text-gray-300">
+          <span className="font-semibold ml-16 text-gray-300">
             Progress
           </span>
           <span className="font-semibold text-gray-300">
@@ -190,7 +190,7 @@ const FoundationRewards = () => {
           {visibleSections.map((section) => (
             <div
               key={section.id}
-              className="flex justify-between items-center dark:bg-[#000626] shadow-[2px_2px_2px_#ecb705,-2px_-2px_2px_#ecb705] rounded-lg p-4">
+              className="flex justify-between items-center bg-transparent border-b-2 border-gray-200  rounded-lg p-4">
               {/* Project - Icon and Name */}
               <div className="flex justify-center items-center ">
                 <img
@@ -211,7 +211,7 @@ const FoundationRewards = () => {
               </div>
 
               {/* Rewards */}
-              <span className="font-bold   text-[#ecb705]">
+              <span className="font-bold   text-[#3cba54]">
                 {section.rewards}
               </span>
             </div>

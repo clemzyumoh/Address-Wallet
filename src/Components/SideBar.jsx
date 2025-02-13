@@ -57,9 +57,9 @@ import { FaCog, FaSignOutAlt } from "react-icons/fa";
 
 const Sidebar = () => {
   return (
-    <div className="w-64 rounded-2xl mr-8 hidden lg:block bg-gray-400 dark:bg-[#000026] fixed left-0 top-0 h-screen  text-black dark:text-white p-6">
+    <div className="w-64 rounded-2xl mr-8 hidden lg:block bg-gray-300 dark:bg-[#000116] fixed left-0 top-0 h-screen  text-black dark:text-white p-6">
       {/* Logo */}
-      <h1 className="text-2xl font-bold text-[#040f4c] dark:text-[#ecb705] mb-6">
+      <h1 className="text-2xl font-bold text-[#040f4c] dark:text-gray-100 mb-6">
         Deeproots
       </h1>
 

@@ -32,7 +32,7 @@ const Launchpad = () => {
   const [filter, setFilter] = useState("Active");
 
   return (
-    <div className="p-6 bg-gray-100 dark:bg-gray-800 rounded-2xl mx-5 md:mr-8">
+    <div className="p-6 bg-gray-100 dark:bg-gray-800 pt-10 rounded-2xl mx-5 md:mr-8">
       <motion.h2
         className="text-2xl font-bold mb-4"
         initial={{ opacity: 0, y: -10 }}
@@ -48,8 +48,8 @@ const Launchpad = () => {
             key={status}
             className={`px-4 py-2 rounded ${
               filter === status
-                ? "bg-[#24AEBB] hover:scale-105 hover:bg-[#1E7E8E] text-white dark:bg-[#149FB2]  dark:hover:bg-[#1E7E8E]"
-                : "hover:bg-gray-200 hover:scale-105 dark:hover:bg-gray-800 shadow-[2px_2px_2px_#24aebb] hover:shadow-[2px_2px_2px_#24aebb,-2px_-2px_2px_#24aebb]"
+                ? "bg-blue-500 hover:scale-105 hover:bg-blue-600 text-white  "
+                : "bg-gray-400 hover:scale-105 hover:border-2 hover:bg-transparent hover:border-blue-500"
             }`}
             onClick={() => setFilter(status)}>
             {status} Projects
