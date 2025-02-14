@@ -100,22 +100,33 @@ const Swap = () => {
   };
 
   // Token Allocation Data
-  const totalSupply = 26200000;
+  const totalSupply = 100000000;
   const allocations = [
-    { name: "Distributed Over 25years", value: 16000000, color: "#3cba54" },
-    { name: "Seeding & Rewards", value: 4000000, color: "#F4c20d" },
-    { name: "Vesting 2-4 years team", value: 4000000, color: "#4885ed" },
-    { name: "3 Exchange Listing 2026", value: 1000000, color: "#900ea7" },
-    { name: "Foundation Rewards", value: 1200000, color: "#db3236" },
+    { name: "Distributed Over 41years", value: 60000000, color: "#3cba54" },
+    { name: "Vesting 3-5 years team", value: 20000000, color: "#4885ed" },
+    { name: "Development $ Innovation", value: 8000000, color: "#F4c20d" },
+    { name: "Seed & Private Rounds", value: 4000000, color: "#14B8A6" },
+    { name: "Marketing & Partnership", value: 3000000, color: "#F97316" },
+
+    {
+      name: "Ecosystem Growth(Grants,Hackathons)",
+      value: 2000000,
+      color: "#95ed48",
+    },
+    { name: "Exchange Listing (2026)", value: 1000000, color: "#6366F1" },
+
+    { name: "Foundation Rewards", value: 1000000, color: "#db3236" },
+    { name: "One year ICO", value: 500000, color: "#6a0ea7" },
+    { name: "GameFi & Education Rewards", value: 500000, color: "#EC4899" },
   ];
 
   return (
     <motion.div
-      className="md:p-6 p-2 bg-white mb-32 mt-20 w-full flex-col lg:flex-row flex items-center md:gap-10 lg:gap-28 justify-around rounded-lg dark:bg-gray-800  md:mx-auto"
+      className="md:p-6 p-2 bg-white mb-32 mt-20 w-full flex-col lg:flex-row flex items-center md:gap-10 lg:gap-10 justify-around rounded-lg dark:bg-gray-800  md:mx-auto"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}>
-      <div className="w-full">
+      <div className="w-full shadow-2xl p-10 lg:w-[50vw]">
         <h2 className="text-xl font-semibold lg:mb-20 mb-10">Swap Crypto</h2>
 
         {/* From Currency Input */}

@@ -61,9 +61,9 @@ const Home = ({darkMode, setDarkMode}) => {
   const [showBalance, setShowBalance] = useState(true);
 
   return (
-    <div className="dark:bg-[#0B090D] px-3 ">
+    <div className="dark:bg-[#0B090D]  md:px-3 mx-2 ">
       {/* Wallet Card */}
-      <div className="bg-gray-100 mb-8 dark:bg-gray-800  mt-10 p-6 rounded-lg ">
+      <div className="bg-gray-100 mb-8 dark:bg-gray-800 shadow-2xl mt-10 md:p-6 p-4 rounded-lg ">
         {/* Wallet Selector */}
         <select
           className=" p-2 bg-gray-200 dark:bg-gray-700  text-black dark:text-white rounded-md focus:outline-none"
@@ -115,14 +115,14 @@ const Home = ({darkMode, setDarkMode}) => {
       </div>
 
       {/* Tab Navigation */}
-      <div className="flex space-x-4 font-bold mb-4">
+      <div className="flex space-x-2 md:space-x-4 font-bold mb-4">
         {["Asset", "Crypto", "NFT"].map((tab) => (
           <button
             key={tab}
             className={`px-8 py-3 rounded ${
               activeTab === tab
                 ? " hover:scale-105  text-white bg-green-500  hover:bg-green-600"
-                : "bg-gray-200 hover:scale-105 text-neutral-700 hover:border-2 hover:bg-transparent hover:border-green-500 "
+                : "bg-gray-200 hover:scale-105 text-neutral-700 hover:border-2 hover:bg-transparent dark:hover:text-neutral-200 hover:border-green-500 "
             }`}
             onClick={() => dispatch(setActiveTab(tab))}>
             {tab}

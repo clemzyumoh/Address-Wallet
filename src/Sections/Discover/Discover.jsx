@@ -37,7 +37,7 @@ const Discover = () => {
   );
 
   return (
-    <div className="p-6">
+    <div className="p-6 md:mt-18 mt-8 mb-20">
       <motion.h2
         className="text-2xl font-bold mb-4"
         initial={{ opacity: 0, y: -10 }}

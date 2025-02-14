@@ -146,22 +146,22 @@ const CryptoSection = () => {
     : cryptocurrencies.slice(0, 5);
 
   return (
-    <section className=" md:mb-20 mb-28 md:p-6">
+    <section className=" md:mb-20 w-full mb-28 px-2 md:p-6">
       <h2 className="text-2xl md:text-4xl font-bold text-gray-900 text-center md:text-left mt-5 mb-10 dark:text-gray-100">
         Cryptocurrency Prices
       </h2>
 
-      <div className="flex items-center justify-between px-3 gap-3 mb-6 text-sm font-semibold text-gray-700 dark:text-gray-300">
-        <div>Crypto</div>
-        <div className="ml-18">Price</div>
-        <div>24H Change</div>
+      <div className="flex items-center justify-between px-3 gap-3 mb-6 text-sm w-full font-semibold text-gray-700 dark:text-gray-300">
+        <div className="md:w-1/3 text-left">Crypto</div>
+        <div className="md:w-1/3 ml-18 md:ml-0 text-center">Price</div>
+        <div className="md:w-1/3 text-right">24H Change</div>
       </div>
 
-      {displayedCryptos.map((crypto) => (
+      {/* {displayedCryptos.map((crypto) => (
         <div
           key={crypto.id}
-          className="flex justify-between gap-6 items-center mb-4 text-sm py-3 px-2 rounded-lg shadow-md bg-white dark:bg-gray-800">
-          <div className="flex items-center">
+          className="flex justify-between  items-center mb-4 text-sm py-3 px-2 w-full rounded-lg shadow-md bg-white dark:bg-gray-800">
+          <div className="flex w-1/3 items-center">
             <img
               src={crypto.logo}
               alt={crypto.name}
@@ -176,17 +176,58 @@ const CryptoSection = () => {
               </div>
             </div>
           </div>
-          <div className="text-gray-900 dark:text-gray-100">{crypto.price}</div>
+          <div className="text-gray-900 w-1/3 dark:text-gray-100">
+            {crypto.price}
+          </div>
           <div
             className={`font-semibold ${
               crypto.change24h.startsWith("+")
-                ? "text-green-600"
-                : "text-red-600"
+                ? "text-green-600 w-1/3"
+                : "text-red-600 w-1/3"
             }`}>
             {crypto.change24h}
           </div>
         </div>
-      ))}
+      ))} */}
+      <div className="w-full">
+        {displayedCryptos.map((crypto) => (
+          <div
+            key={crypto.id}
+            className="flex justify-between items-center mb-4 text-sm py-3 px-2 w-full rounded-lg shadow-md bg-white dark:bg-gray-800">
+            {/* Crypto Column */}
+            <div className="flex items-center flex-1">
+              <img
+                src={crypto.logo}
+                alt={crypto.name}
+                className="w-10 h-10 rounded mr-2 md:mr-4"
+              />
+              <div>
+                <div className="text-gray-900 dark:text-gray-100 font-semibold">
+                  {crypto.name}
+                </div>
+                <div className="text-gray-600 dark:text-gray-400">
+                  {crypto.turnover24h}
+                </div>
+              </div>
+            </div>
+
+            {/* Price Column */}
+            <div className="text-gray-900 ml-10 md:ml-0 dark:text-gray-100 flex-1 text-center">
+              {crypto.price}
+            </div>
+
+            {/* 24h Change Column */}
+            <div
+              className={`font-semibold flex-1 text-right ${
+                crypto.change24h.startsWith("+")
+                  ? "text-green-600"
+                  : "text-red-600"
+              }`}>
+              {crypto.change24h}
+            </div>
+          </div>
+        ))}
+      </div>
 
       <button
         onClick={() => setShowMore(!showMore)}

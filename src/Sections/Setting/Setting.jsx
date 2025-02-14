@@ -11,7 +11,7 @@ const Settings = ({ darkMode, setDarkMode }) => {
   const {  language } = useSelector((state) => state.settings);
 
   return (
-    <motion.div className="p-6 dark:bg-gray-800">
+    <motion.div className="p-6 mt-18 dark:bg-gray-800">
       <motion.h2
         className="text-2xl font-bold mb-4"
         initial={{ opacity: 0, y: -10 }}
@@ -21,7 +21,7 @@ const Settings = ({ darkMode, setDarkMode }) => {
       </motion.h2>
 
       {/* Dark Mode Toggle */}
-      <motion.div className="flex items-center justify-between p-4 shadow-lg bg-neutral-200 dark:bg-gray-700 text-neutral-900 dark:text-neutral-200 rounded-lg mb-6 bg-gray-200">
+      <motion.div className="flex items-center justify-between p-4 shadow-lg bg-neutral-200 dark:bg-gray-700 text-neutral-900 dark:text-neutral-200 rounded-lg mb-6 ">
         <p className="text-lg">Dark Mode</p>
         {/* <button
           className="p-2 rounded-full bg-gray-300"
