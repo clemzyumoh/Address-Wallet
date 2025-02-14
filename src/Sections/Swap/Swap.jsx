@@ -111,12 +111,12 @@ const Swap = () => {
 
   return (
     <motion.div
-      className="p-6 bg-white mb-32 mt-20 w-full flex-col md:flex-row flex items-center gap-28 justify-around rounded-lg dark:bg-gray-800  md:mx-auto"
+      className="md:p-6 p-2 bg-white mb-32 mt-20 w-full flex-col lg:flex-row flex items-center md:gap-10 lg:gap-28 justify-around rounded-lg dark:bg-gray-800  md:mx-auto"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}>
       <div className="w-full">
-        <h2 className="text-xl font-semibold mb-10">Swap Crypto</h2>
+        <h2 className="text-xl font-semibold lg:mb-20 mb-10">Swap Crypto</h2>
 
         {/* From Currency Input */}
         <div className="mb-4">
@@ -190,7 +190,7 @@ const Swap = () => {
         </button>
       </div>
 
-      <div className="w-full">
+      <div className="w-full md:mb-20">
         {/* Token Allocation Section */}
         <h2 className="text-xl font-semibold my-6">Token Allocation</h2>
         <div className="flex relative justify-center">
@@ -213,21 +213,25 @@ const Swap = () => {
             </PieChart>
           </ResponsiveContainer>
           <div className="absolute top-28 flex justify-center items-center text-lg font-bold">
-           <span>{totalSupply.toLocaleString()}</span>
+            <span>{totalSupply.toLocaleString()}</span>
           </div>
         </div>
 
         {/* Allocation Details */}
-        <div className="mt-4">
+        <div className="mt-4 text-sm md:text-xl">
           {allocations.map((allocation, index) => (
-            <div key={index} className="flex items-center mb-2">
-              <span
-                className="inline-block w-4 h-4 rounded-full mr-2"
-                style={{ backgroundColor: allocation.color }}></span>
-              <span className="text-gray-700 dark:text-gray-300">
-                {allocation.name}:
-              </span>
-              <span className="ml-auto text-gray-900 dark:text-gray-100 font-semibold">
+            <div
+              key={index}
+              className="flex items-center  justify-between mb-2">
+              <div className="flex justify-center items-center">
+                <span
+                  className="inline-block w-4 h-4 rounded-full mr-2"
+                  style={{ backgroundColor: allocation.color }}></span>
+                <span className="text-gray-700 dark:text-gray-300">
+                  {allocation.name}:
+                </span>
+              </div>
+              <span className=" text-gray-900 dark:text-gray-100 md:font-semibold">
                 {allocation.value.toLocaleString()} (
                 {((allocation.value / totalSupply) * 100).toFixed(2)}%)
               </span>
