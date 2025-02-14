@@ -1,9 +1,11 @@
 // CurvedRectangleWithCircle from "../../Components/CircleCurve";
 
+import AssetSection from "../../Components/AssetSection";
+
 const Asset = () => {
   return (
-    <main className="">
-    <h1 className="">Assets</h1>
+    <main className="bg-gray-100 pt-6 dark:bg-gray-900 w-ful">
+      <AssetSection />
     </main>
   );
 };

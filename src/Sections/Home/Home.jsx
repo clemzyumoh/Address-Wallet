@@ -61,7 +61,7 @@ const Home = ({darkMode, setDarkMode}) => {
   const [showBalance, setShowBalance] = useState(true);
 
   return (
-    <div className="dark:bg-[#0B090D] px-3 md:mr-8">
+    <div className="dark:bg-[#0B090D] px-3 ">
       {/* Wallet Card */}
       <div className="bg-gray-100 mb-8 dark:bg-gray-800  mt-10 p-6 rounded-lg ">
         {/* Wallet Selector */}
@@ -131,7 +131,7 @@ const Home = ({darkMode, setDarkMode}) => {
       </div>
 
       {/* Content */}
-      <div className=" p-4 rounded bg-gray-300  dark:bg-[#0B090D] text-black dark:text-white">
+      <div className=" md:p-4 rounded bg-gray-300  dark:bg-[#0B090D] text-black dark:text-white">
         {activeTab === "Asset" && <Asset />}
         {activeTab === "Crypto" && <Crypto />}
         {activeTab === "NFT" && <NFT />}

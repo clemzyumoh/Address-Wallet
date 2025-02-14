@@ -1,5 +1,13 @@
+//import NFTs from "../../Components/NFT";
+
+import NFTSection from "../../Components/NFT";
+
 const NFT = () => {
-  return <div>NFT Section Content</div>;
+  return (
+    <main className="">
+      <NFTSection/>
+    </main>
+  );
 };
 
 export default NFT;

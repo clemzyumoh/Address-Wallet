@@ -1,9 +1,11 @@
-import CryptoGraph from "../../Components/CryptoGraph";
+//import CryptoGraph from "../../Components/CryptoGraph";
+
+import CryptoSection from "../../Components/CryptoSection";
 
 const Crypto = () => {
   return (
-    <main className="min-h-screen bg-gray-100 dark:bg-gray-900 p-6">
-      <CryptoGraph/>
+    <main className=" bg-gray-100 pt-6 dark:bg-gray-900 w-full">
+      <CryptoSection/>
     </main>
   );
 };
