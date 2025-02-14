@@ -165,7 +165,7 @@ const FoundationRewards = () => {
   const visibleSections = showMore ? sections : sections.slice(0, 5);
 
   return (
-    <section className="md:mb-20 w-full mb-28 px-2 md:p-6">
+    <section className="md:mb-20 w-full mt-16 mb-28 px-2 md:p-6">
       <h1 className="text-3xl font-bold md:w-[70vw] w-full text-center text-gray-900 dark:text-gray-100 mb-8">
         Foundation Activation Rewards
       </h1>
