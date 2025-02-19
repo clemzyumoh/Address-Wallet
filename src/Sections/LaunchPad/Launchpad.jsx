@@ -195,10 +195,10 @@ const Launchpad = () => {
                     {/* Phase Completion & Vote Buttons */}
                     <div className="gap-3 flex  text-white text-sm w-full">
                       {[
-                        { phase: "Phase 1", percent: "75%" },
-                        { phase: "Phase 2", percent: "50%" },
-                        { phase: "Phase 3", percent: "25%" },
-                        { phase: "Phase 4", percent: "10%" },
+                        { phase: "Phase 1", percent: "100%" },
+                        { phase: "Phase 2", percent: "75%" },
+                        { phase: "Phase 3", percent: "50%" },
+                        { phase: "Phase 4", percent: "20%" },
                       ].map((item, index) => (
                         <div
                           key={index}
