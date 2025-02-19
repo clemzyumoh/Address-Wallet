@@ -122,7 +122,7 @@ const Swap = () => {
 
   return (
     <motion.div
-      className="md:p-6 p-2 bg-white mb-32 mt-20 w-full flex-col lg:flex-row flex items-center md:gap-10 lg:gap-10 justify-around rounded-lg dark:bg-gray-800  md:mx-auto"
+      className="md:p-6 p-2 bg-white mb-32 mt-8 lg:mt-20 w-full flex-col lg:flex-row flex items-center md:gap-10 lg:gap-10 justify-around rounded-lg dark:bg-gray-800  md:mx-auto"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}>

@@ -70,7 +70,7 @@ const Sidebar = () => {
           { to: "/swap", label: "Swap" },
           { to: "/foundation", label: "Foundation" },
           { to: "/launchpad", label: "Launchpad" },
-          { to: "/discover", label: "Discover" },
+          { to: "/discover", label: "RootOpia" },
         ].map((item) => (
           <NavLink
             key={item.to}
@@ -95,7 +95,7 @@ const Sidebar = () => {
             `flex items-center space-x-2 py-4 px-8 rounded transition ${
               isActive
                 ? " hover:scale-105   text-green-400   "
-                : " bg-transparent text-[#040f4c]   hover:border-2 hover:border-green-400 dark:hover:border-green-400"
+                : " bg-transparent text-[#040f4c] dark:text-neutral-300   hover:border-2 hover:border-green-400 dark:hover:border-green-400"
             }`
           }>
           <FaCog /> <span>Settings</span>

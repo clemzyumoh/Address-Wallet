@@ -222,13 +222,19 @@ const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState(searchTermFromURL);
   const [results, setResults] = useState([]);
 
+  // useEffect(() => {
+  //   if (searchTermFromURL) {
+  //     setSearchTerm(searchTermFromURL); // Update state when URL changes
+  //     handleSearch(searchTermFromURL);
+  //   }
+  // }, [searchTermFromURL]); // 👈 Watch for query changes in the URL
+
   useEffect(() => {
     if (searchTermFromURL) {
-      setSearchTerm(searchTermFromURL); // Update state when URL changes
+      setSearchTerm(searchTermFromURL);
       handleSearch(searchTermFromURL);
     }
-  }, [searchTermFromURL]); // 👈 Watch for query changes in the URL
-
+  }, [searchTermFromURL]); // ✅ R
   const handleSearch = async (query) => {
     if (!query.trim()) return;
     try {

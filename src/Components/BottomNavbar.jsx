@@ -36,7 +36,7 @@ import { IoGameControllerOutline } from "react-icons/io5";
 
 const BottomNavbar = () => {
   return (
-    <nav className="fixed bottom-0 left-0 w-full z-40 bg-gray-200 border border-[#040f4c] dark:bg-[#181c33] shadow-lg p-2 gap-4 pb-6 flex justify-around lg:hidden">
+    <nav className="fixed bottom-0 left-0 w-full  z-40 bg-gray-200 border border-[#040f4c] dark:bg-[#181c33] shadow-lg  pt-2 pb-6 flex justify-around lg:hidden">
       {[
         {
           to: "/",
@@ -68,7 +68,7 @@ const BottomNavbar = () => {
           key={item.to}
           to={item.to}
           className={({ isActive }) =>
-            `flex flex-col items-center p-2 rounded transition ${
+            `flex flex-col items-center text-sm p-2 rounded transition ${
               isActive
                 ? " hover:scale-110  text-green-400 dark:text-green-400"
                 : " hover:scale-105 dark:text-neutral-300 "

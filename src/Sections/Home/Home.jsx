@@ -62,6 +62,8 @@ import { NavLink } from "react-router-dom";
 import NotificationSlide from "../../Components/notSlide";
 import { motion } from "framer-motion";
 import { FaBell, FaTimes } from "react-icons/fa";
+import { useSearchParams } from "react-router-dom";
+
 const Home = ({darkMode, setDarkMode}) => {
   const activeTab = useSelector((state) => state.home.activeTab);
   const dispatch = useDispatch();
@@ -77,7 +79,9 @@ const Home = ({darkMode, setDarkMode}) => {
       "New transaction received",
       "Price alert: Bitcoin up 5%",
       "System update scheduled",
-    ];
+  ];
+  const [searchParams, setSearchParams] = useSearchParams();
+
   // const handleSearch = () => {
   //   if (searchTerm.trim() !== "") {
   //     navigate(`/search?query=${searchTerm}`);
@@ -87,11 +91,23 @@ const Home = ({darkMode, setDarkMode}) => {
   //      navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
   //    }
   //  };
-    const handleSearch = (e) => {
-      if (e.key === "Enter" && searchTerm.trim() !== "") {
-        navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
-      }
-    };
+  
+    // const handleSearch = (e) => {
+    //   if (e.key === "Enter" && searchTerm.trim() !== "") {
+    //     navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
+    //   }
+      const searchCrypto = () => {
+        if (searchTerm.trim() !== "") {
+          navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
+        }
+      };
+
+      const handleSearch = (e) => {
+        if (e.key === "Enter") {
+          searchCrypto(); // ✅ Triggers search on Enter
+        }
+      };
+    
   return (
     <div className="dark:bg-[#0B090D]  md:px-3 mx-2 ">
       {/* <div className="flex items-center border-b pb-2 w-full mt-12 max-w-md mx-auto">
@@ -127,7 +143,7 @@ const Home = ({darkMode, setDarkMode}) => {
           Search
         </button>
       </div> */}
-      <div className="flex items-center border-2 border-neutral-400 rounded-2xl pl-6 p-3 w-full lg:hidden mt-12 max-w-md mx-auto">
+      {/* <div className="flex items-center border-2 border-neutral-400 rounded-2xl pl-6 p-3 w-full lg:hidden mt-12 max-w-md mx-auto">
         <FaSearch className="mr-2 text-gray-500" />
         <input
           type="text"
@@ -137,7 +153,41 @@ const Home = ({darkMode, setDarkMode}) => {
           onChange={(e) => setSearchTerm(e.target.value)}
           onKeyDown={handleSearch} // 🔥 Triggers on Enter key
         />
+      </div> */}
+      {/* <div className="flex items-center border-2 border-neutral-400 rounded-2xl pl-6 p-3 w-full lg:hidden mt-12 max-w-md mx-auto">
+        <FaSearch className="mr-2 text-gray-500" />
+        <input
+          type="text"
+          className="w-full p-2 bg-transparent focus:outline-none"
+          placeholder="Search crypto across networks..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <button
+          className="ml-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg"
+          onClick={() => setSearchParams({ query: searchTerm })} // ✅ Now it works
+        >
+          Search
+        </button>
+      </div> */}
+      <div className="flex items-center border-2 border-neutral-400 rounded-2xl pl-6 p-3 w-full lg:hidden mt-12 max-w-md mx-auto">
+        <FaSearch className="mr-2 text-gray-500" />
+        <input
+          type="text"
+          className="w-full p-2 bg-transparent focus:outline-none"
+          placeholder="Search crypto for networks..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyDown={handleSearch} // ✅ Works when pressing Enter
+        />
+        <button
+          className="ml-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg"
+          onClick={searchCrypto} // ✅ Works when clicking the button
+        >
+          Search
+        </button>
       </div>
+
       {/* Wallet Card */}
       <div className=" mb-8   mt-10 md:p-6 p-4 rounded-lg ">
         {/* Wallet Selector */}
