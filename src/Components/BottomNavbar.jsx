@@ -32,6 +32,7 @@
 
 import { NavLink } from "react-router-dom";
 import { FiHome, FiShuffle, FiLayers, FiZap, FiCompass } from "react-icons/fi";
+import { IoGameControllerOutline } from "react-icons/io5";
 
 const BottomNavbar = () => {
   return (
@@ -40,27 +41,27 @@ const BottomNavbar = () => {
         {
           to: "/",
           label: "Home",
-          icon: <FiHome className="text-xl dark:text-neutral-200" />,
+          icon: <FiHome className="text-xl " />,
         },
         {
           to: "/swap",
           label: "Swap",
-          icon: <FiShuffle className="text-xl dark:text-neutral-200" />,
+          icon: <FiShuffle className="text-xl " />,
         },
         {
           to: "/foundation",
           label: "Foundation",
-          icon: <FiLayers className=" dark:text-neutral-200 text-xl" />,
+          icon: <FiLayers className="text-xl" />,
         },
         {
           to: "/launchpad",
           label: "Launchpad",
-          icon: <FiZap className="text-xl dark:text-neutral-200" />,
+          icon: <FiZap className="text-xl " />,
         },
         {
           to: "/discover",
-          label: "Discover",
-          icon: <FiCompass className="text-xl dark:text-neutral-200" />,
+          label: "RootOpia",
+          icon: <IoGameControllerOutline className="text-xl " />,
         },
       ].map((item) => (
         <NavLink
@@ -69,12 +70,12 @@ const BottomNavbar = () => {
           className={({ isActive }) =>
             `flex flex-col items-center p-2 rounded transition ${
               isActive
-                ? " hover:scale-110  dark:text-white text-neutral-900 dark:shadow-[2px_2px_2px_#ecb705,-2px_-2px_2px_#ecb705] shadow-[2px_2px_2px_#040f4c,-2px_-2px_2px_#040f4c]"
-                : "hover:bg-gray-200 hover:scale-105 dark:hover:bg-gray-800  "
+                ? " hover:scale-110  text-green-400 dark:text-green-400"
+                : " hover:scale-105 dark:text-neutral-300 "
             }`
           }>
           {item.icon}
-          <span className="text-xs dark:text-neutral-200">{item.label}</span>
+          {item.label}
         </NavLink>
       ))}
     </nav>

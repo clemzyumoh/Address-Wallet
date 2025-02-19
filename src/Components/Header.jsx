@@ -120,12 +120,22 @@ import {
   Moon,
 
 } from "lucide-react";
+import { MdOutlineManageSearch } from "react-icons/md";
+//import { FaSearch } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ darkMode, setDarkMode }) => {
   //const dispatch = useDispatch();
   //const { darkMode } = useSelector((state) => state.settings);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+   const [searchTerm, setSearchTerm] = useState("");
+   const navigate = useNavigate();
 
+   const handleSearch = (e) => {
+     if (e.key === "Enter" && searchTerm.trim() !== "") {
+       navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
+     }
+   };
   return (
     <motion.div className="flex fixed top-0 justify-between lg:justify-around items-center w-full z-40 lg:w-[80vw] bg-gray-300  dark:bg-[#000116] text-black dark:text-white p-4 ">
       {/* Large Screen: Search Bar */}
@@ -138,12 +148,18 @@ const Header = ({ darkMode, setDarkMode }) => {
           type="text"
           placeholder="Search..."
           className="bg-transparent focus:outline-none w-full text-white"
+          onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyDown={handleSearch} // 🔥 Triggers on Enter key
         />
       </div>
 
       {/* Mobile: User Icon on the Left */}
       <div className="block lg:hidden">
-        <FaUser className="text-gray-950 dark:text-gray-300  md:text-3xl text-xl" />
+        <button className=" space-x-2 p-2 w-full hover:bg-gray-200 dark:hover:bg-gray-700">
+          <NavLink to="/settings" className="flex items-center">
+            <FaCog className="text-xl" />
+          </NavLink>
+        </button>
       </div>
 
       {/* Large Screen: Dark Mode & User Icon on the Right */}
@@ -166,7 +182,7 @@ const Header = ({ darkMode, setDarkMode }) => {
           onClick={() => setDarkMode(!darkMode)}
           className="w-[24px]">
           {darkMode ? (
-            <Sun size={24} className="dark:text-[#ecb705]" />
+            <Sun size={24} className="dark:text-[#E9771D]" />
           ) : (
             <Moon size={24} className="text-[#040f4c]" />
           )}
@@ -175,12 +191,20 @@ const Header = ({ darkMode, setDarkMode }) => {
       </motion.div>
 
       {/* Mobile: Menu Icon on the Right */}
-      <div className="block lg:hidden">
+      <div className="hidden">
         <button
           onClick={() => setDropdownOpen(!dropdownOpen)}
           className="text-xl">
-          {dropdownOpen ? <FaTimes className="text-xl text-gray-950 dark:text-gray-100 md:text-3xl"/> : <FaBars className="md:text-3xl text-gray-950 dark:text-gray-100 text-xl"/>}
+          {dropdownOpen ? (
+            <FaTimes className="text-xl  text-gray-950 dark:text-gray-100 md:text-3xl" />
+          ) : (
+            <FaBars className="md:text-3xl  text-gray-950 dark:text-gray-100 text-xl" />
+          )}
         </button>
+        <MdOutlineManageSearch className="text-xl text-gray-950 dark:text-gray-100 md:text-3xl" />
+      </div>
+      <div className="block lg:hidden">
+        <MdOutlineManageSearch className="text-3xl text-gray-950 dark:text-gray-100 md:text-3xl" />
       </div>
 
       {/* Mobile Dropdown Menu (h-screen but doesn't cover navbar) */}
@@ -231,7 +255,6 @@ const Header = ({ darkMode, setDarkMode }) => {
               <NavLink
                 to="/settings"
                 onClick={() => {
-                  
                   setDropdownOpen(!dropdownOpen);
                 }}
                 className="flex items-center">

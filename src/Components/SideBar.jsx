@@ -78,8 +78,8 @@ const Sidebar = () => {
             className={({ isActive }) =>
               `block p-2 rounded transition ${
                 isActive
-                  ? "bg-[#040f4c] hover:scale-105 hover:border hover:border-[#040f4c] text-white dark:bg-[#ecb705]  hover:bg-transparent dark:hover:border dark:hover:border-[#ecb705]"
-                  : " hover:scale-105 hover:bg-transparent shadow-[2px_2px_2px_#040f4c] hover:border hover:border-[#040f4c] text-[#040f4c] dark:text-gray-100 dark:hover:border-[#ecb705]"
+                  ? " hover:scale-105 hover:border hover:border-green-400 text-green-400 dark:text-green-400   hover:bg-transparent dark:hover:border dark:hover:border-green-400"
+                  : " hover:scale-105 hover:bg-transparent hover:border hover:border-green-400 text-[#040f4c] dark:text-gray-100 dark:hover:border-green-400"
               }`
             }>
             {item.label}
@@ -94,13 +94,13 @@ const Sidebar = () => {
           className={({ isActive }) =>
             `flex items-center space-x-2 py-4 px-8 rounded transition ${
               isActive
-                ? "bg-[#040f4c] hover:scale-105  text-white dark:bg-[#ecb705]  "
-                : " bg-transparent text-[#040f4c]  dark:text-gray-100 shadow-[2px_2px_2px_#040f4c] hover:border hover:border-[#040f4c] dark:hover:border-[#ecb705]"
+                ? " hover:scale-105   text-green-400   "
+                : " bg-transparent text-[#040f4c]   hover:border-2 hover:border-green-400 dark:hover:border-green-400"
             }`
           }>
           <FaCog /> <span>Settings</span>
         </NavLink>
-        <button className="flex items-center space-x-2 py-4 px-8 rounded shadow-[2px_2px_2px_#040f4c] text-[#040f4c] dark:text-gray-100 hover:border hover:border-[#040f4c] dark:hover:border-[#ecb705] hover:scale-105 ">
+        <button className="flex items-center space-x-2 py-4 px-8 rounded text-[#040f4c] dark:text-gray-100 hover:border hover:border-green-400 dark:hover:border-green-400 hover:scale-105 ">
           <FaSignOutAlt /> <span>Logout</span>
         </button>
       </div>

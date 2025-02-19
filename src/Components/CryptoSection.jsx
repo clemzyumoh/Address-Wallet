@@ -147,9 +147,7 @@ const CryptoSection = () => {
 
   return (
     <section className=" md:mb-20 w-full mb-28 px-2 md:p-6">
-      <h2 className="text-2xl md:text-4xl font-bold text-gray-900 text-center md:text-left mt-5 mb-10 dark:text-gray-100">
-        Cryptocurrency Prices
-      </h2>
+     
 
       <div className="flex items-center justify-between px-3 gap-3 mb-6 text-sm w-full font-semibold text-gray-700 dark:text-gray-300">
         <div className="md:w-1/3 text-left">Crypto</div>

@@ -4,7 +4,7 @@ import AssetSection from "../../Components/AssetSection";
 
 const Asset = () => {
   return (
-    <main className="bg-gray-100 pt-6 rounded-2xl dark:bg-gray-900 w-ful">
+    <main className=" pt-6 rounded-2xl  w-ful">
       <AssetSection />
     </main>
   );

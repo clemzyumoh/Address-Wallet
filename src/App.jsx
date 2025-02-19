@@ -8,6 +8,8 @@ import Foundation from "../src/Sections/Foundation/Foundation";
 import Launchpad from "../src/Sections/LaunchPad/Launchpad";
 import Discover from "../src/Sections/Discover/Discover";
 import Settings from "../src/Sections/Setting/Setting";
+import SearchPage from "./Components/SearchPage";
+import NotificationPage from "./Components/NotificationPage";
 import Header from "./Components/Header";
 import "../src/index.css";
 //import MobHeader from "./Components/MobHeader";
@@ -60,6 +62,8 @@ const App = () => {
                   <Foundation darkMode={darkMode} setDarkMode={setDarkMode} />
                 }
               />
+              <Route path="/search" element={<SearchPage />} />
+              <Route path="/notifications" element={<NotificationPage />} />
               <Route
                 path="/launchpad"
                 element={

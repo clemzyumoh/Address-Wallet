@@ -30,9 +30,7 @@ const AssetSection = () => {
     <section
       className="md:p-6  w-full px-2 md:mb-20 mb-32 pb-10
     ">
-      <h2 className="text-3xl md:text-4xl md:text-left text-center my-10 font-bold text-gray-900  dark:text-gray-100">
-        Asset Holdings
-      </h2>
+      
       {/* <div className="flex justify-center items-center flex-col w-full gap-4">
         <div className="flex justify-between items-center w-full text-gray-500 font-semibold mb-2">
           <p>Crypto</p>
