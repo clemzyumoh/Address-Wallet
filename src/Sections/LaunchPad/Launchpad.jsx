@@ -80,153 +80,342 @@
 // export default Launchpad;
 import { useState } from "react";
 import { motion } from "framer-motion";
-import img from "../../assets/launch.webp"
-import img1 from "../../assets/launch.webp";
-import img2 from "../../assets/launch.webp";
-import img3 from "../../assets/launch.webp";
-import img4 from "../../assets/launch.webp";
-import img5 from "../../assets/launch.webp";
+import img from "../../assets/vote.webp"
+import img1 from "../../assets/deeproot-banner.jpg";
+import img2 from "../../assets/address.jpeg";
+import img3 from "../../assets/telexcoin.jpeg";
+import img4 from "../../assets/asset5.jpeg";
+import img5 from "../../assets/share.webp";
+import img6 from "../../assets/launch.webp";
+import img7 from "../../assets/metafabric.webp";
+import img8 from "../../assets/rootopia.jpeg";
+import img9 from "../../assets/the foundation.jpeg";
 import AnimatedText from "../../Components/AnimationText";
+
+
+// const projects = [
+//   {
+//     id: 1,
+//     name: "DeepRoots",
+//     description: "A Platform for Innovative Deworld Apps.",
+//     image: img, // Replace with actual
+//     href: www.deeproots.earth,
+//   },
+//   {
+//     id: 2,
+//     name: "Addres Wallet",
+//     description: "9 Layers of Dynamic Finance.",
+//     image: img, // Replace with actual
+//     href: www.addresswallet.com,
+//   },
+//   {
+//     id: 3,
+//     name: "TeleXcoin",
+//     description: "Unlock the Future of Finance.",
+//     image: img1, // Replace with actual image
+//     href: www.telexcoin.com,
+//   },
+//   {
+//     id: 4,
+//     name: "Deep Assets",
+//     description: "Transforming Real-World Assets into digital Value",
+//     image: img2, // Replace with actual image
+//     href: www.deepassets.com,
+//   },
+//   {
+//     id: 5,
+//     name: "Share Value",
+//     description: "Learn, Create, Innovate – A DeWorld Education Hub",
+//     image: img3, // Replace with actual image
+//     href: www.sharevalue.com,
+//   },
+//   {
+//     id: 6,
+//     name: "InnoLaunch",
+//     description: "Empowering DeWorld Projects.",
+//     image: img4, // Replace with actual image
+//     href: www.innolaunch.com,
+//   },
+//   {
+//     id: 7,
+//     name: "MetaFabric",
+//     description: "Blockchain to Runway Your Style,Your NFT DeWorld.",
+//     image: img5, // Replace with actual image
+//     href: www.innolaunch.com,
+//   },
+//   {
+//     id: 8,
+//     name: "Rootopia Race",
+//     description: "Step into Rootopia World Race.",
+//     image: img5, // Replace with actual image
+//     href: www.innolaunch.com,
+//   },
+//   {
+//     id: 9,
+//     name: "Foundation Seats",
+//     description: "Join The Future.",
+//     image: img5, // Replace with actual image
+//     href: www.foundation.com,
+//   },
+// ];
 
 
 const projects = [
   {
     id: 1,
-    name: "Project Beta",
-    description: "An NFT marketplace for artists.",
-    image: img, // Replace with actual image
+    name: "DeepRoots",
+    description: "A Platform for Innovative Deworld Apps.",
+    image: img1,
+    href: "https://www.deeproots.earth",
   },
   {
     id: 2,
-    name: "Project Delta",
-    description: "A decentralized  AI trading.",
-    image: img1, // Replace with actual image
+    name: "Addres Wallet",
+    description: "9 Layers of Dynamic Finance.",
+    image: img2,
+    href: "https://www.addresswallet.com",
   },
   {
     id: 3,
-    name: "Project 3",
-    description: "A decentralized e AI tradin.",
-    image: img2, // Replace with actual image
+    name: "TeleXcoin",
+    description: "Unlock the Future of Finance.",
+    image: img3,
+    href: "https://www.telexcoin.com",
   },
   {
     id: 4,
-    name: "Project 4",
-    description: "A decentralized  AI trading.",
-    image: img3, // Replace with actual image
+    name: "Deep Assets",
+    description: "Transforming Real-World Assets into Digital Value.",
+    image: img4,
+    href: "https://www.deepassets.com",
   },
   {
     id: 5,
-    name: "Project 5",
-    description: "A decentralized  AI trading.",
-    image: img4, // Replace with actual image
+    name: "Share Value",
+    description: "Learn, Create, Innovate – A DeWorld Education Hub.",
+    image: img5,
+    href: "https://www.sharevalue.com",
   },
   {
     id: 6,
-    name: "Project6",
-    description: "A decentralized  AI trading.",
-    image: img5, // Replace with actual image
+    name: "InnoLaunch",
+    description: "Empowering DeWorld Projects.",
+    image: img6,
+    href: "https://www.innolaunch.com",
+  },
+  {
+    id: 7,
+    name: "MetaFabric",
+    description: "Blockchain to Runway Your Style, Your NFT DeWorld.",
+    image: img7,
+    href: "https://www.metafabric.com",
+  },
+  {
+    id: 8,
+    name: "Rootopia Race",
+    description: "Step into Rootopia World Race.",
+    image: img8,
+    href: "https://www.rootopiarace.com",
+  },
+  {
+    id: 9,
+    name: "Foundation Seats",
+    description: "Join The Future.",
+    image: img9,
+    href: "https://www.foundation.com",
   },
 ];
 
+// const Launchpad = () => {
+//   return (
+//     <div className="  mb-20 bg-[#e2fafb] dark:bg-gray-800   ">
+//       <AnimatedText
+//         text="InnoFi"
+//         animation="fade"
+//         as="h1"
+//         className="font-extrabold lg:max-w-[600px] mb-12 ml-3 mt-5 leading-[40px] tracking-wider lg:text-start lg:mt-20  text-5xl t lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
+//       />
+
+//       {/* Project Cards */}
+//       <div className="flex justify-center items-center flex-col ">
+//         <AnimatedText
+//           text="Upcoming Projects"
+//           animation="fade"
+//           as="h1"
+//           className="font-bold hidden lg:max-w-[600px] mb-8 leading-[40px] text-center md:text-4xl text-2xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
+//         />
+//         <img src={img} alt="" className="" />
+//       </div>
+
+//       <div className="grid  grid-cols-1 my-16 gap-6">
+//         {projects.map((project) => (
+//           <motion.div
+//             key={project.id}
+//             className="relative h-[340px] w-full lg:h-[600px] bg-cover bg-center shadow-lg rounded-lg overflow-hidden"
+//             whileHover={{ scale: 0.9 }}
+//             transition={{ type: "spring", stiffness: 100 }}>
+//             {/* VOTE Text - Positioned Bottom-32 */}
+
+//             {/* Card Content */}
+//             <div className="absolute bottom-2 hidden left-2 right-2 flex-col bg-black bg-opacity-60 text-white  flex-wrap justify-between items-center p-3 rounded-lg">
+//               <AnimatedText
+//                 text="Vote"
+//                 animation="fade"
+//                 as="h1"
+//                 className="font-bold  lg:max-w-[600px] mb-3 leading-[40px] text-center md:text-4xl text-2xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
+//               />
+
+//               {/* Phase Completion - Positioned Bottom-20 */}
+//               <div className="gap-3 flex justify-between text-white text-sm">
+//                 <span>Phase 1: 100%</span>
+//                 <span>Phase 2: 75%</span>
+//                 <span>Phase 3: 50%</span>
+//                 <span>Phase 4: 25%</span>
+//               </div>
+//             </div>
+//             <div className="grid md:grid-cols-2 gap-6">
+//               {projects.map((project) => (
+//                 <motion.div
+//                   key={project.id}
+//                   className="relative w-full h-[346px] md:h-96 lg:h-[600px] bg-cover bg-center shadow-lg rounded-lg overflow-hidden"
+//                   style={{ backgroundImage: `url(${img})` }}
+//                   whileHover={{ scale: 1.05 }}
+//                   transition={{ type: "spring", stiffness: 100 }}>
+//                   {/* VOTE Text */}
+//                   <div className="absolute bottom-0 left-0 right-0 flex-col bg-black bg-opacity-60 text-white flex flex-wrap justify-center items-center p-3 rounded-lg">
+//                     <AnimatedText
+//                       text="VOTE"
+//                       animation="fade"
+//                       as="h1"
+//                       className="font-extrabold lg:max-w-[600px] mb-3 leading-[40px] text-center md:text-4xl text-2xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
+//                     />
+
+//                     {/* Phase Completion & Vote Buttons */}
+//                     <div className="gap-3 flex  text-white text-sm w-full">
+//                       {[
+//                         { phase: "Phase 1", percent: "100%" },
+//                         { phase: "Phase 2", percent: "75%" },
+//                         { phase: "Phase 3", percent: "50%" },
+//                         { phase: "Phase 4", percent: "20%" },
+//                       ].map((item, index) => (
+//                         <div
+//                           key={index}
+//                           className="flex justify-between flex-col items-center w-full bg-gray-800 p-2 rounded-md">
+//                           <span>{item.phase}</span>
+//                           <span className="text-gray-300">{item.percent}</span>
+//                           <button className="  bg-gradient-to-r from-[#F68082] to-[#97F4F3] text-black font-bold  px-2 py-1 rounded">
+//                             Vote
+//                           </button>
+//                         </div>
+//                       ))}
+//                     </div>
+//                   </div>
+
+//                   {/* Card Content */}
+                 
+//                   <div className="grid md:grid-cols-1 gap-6">
+//                     {projects.map((project) => (
+//                       <a
+//                         key={project.id}
+//                         href={project.href}
+//                         target="_blank"
+//                         rel="noopener noreferrer">
+//                         <div className="bg-black bg-opacity-60 text-white flex-wrap justify-between items-center p-3 rounded-lg">
+//                           <div className="mr-2">
+//                             <h3 className="text-lg font-semibold leading-tight">
+//                               {project.name}
+//                             </h3>
+//                             <p className="text-sm">{project.description}</p>
+//                           </div>
+//                         </div>
+//                       </a>
+//                     ))}
+//                   </div>
+//                 </motion.div>
+//               ))}
+//             </div>
+//           </motion.div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
 const Launchpad = () => {
   return (
-    <div className="  mb-20 bg-[#e2fafb] dark:bg-gray-800   ">
+    <div className="mb-28 bg-[#e2fafb] dark:bg-gray-800">
       <AnimatedText
         text="InnoFi"
         animation="fade"
         as="h1"
-        className="font-extrabold lg:max-w-[600px] mb-12 ml-3 leading-[40px] lg:text-start  md:text-4xl text-3xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
+        className="font-extrabold lg:max-w-[600px] mb-12 ml-3 mt-5 leading-[40px] tracking-wider lg:text-start lg:mt-20 text-5xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
       />
-
+      <img src={img} alt="" className="text-center mx-auto" />
       {/* Project Cards */}
-      <div className="flex justify-center items-center flex-col ">
+      <div className="flex justify-center items-center flex-col">
         <AnimatedText
           text="Upcoming Projects"
           animation="fade"
           as="h1"
           className="font-bold hidden lg:max-w-[600px] mb-8 leading-[40px] text-center md:text-4xl text-2xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
         />
-        <img src={img} alt="" className="" />
       </div>
 
-      <div className="grid  grid-cols-1 my-16 gap-6">
+      <div className="grid md:grid-cols-2 grid-cols-1  my-16 gap-6 px-2 lg:px-4">
         {projects.map((project) => (
           <motion.div
             key={project.id}
-            className="relative h-[340px] w-full lg:h-[600px] bg-cover bg-center shadow-lg rounded-lg overflow-hidden"
-            whileHover={{ scale: 0.9}}
+            className="relative w-full h-[346px] md:h-96 lg:h-[600px] bg-cover bg-center shadow-lg rounded-lg overflow-hidden"
+            style={{ backgroundImage: `url(${project.image})` }} // ✅ Use correct project image
+            whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 100 }}>
-            {/* VOTE Text - Positioned Bottom-32 */}
-
-            {/* Card Content */}
-            <div className="absolute bottom-2 hidden left-2 right-2 flex-col bg-black bg-opacity-60 text-white  flex-wrap justify-between items-center p-3 rounded-lg">
+            {/* Vote Section */}
+            <div className="absolute bottom-0 left-0 right-0 flex-col bg-black bg-opacity-60 text-white flex flex-wrap justify-center items-center p-3 rounded-lg">
               <AnimatedText
-                text="Vote"
+                text="VOTE"
                 animation="fade"
                 as="h1"
-                className="font-bold  lg:max-w-[600px] mb-3 leading-[40px] text-center md:text-4xl text-2xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
+                className="font-extrabold lg:max-w-[600px] mb-3 leading-[40px] text-center md:text-4xl text-2xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
               />
 
-              {/* Phase Completion - Positioned Bottom-20 */}
-              <div className="gap-3 flex justify-between text-white text-sm">
-                <span>Phase 1: 100%</span>
-                <span>Phase 2: 75%</span>
-                <span>Phase 3: 50%</span>
-                <span>Phase 4: 25%</span>
+              {/* Phase Completion & Vote Buttons */}
+              <div className="gap-3 flex text-white text-sm w-full">
+                {[
+                  { phase: "Phase 1", percent: "100%" },
+                  { phase: "Phase 2", percent: "75%" },
+                  { phase: "Phase 3", percent: "50%" },
+                  { phase: "Phase 4", percent: "20%" },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex justify-between flex-col items-center w-full bg-gray-800 p-2 rounded-md">
+                    <span>{item.phase}</span>
+                    <span className="text-gray-300">{item.percent}</span>
+                    <button className="bg-gradient-to-r from-[#F68082] to-[#97F4F3] text-black font-bold px-2 py-1 rounded">
+                      Vote
+                    </button>
+                  </div>
+                ))}
               </div>
             </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              {projects.map((project) => (
-                <motion.div
-                  key={project.id}
-                  className="relative w-full h-80 md:h-96 lg:h-[600px] bg-cover bg-center shadow-lg rounded-lg overflow-hidden"
-                  style={{ backgroundImage: `url(${img})` }}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 100 }}>
-                  {/* VOTE Text */}
-                  <div className="absolute bottom-3 left-2 right-2 flex-col bg-black bg-opacity-60 text-white flex flex-wrap justify-center items-center p-3 rounded-lg">
-                    <AnimatedText
-                      text="Vote"
-                      animation="fade"
-                      as="h1"
-                      className="font-bold lg:max-w-[600px] mb-3 leading-[40px] text-center md:text-4xl text-2xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
-                    />
 
-                    {/* Phase Completion & Vote Buttons */}
-                    <div className="gap-3 flex  text-white text-sm w-full">
-                      {[
-                        { phase: "Phase 1", percent: "100%" },
-                        { phase: "Phase 2", percent: "75%" },
-                        { phase: "Phase 3", percent: "50%" },
-                        { phase: "Phase 4", percent: "20%" },
-                      ].map((item, index) => (
-                        <div
-                          key={index}
-                          className="flex justify-between flex-col items-center w-full bg-gray-800 p-2 rounded-md">
-                          <span>{item.phase}</span>
-                          <span className="text-gray-300">{item.percent}</span>
-                          <button className=" my-3 bg-gradient-to-r from-[#F68082] to-[#97F4F3] text-black font-bold  px-3 py-1 rounded">
-                            Vote
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Card Content */}
-                  <div className="hidden  bg-black bg-opacity-60 text-white  flex-wrap justify-between items-center p-3 rounded-lg">
-                    <div className="mr-2">
-                      <h3 className="text-lg font-semibold leading-tight">
-                        {project.name}
-                      </h3>
-                      <p className="text-sm hidden sm:block">
-                        {project.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            {/* Project Details */}
+            
+              <div className="absolute top-0 left-0 right-0 bg-black bg-opacity-60 text-white flex-wrap justify-between items-center p-3 rounded-lg">
+                <h3 className="text-lg font-semibold leading-tight">
+                  {project.name}
+                </h3>
+                <p className="text-sm">{project.description}</p>
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-bold text-md text-transparent">
+                  {" "}
+                {project.href}
+                </a>
+              </div>
+            
           </motion.div>
         ))}
       </div>
@@ -235,3 +424,4 @@ const Launchpad = () => {
 };
 
 export default Launchpad;
+
