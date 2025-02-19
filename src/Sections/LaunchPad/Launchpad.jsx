@@ -130,47 +130,105 @@ const projects = [
 
 const Launchpad = () => {
   return (
-    <div className="p-6 mt-8 md:mt-18 mb-20 bg-[#e2fafb] dark:bg-gray-800 pt-10 rounded-2xl mx-5 md:mr-8">
+    <div className="  mb-20 bg-[#e2fafb] dark:bg-gray-800   ">
       <AnimatedText
-        text="InnoLaunchpad"
+        text="InnoFi"
         animation="fade"
         as="h1"
-        className="font-extrabold lg:max-w-[600px] mb-12 leading-[40px] lg:text-start text-3xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
+        className="font-extrabold lg:max-w-[600px] mb-12 ml-3 leading-[40px] lg:text-start  md:text-4xl text-3xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
       />
 
       {/* Project Cards */}
-      <div className=" text-center ">
+      <div className="flex justify-center items-center flex-col ">
         <AnimatedText
           text="Upcoming Projects"
           animation="fade"
           as="h1"
-          className="font-bold lg:max-w-[600px] mb-8 leading-[40px] text-center text-2xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
+          className="font-bold hidden lg:max-w-[600px] mb-8 leading-[40px] text-center md:text-4xl text-2xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
         />
-        <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project) => (
-            <motion.div
-              key={project.id}
-              className="relative w-full h-72 md:h-96 lg:h-[600px] bg-cover bg-center shadow-lg rounded-lg overflow-hidden"
-              style={{ backgroundImage: `url(${project.image})` }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 100 }}>
-              <div className="absolute bottom-2 left-2 right-2 bg-black bg-opacity-60 text-white flex flex-wrap justify-between items-center p-3 rounded-lg">
-                <div className="mr-2">
-                  <h3 className="text-lg font-semibold leading-tight">
-                    {project.name}
-                  </h3>
-                  <p className="text-sm hidden sm:block">
-                    {project.description}
-                  </p>
-                </div>
+        <img src={img} alt="" className="" />
+      </div>
 
-                <h1 className="bg-gradient-to-r from-[#f68082] font-bold lg:text-2xl text-lg to-[#96f2f3] bg-clip-text text-transparent">
-                  InnoFi Vote
-                </h1>
+      <div className="grid  grid-cols-1 my-16 gap-6">
+        {projects.map((project) => (
+          <motion.div
+            key={project.id}
+            className="relative h-[340px] w-full lg:h-[600px] bg-cover bg-center shadow-lg rounded-lg overflow-hidden"
+            whileHover={{ scale: 0.9}}
+            transition={{ type: "spring", stiffness: 100 }}>
+            {/* VOTE Text - Positioned Bottom-32 */}
+
+            {/* Card Content */}
+            <div className="absolute bottom-2 hidden left-2 right-2 flex-col bg-black bg-opacity-60 text-white  flex-wrap justify-between items-center p-3 rounded-lg">
+              <AnimatedText
+                text="Vote"
+                animation="fade"
+                as="h1"
+                className="font-bold  lg:max-w-[600px] mb-3 leading-[40px] text-center md:text-4xl text-2xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
+              />
+
+              {/* Phase Completion - Positioned Bottom-20 */}
+              <div className="gap-3 flex justify-between text-white text-sm">
+                <span>Phase 1: 100%</span>
+                <span>Phase 2: 75%</span>
+                <span>Phase 3: 50%</span>
+                <span>Phase 4: 25%</span>
               </div>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {projects.map((project) => (
+                <motion.div
+                  key={project.id}
+                  className="relative w-full h-80 md:h-96 lg:h-[600px] bg-cover bg-center shadow-lg rounded-lg overflow-hidden"
+                  style={{ backgroundImage: `url(${img})` }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 100 }}>
+                  {/* VOTE Text */}
+                  <div className="absolute bottom-3 left-2 right-2 flex-col bg-black bg-opacity-60 text-white flex flex-wrap justify-center items-center p-3 rounded-lg">
+                    <AnimatedText
+                      text="Vote"
+                      animation="fade"
+                      as="h1"
+                      className="font-bold lg:max-w-[600px] mb-3 leading-[40px] text-center md:text-4xl text-2xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
+                    />
+
+                    {/* Phase Completion & Vote Buttons */}
+                    <div className="gap-3 flex  text-white text-sm w-full">
+                      {[
+                        { phase: "Phase 1", percent: "75%" },
+                        { phase: "Phase 2", percent: "50%" },
+                        { phase: "Phase 3", percent: "25%" },
+                        { phase: "Phase 4", percent: "10%" },
+                      ].map((item, index) => (
+                        <div
+                          key={index}
+                          className="flex justify-between flex-col items-center w-full bg-gray-800 p-2 rounded-md">
+                          <span>{item.phase}</span>
+                          <span className="text-gray-300">{item.percent}</span>
+                          <button className=" my-3 bg-gradient-to-r from-[#F68082] to-[#97F4F3] text-black font-bold  px-3 py-1 rounded">
+                            Vote
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Card Content */}
+                  <div className="hidden  bg-black bg-opacity-60 text-white  flex-wrap justify-between items-center p-3 rounded-lg">
+                    <div className="mr-2">
+                      <h3 className="text-lg font-semibold leading-tight">
+                        {project.name}
+                      </h3>
+                      <p className="text-sm hidden sm:block">
+                        {project.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
       </div>
     </div>
   );

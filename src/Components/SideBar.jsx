@@ -54,6 +54,7 @@
 // export default Sidebar;
 import { NavLink } from "react-router-dom";
 import { FaCog, FaSignOutAlt } from "react-icons/fa";
+import { FaVoteYea } from "react-icons/fa";
 
 const Sidebar = () => {
   return (
@@ -69,7 +70,7 @@ const Sidebar = () => {
           { to: "/", label: "Home" },
           { to: "/swap", label: "Swap" },
           { to: "/foundation", label: "Foundation" },
-          { to: "/launchpad", label: "Launchpad" },
+          { to: "/launchpad", label: "Vote" },
           { to: "/discover", label: "RootOpia" },
         ].map((item) => (
           <NavLink

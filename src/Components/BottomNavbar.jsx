@@ -33,6 +33,7 @@
 import { NavLink } from "react-router-dom";
 import { FiHome, FiShuffle, FiLayers, FiZap, FiCompass } from "react-icons/fi";
 import { IoGameControllerOutline } from "react-icons/io5";
+import { FaVoteYea } from "react-icons/fa";
 
 const BottomNavbar = () => {
   return (
@@ -55,8 +56,8 @@ const BottomNavbar = () => {
         },
         {
           to: "/launchpad",
-          label: "Launchpad",
-          icon: <FiZap className="text-xl " />,
+          label: "Vote",
+          icon: <FaVoteYea className="text-xl " />,
         },
         {
           to: "/discover",
