@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import img from "../assets/logobg.png";
+import BlurEffect from "./BlurEffect";
 
 const assets = [
   {
@@ -28,9 +29,15 @@ const AssetSection = () => {
 
   return (
     <section
-      className="md:p-6 bg-gray-300 dark:bg-transparent  w-full px-2 
+      className="md:p-6 bg-gray-300 dark:bg-transparent relative w-full px-2 
     ">
-      
+      <div className="z-0 text-lg">
+        <BlurEffect
+          color="#D661E8"
+          className="w-60 h-60 absolute top-0 right-16 lg:left-32    bg-[#D661E8] blur-[300px]  rounded-full"
+        />
+      </div>
+
       {/* <div className="flex justify-center items-center flex-col w-full gap-4">
         <div className="flex justify-between items-center w-full text-gray-500 font-semibold mb-2">
           <p>Crypto</p>
@@ -98,9 +105,7 @@ const AssetSection = () => {
                 className="w-8 h-8 md:w-10 md:h-10 rounded-full shadow-[2px_2px_5px_#ecb705,-2px_-2px_5px_#040f4c] dark:shadow-[2px_2px_2px_#040F4C,-2px_-2px_2px_#ecb705]"
               />
               <div>
-                <p className=" font-bold text-gray-100">
-                  {asset.name}
-                </p>
+                <p className=" font-bold text-gray-100">{asset.name}</p>
               </div>
             </div>
 
@@ -126,7 +131,7 @@ const AssetSection = () => {
         {/* Show More / Less Button */}
         <button
           onClick={() => setShowAll(!showAll)}
-          className="mt-4 text-green-600 hover:underline flex items-center justify-center">
+          className="mt-4  hover:underline flex items-center justify-center">
           {showAll ? "Show Less" : "Show More"}
           {showAll ? (
             <FiChevronUp className="text-3xl" />

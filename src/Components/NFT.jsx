@@ -1,6 +1,6 @@
 import React from "react";
 import { FaLock, FaStar } from "react-icons/fa";
-
+import BlurEffect from "./BlurEffect";
 import nft1 from "../assets/nft1.jpeg";
 import nft2 from "../assets/nft2.jpeg";
 import nft3 from "../assets/nft3.png";
@@ -43,8 +43,13 @@ const nftData = [
 
 const NFTSection = () => {
   return (
-    <section className="p-6 mb-20">
-   
+    <section className="p-6 mb-20 relative">
+      <div className="z-0 text-lg">
+        <BlurEffect
+          color="#D661E8"
+          className="w-60 h-60 absolute top-0 left-16    bg-[#D661E8] blur-[300px]  rounded-full"
+        />
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {nftData.map((nft) => (
           <div

@@ -4,6 +4,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaArrowDown } from "react-icons/fa";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
+import AnimatedText from "../../Components/AnimationText";
+import { IoIosNotifications } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { FaCog } from "react-icons/fa";
 
 const Swap = () => {
   const [fromCurrency, setFromCurrency] = useState("BTC");
@@ -36,13 +41,30 @@ const Swap = () => {
     { name: "One year ICO", value: 500000, color: "#6a0ea7" },
     { name: "GameFi & Education Rewards", value: 500000, color: "#EC4899" },
   ];
+  const navigate = useNavigate();
 
   return (
     <motion.div
-      className="md:p-6 p-2 bg-white mb-32 mt-8 lg:mt-20 w-full flex-col lg:flex-row flex items-center md:gap-10 lg:gap-10 justify-around rounded-lg dark:bg-gray-800  md:mx-auto"
+      className="md:p-6 p-2 mb-32 mt-8 lg:mt-20 w-full flex-col lg:flex-row flex items-center md:gap-10 lg:gap-10 justify-around rounded-lg   md:mx-auto"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}>
+      <div className="flex justify-between mx-4 mb-12  items-center">
+        <AnimatedText
+          text="InnoFi"
+          animation="fade"
+          as="h1"
+          className="font-extrabold md:ml-5  leading-[40px] tracking-wider  lg:text-end lg:mt-20 text-5xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
+        />
+        <div className="flex justify-center items-center lg:hidden gap-4">
+        
+          <button className="  p-2 w-full rounded-full  bg-[#fce2e2]">
+            <NavLink to="/settings" className="flex items-center">
+              <FaCog className="hover:scale-110 md:text-2xl text-xl text-[#f68082] hover:rotate-90" />
+            </NavLink>
+          </button>
+        </div>
+      </div>
       <div className="w-full shadow-2xl p-10 lg:w-[50vw]">
         <h2 className="text-xl font-semibold lg:mb-20 mb-10">Swap Crypto</h2>
 

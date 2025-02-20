@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import BlurEffect from "./BlurEffect";
 const CryptoSection = () => {
   const [showMore, setShowMore] = useState(false);
 
@@ -146,8 +146,13 @@ const CryptoSection = () => {
     : cryptocurrencies.slice(0, 5);
 
   return (
-    <section className=" md:mb-20 w-full mb-28 px-2 md:p-6">
-     
+    <section className=" md:mb-20 w-full relative mb-28 px-2 md:p-6">
+      <div className="z-0 text-lg">
+        <BlurEffect
+          color="#D661E8"
+         className="w-60 h-60 absolute top-0 left-16    bg-[#D661E8] blur-[300px]  rounded-full"
+        /> 
+      </div>
 
       <div className="hidden items-center justify-between px-3 gap-3 mb-6 text-sm w-full font-semibold text-gray-700 dark:text-gray-300">
         <div className="md:w-1/3 text-left">Crypto</div>
@@ -229,7 +234,7 @@ const CryptoSection = () => {
 
       <button
         onClick={() => setShowMore(!showMore)}
-        className="mt-4 text-green-600 dark:text-green-400 mb-8 hover:underline">
+        className="mt-4  mb-8 hover:underline">
         {showMore ? "Show Less" : "Show More"}
       </button>
     </section>

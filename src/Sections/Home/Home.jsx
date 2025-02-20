@@ -1,38 +1,4 @@
-// import { useSelector, useDispatch } from "react-redux";
-// import { setActiveTab } from "../../Redux/homeSlice";
-// import Asset from "./Asset";
-// import Crypto from "./Crypto";
-// import NFT from "./NFT";
 
-// const Home = () => {
-//   const activeTab = useSelector((state) => state.home.activeTab);
-//   const dispatch = useDispatch();
-
-//   return (
-//     <div className="p-4">
-//       <div className="flex space-x-4 mb-4">
-//         {["Asset", "Crypto", "NFT"].map((tab) => (
-//           <button
-//             key={tab}
-//             className={`px-4 py-2 rounded ${
-//               activeTab === tab ? "bg-blue-500 text-white" : "bg-gray-200"
-//             }`}
-//             onClick={() => dispatch(setActiveTab(tab))}>
-//             {tab}
-//           </button>
-//         ))}
-//       </div>
-
-//       <div className="border p-4 rounded bg-white shadow">
-//         {activeTab === "Asset" && <Asset />}
-//         {activeTab === "Crypto" && <Crypto />}
-//         {activeTab === "NFT" && <NFT />}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Home;
 
 
 import { useState } from "react";
@@ -64,7 +30,7 @@ import { motion } from "framer-motion";
 import { FaBell, FaTimes } from "react-icons/fa";
 import { useSearchParams } from "react-router-dom";
 import { MdOutlineManageSearch } from "react-icons/md";
-
+import BlurEffect from "../../Components/BlurEffect";
 
 import { FaCog } from "react-icons/fa";
 import HorizontalSlider from "../../Components/HorizontalSlider";
@@ -90,20 +56,7 @@ const Home = ({darkMode, setDarkMode}) => {
   ];
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // const handleSearch = () => {
-  //   if (searchTerm.trim() !== "") {
-  //     navigate(`/search?query=${searchTerm}`);
-  //   }
-  //  const handleSearch = () => {
-  //    if (searchTerm.trim() !== "") {
-  //      navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
-  //    }
-  //  };
-  
-    // const handleSearch = (e) => {
-    //   if (e.key === "Enter" && searchTerm.trim() !== "") {
-    //     navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
-    //   }
+ 
       const searchCrypto = () => {
         if (searchTerm.trim() !== "") {
           navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
@@ -119,18 +72,24 @@ const Home = ({darkMode, setDarkMode}) => {
     
   return (
     <div className=" mb-28 md:px-3 mx-2 lg:mt-16 ">
+      <div className="z-0 text-lg">
+        <BlurEffect
+          color="#D661E8"
+          className="w-60 h-60 absolute top- lg:top-20 right-16    bg-[#D661E8] blur-[300px]  rounded-full"
+        />
+      </div>
       <div className="flex justify-between lg:hidden mt-8 px-2 items-center">
-        <button className="  p-2  rounded-full  bg-[#F4DAFB]">
+        <button className="  p-2  rounded-full bg-transparent">
           <NavLink to="/settings" className="flex items-center">
-            <FaCog className="hover:scale-110 md:text-3xl text-2xl text-[#D661E8] hover:rotate-90" />
+            <FaCog className="hover:scale-110 md:text-3xl text-2xl text- hover:rotate-90" />
           </NavLink>
         </button>
-        <div className="p-2  rounded-full  bg-[#F4DAFB]">
-          <MdOutlineManageSearch className="text-2xl hover:scale-110 md:text-3xl text-[#D661E8] hover:rotate-12" />
+        <div className="p-2  rounded-full ">
+          <MdOutlineManageSearch className="text-3xl hover:scale-110 md:text-3xl  hover:rotate-12" />
         </div>
       </div>
       <div className="flex items-center border-2 border-[#F4DAFB] rounded-2xl pl-6 px-3 w-full py-2 lg:hidden mt-12  ">
-        <FaSearch className="mr-2 text-2xl text-[#d661e8]" />
+        <FaSearch className="mr-2 text-2xl text-neutral-700" />
         <input
           type="text"
           className="w-full p-2 bg-transparent  focus:outline-none"
@@ -140,7 +99,7 @@ const Home = ({darkMode, setDarkMode}) => {
           onKeyDown={handleSearch} // ✅ Works when pressing Enter
         />
         <button
-          className="ml-2 px-4 py-2 bg-[#f4dafb] hover:bg-[#d661e8] hover:text-[#f4dafb] text-[#d661e8] rounded-lg"
+          className="ml-2 px-4 py-2 bg-[#f4dafb]   text-[#d661e8] rounded-lg"
           onClick={searchCrypto} // ✅ Works when clicking the button
         >
           Search
@@ -152,7 +111,7 @@ const Home = ({darkMode, setDarkMode}) => {
         {/* Wallet Selector */}
         <div className="flex justify-between  items-center">
           <select
-            className=" p-2 bg-[#f4dafb] dark:bg-[#d661e8] dark:text-[#f4dafb]  text-[#d661e8]  rounded-md focus:outline-none"
+            className=" p-2 bg-[#f4dafb]   text-[#d661e8]  rounded-md focus:outline-none"
             value={selectedWallet}
             onChange={(e) => setSelectedWallet(e.target.value)}>
             <option>Main Wallet</option>
@@ -160,7 +119,7 @@ const Home = ({darkMode, setDarkMode}) => {
             <option>Wallet 3</option>
             <option>Wallet 4</option>
           </select>
-          <div className="flex justify-center items-center md:text-2xl text-[#d661e8]  text-xl md:gap-6 gap-4">
+          <div className="flex justify-center items-center md:text-2xl text-xl md:gap-6 gap-4">
             <FaRegCopy className="hover:scale-110 hover:rotate-12" />
             <RiQrScan2Line className="hover:scale-110 hover:rotate-12" />
             <button onClick={() => navigate("/notifications")}>
@@ -184,16 +143,16 @@ const Home = ({darkMode, setDarkMode}) => {
         </div>
 
         {/* Action Icons */}
-        <div className="flex justify-between text-[#d661e8] mt-10">
-          <button className="flex flex-col items-center text-[#d661e8]  hover:scale-110 ">
-            <FaPaperPlane className="text-2xl text-[#d661e8] mb-1" />{" "}
-            <span className="text-sm text-[#d661e8]">Send</span>
+        <div className="flex justify-between  mt-10">
+          <button className="flex flex-col items-center   hover:scale-110 ">
+            <FaPaperPlane className="text-2xl  mb-1" />{" "}
+            <span className="text-sm ">Send</span>
           </button>
-          <button className="flex flex-col items-center hover:scale-110 text-[#d661e8]">
+          <button className="flex flex-col items-center hover:scale-110 ">
             <FaDownload className="text-2xl mb-1" />{" "}
             <span className="text-sm">Receive</span>
           </button>
-          <button className="flex flex-col items-center hover:scale-110 text-[#d661e8]">
+          <button className="flex flex-col items-center hover:scale-110 ">
             <FaRegCreditCard className="text-2xl mb-1" />{" "}
             <span className="text-sm">Buy</span>
           </button>
@@ -208,11 +167,16 @@ const Home = ({darkMode, setDarkMode}) => {
         </div>
       </div>
       <div>
-     
-        <NotificationSlider/>
+        <NotificationSlider />
       </div>
       {/* Tab Navigation */}
-      <div className="flex space-x-2 md:space-x-4 font-bold w-full justify-between mb-4">
+      <div className="flex space-x-2 md:space-x-4  font-bold w-full justify-between mb-4">
+        <div className="z-0 text-lg">
+          <BlurEffect
+            color="#D661E8"
+            className="w-60 h-60 absolute bottom-0 left-16    bg-[#D661E8] blur-[300px]  rounded-full"
+          />
+        </div>
         {["CRYPTO", "ASSET", "NFT"].map((tab) => (
           <button
             key={tab}
