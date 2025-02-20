@@ -363,23 +363,23 @@ const Launchpad = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="mb-28 bg-[#e2fafb] dark:bg-gray-800">
-      <div className="flex justify-between mx-2 items-center">
+    <div className="mb-28 bg-[#e2fafb] pt-8 dark:bg-gray-800">
+      <div className="flex justify-between mx-2 mb-12  items-center">
         <AnimatedText
           text="InnoFi"
           animation="fade"
           as="h1"
-          className="font-extrabold mb-12 ml-3 mt-5 leading-[40px] tracking-wider  lg:text-end lg:mt-20 text-5xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
+          className="font-extrabold   leading-[40px] tracking-wider  lg:text-end lg:mt-20 text-5xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
         />
-        <div className="flex justify-center items-center lg:hidden gap-2">
+        <div className="flex justify-center items-center lg:hidden gap-4">
           <button
             onClick={() => navigate("/notifications")}
             className="rounded-full p-2 bg-[#fce2e2]">
-            <IoIosNotifications className="hover:scale-110 text-2xl text-[#f68082] cursor-pointer hover:rotate-12" />
+            <IoIosNotifications className="hover:scale-110 mdtext-2xl text-xl text-[#f68082] cursor-pointer hover:rotate-12" />
           </button>
           <button className="  p-2 w-full rounded-full  bg-[#fce2e2]">
             <NavLink to="/settings" className="flex items-center">
-              <FaCog className="hover:scale-110 text-2xl text-[#f68082] hover:rotate-90" />
+              <FaCog className="hover:scale-110 md:text-2xl text-xl text-[#f68082] hover:rotate-90" />
             </NavLink>
           </button>
         </div>
