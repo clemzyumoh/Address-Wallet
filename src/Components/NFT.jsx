@@ -43,13 +43,8 @@ const nftData = [
 
 const NFTSection = () => {
   return (
-    <section className="p-6 mb-20 relative">
-      <div className="z-0 text-lg">
-        <BlurEffect
-          color="#D661E8"
-          className="w-60 h-60 absolute top-0 left-16    bg-[#D661E8] blur-[250px] dark:blur-[300px]  rounded-full"
-        />
-      </div>
+    <section className="p-6 mb-20 ">
+    
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {nftData.map((nft) => (
           <div

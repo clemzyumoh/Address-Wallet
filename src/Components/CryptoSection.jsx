@@ -147,12 +147,7 @@ const CryptoSection = () => {
 
   return (
     <section className=" md:mb-20 w-full relative mb-28 px-2 md:p-6">
-      <div className="z-0 text-lg">
-        <BlurEffect
-          color="#D661E8"
-         className="w-60 h-60 absolute top-0 left-16  blur-[300px]  bg-[#D661E8] dark:blur-[350px]  rounded-full"
-        /> 
-      </div>
+    
 
       <div className="hidden items-center justify-between px-3 gap-3 mb-6 text-sm w-full font-semibold text-gray-700 dark:text-gray-300">
         <div className="md:w-1/3 text-left">Crypto</div>

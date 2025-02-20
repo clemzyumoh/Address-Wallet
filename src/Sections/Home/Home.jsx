@@ -71,11 +71,11 @@ const Home = ({darkMode, setDarkMode}) => {
  
     
   return (
-    <div className=" mb-28 md:px-3 relative mx-2 lg:mt-16 ">
+    <div className=" mb-28 md:px-3 relative  lg:mt-16 px-6 ">
       <div className="z-0 text-lg">
         <BlurEffect
           color="#D661E8"
-          className="w-72 h-72 absolute top- lg:top-20 right-16    bg-[#D661E8] blur-[250px] dark:blur-[350px]  rounded-full"
+          className="w-72 h-72 absolute top- lg:top-20 right-16    bg-[#D661E8] blur-[500px]  md:blur-[400px] md:dark:blur-[400px] dark:blur-[600px] rounded-full"
         />
       </div>
       <div className="flex justify-between lg:hidden mt-8 px-2 items-center">
@@ -174,7 +174,7 @@ const Home = ({darkMode, setDarkMode}) => {
         <div className="z-0 text-lg">
           <BlurEffect
             color="#D661E8"
-            className="w-72 h-72 absolute bottom-0 left-16  lg:right-5 lg:bottom-0 dark:blur[300px]   bg-[#D661E8] blur-[250px] dark:blur-[350px] rounded-full"
+            className="w-72 h-72 absolute bottom-0 left-16 md:dark:blur-[400px] lg:right-5 lg:bottom-0 dark:blur[600px]   bg-[#D661E8] md:blur-[300px] blur-[450px] rounded-full"
           />
         </div>
         {["CRYPTO", "ASSET", "NFT"].map((tab) => (
