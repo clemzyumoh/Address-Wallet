@@ -375,7 +375,7 @@ const Launchpad = () => {
           <button
             onClick={() => navigate("/notifications")}
             className="rounded-full p-2 bg-[#fce2e2]">
-            <IoIosNotifications className="hover:scale-110 mdtext-2xl text-xl text-[#f68082] cursor-pointer hover:rotate-12" />
+            <IoIosNotifications className="hover:scale-110 md:text-2xl text-xl text-[#f68082] cursor-pointer hover:rotate-12" />
           </button>
           <button className="  p-2 w-full rounded-full  bg-[#fce2e2]">
             <NavLink to="/settings" className="flex items-center">
