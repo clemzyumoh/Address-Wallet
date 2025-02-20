@@ -149,7 +149,7 @@ const CryptoSection = () => {
     <section className=" md:mb-20 w-full mb-28 px-2 md:p-6">
      
 
-      <div className="flex items-center justify-between px-3 gap-3 mb-6 text-sm w-full font-semibold text-gray-700 dark:text-gray-300">
+      <div className="hidden items-center justify-between px-3 gap-3 mb-6 text-sm w-full font-semibold text-gray-700 dark:text-gray-300">
         <div className="md:w-1/3 text-left">Crypto</div>
         <div className="md:w-1/3 ml-18 md:ml-0 text-center">Price</div>
         <div className="md:w-1/3 text-right">24H Change</div>

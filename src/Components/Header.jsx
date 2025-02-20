@@ -137,17 +137,17 @@ const Header = ({ darkMode, setDarkMode }) => {
      }
    };
   return (
-    <motion.div className="hidden lg:flex fixed top-0 justify-between lg:justify-around items-center w-full z-40 lg:w-[80vw] bg-gray-300  dark:bg-[#000116] text-black dark:text-white p-4 ">
+    <motion.div className="hidden lg:flex fixed top-0 justify-between lg:justify-around items-center w-full z-40 lg:w-[80vw]  text-black dark:text-white p-4 ">
       {/* Large Screen: Search Bar */}
-      <h1 className="font-bold text-3xl lg:block hidden text-[#040f4c] dark:text-gray-100 mr-5 lg:mr-52">
+      <h1 className="font-bold text-3xl lg:block hidden bg-gradient-to-t from-[#d661e8] to-[#f4dafb] bg-clip-text text-transparent mr-5 lg:mr-52">
         Dashboard
       </h1>
-      <div className="hidden lg:flex items-center bg-gray-500 dark:bg-gray-700 p-2 rounded flex-1">
-        <FaSearch className="text-gray-400 dark:text-gray-300 mr-2" />
+      <div className="hidden lg:flex items-center border-[#f4dafb] border-2 p-2 rounded flex-1">
+        <FaSearch className="text-[#d661e8] mr-2" />
         <input
           type="text"
           placeholder="Search..."
-          className="bg-transparent focus:outline-none w-full text-white"
+          className="bg-transparent focus:outline-none w-full text-neutral-500"
           onChange={(e) => setSearchTerm(e.target.value)}
           onKeyDown={handleSearch} // 🔥 Triggers on Enter key
         />
@@ -182,12 +182,12 @@ const Header = ({ darkMode, setDarkMode }) => {
           onClick={() => setDarkMode(!darkMode)}
           className="w-[24px]">
           {darkMode ? (
-            <Sun size={24} className="dark:text-[#E9771D]" />
+            <Sun size={24} className="dark:text-[#d661e8]" />
           ) : (
-            <Moon size={24} className="text-[#040f4c]" />
+            <Moon size={24} className="text-[#d661e8]" />
           )}
         </motion.button>
-        <FaUser className="text-gray-500 dark:text-gray-300 text-xl" />
+        <FaUser className="text-[#d661e8] text-xl" />
       </motion.div>
 
       {/* Mobile: Menu Icon on the Right */}

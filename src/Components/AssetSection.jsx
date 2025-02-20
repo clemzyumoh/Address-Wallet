@@ -28,7 +28,7 @@ const AssetSection = () => {
 
   return (
     <section
-      className="md:p-6  w-full px-2 md:mb-20 mb-32 pb-10
+      className="md:p-6 bg-gray-300 dark:bg-transparent  w-full px-2 
     ">
       
       {/* <div className="flex justify-center items-center flex-col w-full gap-4">
@@ -81,7 +81,7 @@ const AssetSection = () => {
         </button>
       </div> */}
       <div className="flex justify-center items-center flex-col w-full gap-4">
-        <div className="flex justify-between items-center w-full text-gray-500 font-semibold mb-2">
+        <div className=" hidden justify-between items-center w-full text-gray-500 font-semibold mb-2">
           <p className="w-1/3 text-left">Crypto</p>
           <p className="w-1/3 ml-10 md:ml-0 text-center">Price</p>
           <p className="w-1/3 text-right">Assets</p>
@@ -89,7 +89,7 @@ const AssetSection = () => {
         {visibleAssets.map((asset, index) => (
           <div
             key={index}
-            className="flex justify-between items-center bg-white md:p-4 p-2 rounded-lg w-full dark:bg-gray-800">
+            className="flex justify-between items-center  md:p-4 p-2 rounded-lg w-full bg-gray-800">
             {/* Crypto Column */}
             <div className="w-1/3 flex items-center space-x-2 md:space-x-4">
               <img
@@ -98,7 +98,7 @@ const AssetSection = () => {
                 className="w-8 h-8 md:w-10 md:h-10 rounded-full shadow-[2px_2px_5px_#ecb705,-2px_-2px_5px_#040f4c] dark:shadow-[2px_2px_2px_#040F4C,-2px_-2px_2px_#ecb705]"
               />
               <div>
-                <p className="text-gray-900 font-bold dark:text-gray-100">
+                <p className=" font-bold text-gray-100">
                   {asset.name}
                 </p>
               </div>
@@ -106,17 +106,17 @@ const AssetSection = () => {
 
             {/* Price Column */}
             <div className="w-1/3 ml-10 md:ml-0 text-center">
-              <p className="text-gray-900 font-semibold dark:text-gray-100">
+              <p className="text-gray-100 font-semibold dark:text-gray-100">
                 {asset.price}
               </p>
             </div>
 
             {/* Assets Column */}
             <div className="w-1/3 text-right">
-              <p className="text-gray-900 font-semibold dark:text-gray-100">
+              <p className="text-gray-100 font-semibold dark:text-gray-100">
                 {asset.usd}
               </p>
-              <p className="text-gray-600 text-sm dark:text-gray-400">
+              <p className="text-gray-100 text-sm dark:text-gray-400">
                 {asset.piece}
               </p>
             </div>

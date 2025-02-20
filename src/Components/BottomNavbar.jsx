@@ -37,7 +37,7 @@ import { FaVoteYea } from "react-icons/fa";
 
 const BottomNavbar = () => {
   return (
-    <nav className="fixed bottom-0 left-0 w-full  z-40 bg-gray-200 border border-[#040f4c] dark:bg-[#181c33] shadow-lg  pt-2 pb-6 flex justify-around lg:hidden">
+    <nav className="fixed bottom-0 left-0 w-full  z-40 bg-gray-200 border-none border-[#040f4c] dark:bg-black shadow-lg  pt-2 pb-6 flex justify-around lg:hidden">
       {[
         {
           to: "/",
@@ -56,7 +56,7 @@ const BottomNavbar = () => {
         },
         {
           to: "/launchpad",
-          label: "Vote",
+          label: "InnoFi",
           icon: <FaVoteYea className="text-xl " />,
         },
         {
@@ -71,7 +71,7 @@ const BottomNavbar = () => {
           className={({ isActive }) =>
             `flex flex-col items-center text-sm p-2 rounded transition ${
               isActive
-                ? " hover:scale-110  text-green-400 dark:text-green-400"
+                ? " hover:scale-110  text-[#d661e8]"
                 : " hover:scale-105 dark:text-neutral-300 "
             }`
           }>

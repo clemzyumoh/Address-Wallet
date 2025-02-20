@@ -58,7 +58,7 @@ import { FaVoteYea } from "react-icons/fa";
 
 const Sidebar = () => {
   return (
-    <div className="w-64 rounded-2xl mr-8 hidden lg:block bg-gray-300 dark:bg-[#000116] fixed left-0 top-0 h-screen  text-black dark:text-white p-6">
+    <div className="w-64 rounded-2xl mr-8 hidden lg:block dark:bg-transparent fixed left-0 top-0 h-screen  text-black dark:text-white p-6">
       {/* Logo */}
       <h1 className="text-2xl font-bold text-[#040f4c] dark:text-gray-100 mb-6">
         Deeproots
@@ -70,7 +70,7 @@ const Sidebar = () => {
           { to: "/", label: "Home" },
           { to: "/swap", label: "Swap" },
           { to: "/foundation", label: "Foundation" },
-          { to: "/launchpad", label: "Vote" },
+          { to: "/launchpad", label: "InnoFi" },
           { to: "/discover", label: "RootOpia" },
         ].map((item) => (
           <NavLink
@@ -79,8 +79,8 @@ const Sidebar = () => {
             className={({ isActive }) =>
               `block p-2 rounded transition ${
                 isActive
-                  ? " hover:scale-105 hover:border hover:border-green-400 text-green-400 dark:text-green-400   hover:bg-transparent dark:hover:border dark:hover:border-green-400"
-                  : " hover:scale-105 hover:bg-transparent hover:border hover:border-green-400 text-[#040f4c] dark:text-gray-100 dark:hover:border-green-400"
+                  ? " hover:scale-105 text-[#d661e8]"
+                  : " hover:scale-105  text-neutral-900 dark:text-gray-100 "
               }`
             }>
             {item.label}
@@ -95,13 +95,13 @@ const Sidebar = () => {
           className={({ isActive }) =>
             `flex items-center space-x-2 py-4 px-8 rounded transition ${
               isActive
-                ? " hover:scale-105   text-green-400   "
-                : " bg-transparent text-[#040f4c] dark:text-neutral-300   hover:border-2 hover:border-green-400 dark:hover:border-green-400"
+                ? " hover:scale-105   text-[#d661e8]   "
+                : " bg-transparent text-neutral-900 dark:text-neutral-300 "
             }`
           }>
           <FaCog /> <span>Settings</span>
         </NavLink>
-        <button className="flex items-center space-x-2 py-4 px-8 rounded text-[#040f4c] dark:text-gray-100 hover:border hover:border-green-400 dark:hover:border-green-400 hover:scale-105 ">
+        <button className="flex items-center space-x-2 py-4 px-8 rounded text-neutral-900 dark:text-gray-100  hover:scale-105 ">
           <FaSignOutAlt /> <span>Logout</span>
         </button>
       </div>
