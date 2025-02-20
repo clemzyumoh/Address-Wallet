@@ -71,11 +71,11 @@ const Home = ({darkMode, setDarkMode}) => {
  
     
   return (
-    <div className=" mb-28 md:px-3 mx-2 lg:mt-16 ">
+    <div className=" mb-28 md:px-3 relative mx-2 lg:mt-16 ">
       <div className="z-0 text-lg">
         <BlurEffect
           color="#D661E8"
-          className="w-60 h-60 absolute top- lg:top-20 right-16    bg-[#D661E8] blur-[300px]  rounded-full"
+          className="w-72 h-72 absolute top- lg:top-20 right-16    bg-[#D661E8] blur-[250px] dark:blur-[350px]  rounded-full"
         />
       </div>
       <div className="flex justify-between lg:hidden mt-8 px-2 items-center">
@@ -88,7 +88,7 @@ const Home = ({darkMode, setDarkMode}) => {
           <MdOutlineManageSearch className="text-3xl hover:scale-110 md:text-3xl  hover:rotate-12" />
         </div>
       </div>
-      <div className="flex items-center border-2 border-[#F4DAFB] rounded-2xl pl-6 px-3 w-full py-2 lg:hidden mt-12  ">
+      <div className="flex items-center border-2 border-[#F4DAFB] mx-3 rounded-2xl pl-6 px-3 w-full py-2 lg:hidden mt-12  ">
         <FaSearch className="mr-2 text-2xl text-neutral-700" />
         <input
           type="text"
@@ -174,7 +174,7 @@ const Home = ({darkMode, setDarkMode}) => {
         <div className="z-0 text-lg">
           <BlurEffect
             color="#D661E8"
-            className="w-60 h-60 absolute bottom-0 left-16    bg-[#D661E8] blur-[300px]  rounded-full"
+            className="w-72 h-72 absolute bottom-0 left-16  lg:right-5 lg:bottom-0 dark:blur[300px]   bg-[#D661E8] blur-[250px] dark:blur-[350px] rounded-full"
           />
         </div>
         {["CRYPTO", "ASSET", "NFT"].map((tab) => (
@@ -198,7 +198,7 @@ const Home = ({darkMode, setDarkMode}) => {
         {activeTab === "NFT" && <NFT />}
       </div>
       <a href="/#" className="">
-        <h2 className="font-bold text-2xl text-[#d661e8] md:text-3xl text-center my-16">
+        <h2 className="font-bold text-2xl text-transparent dark:to-[#f4dafb] from-[#d661e8] via-[#d661e8] to-black bg-clip-text bg-gradient-to-l dark:from-[#A06CC7] md:text-3xl text-center my-16">
           ADD & MANAGE CRYPTO
         </h2>
       </a>

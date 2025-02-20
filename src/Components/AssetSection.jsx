@@ -34,7 +34,7 @@ const AssetSection = () => {
       <div className="z-0 text-lg">
         <BlurEffect
           color="#D661E8"
-          className="w-60 h-60 absolute top-0 right-16 lg:left-32    bg-[#D661E8] blur-[300px]  rounded-full"
+          className="w-60 h-60 absolute top-0 right-16 lg:left-32 blur-[250px]   bg-[#D661E8] dark:blur-[400px]  rounded-full"
         />
       </div>
 

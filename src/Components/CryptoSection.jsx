@@ -150,7 +150,7 @@ const CryptoSection = () => {
       <div className="z-0 text-lg">
         <BlurEffect
           color="#D661E8"
-         className="w-60 h-60 absolute top-0 left-16    bg-[#D661E8] blur-[300px]  rounded-full"
+         className="w-60 h-60 absolute top-0 left-16  blur-[300px]  bg-[#D661E8] dark:blur-[350px]  rounded-full"
         /> 
       </div>
 
