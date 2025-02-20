@@ -14,6 +14,9 @@ import {
   FaMoneyBill,
   FaHistory,
 } from "react-icons/fa";
+import { FaArrowUp } from "react-icons/fa6";
+import { FaArrowDown } from "react-icons/fa6";
+import { FaCreditCard } from "react-icons/fa6";
 import Asset from "./Asset";
 import Crypto from "./Crypto";
 import NFT from "./NFT";
@@ -108,9 +111,9 @@ const Home = ({darkMode, setDarkMode}) => {
       </div>
 
       {/* Wallet Card */}
-      <div className=" mb-8   mt-10 md:p-6 p-4 rounded-lg ">
+      <div className=" mb-8  relative mt-10 md:p-6 px-6 flex justify-center items-center flex-col w-full ">
         {/* Wallet Selector */}
-        <div className="flex justify-between  items-center">
+        <div className="flex justify-between w-full items-center">
           <select
             className=" p-2 bg-[#f4dafb]   text-[#d661e8]  rounded-md focus:outline-none"
             value={selectedWallet}
@@ -130,7 +133,7 @@ const Home = ({darkMode, setDarkMode}) => {
         </div>
 
         {/* Balance Section */}
-        <div className="flex justify-start mt-8 items-center md:my-10 my-4">
+        <div className="flex justify-start w-full mt-8 items-center md:my-10 my-4">
           <span className="text-2xl font-bold mr-5 text-neutral-500 dark:text-white">
             {showBalance ? "0.00$" : "••••"}
           </span>
@@ -144,27 +147,33 @@ const Home = ({darkMode, setDarkMode}) => {
         </div>
 
         {/* Action Icons */}
-        <div className="flex justify-between  mt-10">
-          <button className="flex flex-col items-center   hover:scale-110 ">
-            <FaPaperPlane className="text-2xl  mb-1" />{" "}
+        <div className="flex justify-between w-full items-center  mt-10">
+          <div className="flex flex-col items-center  hover:scale-110 ">
+            <FaArrowUp className="text-2xl  mb-2" />{" "}
             <span className="text-sm ">Send</span>
-          </button>
-          <button className="flex flex-col items-center hover:scale-110 ">
-            <FaDownload className="text-2xl mb-1" />{" "}
+          </div>
+          <button className="flex flex-col items-center  hover:scale-110 ">
+            <FaArrowDown className="text-2xl mb-2" />{" "}
             <span className="text-sm">Receive</span>
           </button>
-          <button className="flex flex-col items-center hover:scale-110 ">
-            <FaRegCreditCard className="text-2xl mb-1" />{" "}
+          <button className="flex flex-col items-center  hover:scale-110 ">
+            <FaCreditCard className="text-2xl mb-2" />{" "}
             <span className="text-sm">Buy</span>
           </button>
-          <button className="flex flex-col items-center hover:scale-110 ">
-            <BsCashCoin className="text-2xl mb-1" />{" "}
+          <button className="flex flex-col items-center  hover:scale-110 ">
+            <BsCashCoin className="text-2xl mb-2" />{" "}
             <span className="text-sm">Sell</span>
           </button>
           <button className="flex flex-col items-center hover:scale-110 ">
-            <FaHistory className="text-2xl mb-1" />{" "}
+            <FaHistory className="text-2xl mb-2" />{" "}
             <span className="text-sm">History</span>
           </button>
+        </div>
+        <div className="z-0 text-lg">
+          <BlurEffect
+            color="#D8EAFA"
+            className="w-72 h-72 absolute bottom- dark:hidden left-16 md:dark:blur-[200px] lg:right-5 lg:bottom-0 dark:blur[400px]   bg-[#D8EAFA] md:blur-[100px] blur-[300px] rounded-full"
+          />
         </div>
       </div>
       <div>
@@ -174,8 +183,8 @@ const Home = ({darkMode, setDarkMode}) => {
       <div className="flex space-x-2 md:space-x-4  font-bold w-full justify-between mb-4">
         <div className="z-0 text-lg">
           <BlurEffect
-            color="#D661E8"
-            className="w-72 h-72 absolute bottom-0 left-16 md:dark:blur-[400px] lg:right-5 lg:bottom-0 dark:blur[600px]   bg-[#D661E8] md:blur-[300px] blur-[450px] rounded-full"
+            color="#D8EAFA"
+            className="w-72 h-72 absolute bottom-0 left-16 md:dark:blur-[350px] lg:right-5 lg:bottom-0 dark:blur[200px]   bg-[#D8EAFA] md:blur-[100px] blur-[300px] rounded-full"
           />
         </div>
         {["CRYPTO", "ASSET", "NFT"].map((tab) => (
@@ -183,7 +192,7 @@ const Home = ({darkMode, setDarkMode}) => {
             key={tab}
             className={`px-8 py-3 rounded ${
               activeTab === tab
-                ? " text-[#d661e8] cursor-pointer"
+                ? " text-[#d661e8] dark:text-[#D8EAFA] cursor-pointer"
                 : " text-neutral-400 cursor-pointer "
             }`}
             onClick={() => dispatch(setActiveTab(tab))}>

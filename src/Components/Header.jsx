@@ -137,7 +137,7 @@ const Header = ({ darkMode, setDarkMode }) => {
      }
    };
   return (
-    <motion.div className="hidden lg:flex fixed top-0 justify-between lg:justify-around items-center w-full z-40 lg:w-[80vw]  text-black dark:text-white p-4 ">
+    <motion.div className="hidden lg:flex fixed top-0 justify-between dark:bg-black bg-[#FCF9FC] lg:justify-around items-center w-full z-40 lg:w-[80vw]  text-black dark:text-white p-4 ">
       {/* Large Screen: Search Bar */}
       <h1 className="font-bold text-3xl lg:block hidden  dark:to-[#f4dafb] from-[#d661e8] via-[#d661e8] to-black  bg-gradient-to-l dark:from-[#A06CC7] bg-clip-text text-transparent mr-5 lg:mr-52">
         Dashboard
