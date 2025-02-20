@@ -39,39 +39,38 @@ import PuzzleBox from "../../Components/Puzzle";
 import NotificationSlider from "../../Components/NotificationSlider";
 
 const Home = ({darkMode, setDarkMode}) => {
-  const activeTab = useSelector((state) => state.home.activeTab);
+  //const activeTab = useSelector((state) => state.home.activeTab);
   const dispatch = useDispatch();
 
   // State for wallet selection & balance visibility
   const [selectedWallet, setSelectedWallet] = useState("Main Wallet");
   const [showBalance, setShowBalance] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [activeTab, setActiveTab] = useState("CRYPTO"); // Default active tab
   const navigate = useNavigate();
 
-    const [showNotifications, setShowNotifications] = useState(false);
-    const notificatio = [
-      "New transaction received",
-      "Price alert: Bitcoin up 5%",
-      "System update scheduled",
+  const [showNotifications, setShowNotifications] = useState(false);
+  const notificatio = [
+    "New transaction received",
+    "Price alert: Bitcoin up 5%",
+    "System update scheduled",
   ];
   const [searchParams, setSearchParams] = useSearchParams();
 
- 
-      const searchCrypto = () => {
-        if (searchTerm.trim() !== "") {
-          navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
-        }
-      };
-
-      const handleSearch = (e) => {
-        if (e.key === "Enter") {
-          searchCrypto(); // ✅ Triggers search on Enter
-        }
+  const searchCrypto = () => {
+    if (searchTerm.trim() !== "") {
+      navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
+    }
   };
- 
-    
+
+  const handleSearch = (e) => {
+    if (e.key === "Enter") {
+      searchCrypto(); // ✅ Triggers search on Enter
+    }
+  };
+
   return (
-    <div className=" mb-28 md:px-3 relative  lg:mt-16 px-6 ">
+    <div className=" mb-28 md:px-3 relative pl-2 pr-2 lg:mt-16 px-6 ">
       <div className="z-0 text-lg">
         <BlurEffect
           color="#D661E8"
@@ -88,16 +87,18 @@ const Home = ({darkMode, setDarkMode}) => {
           <MdOutlineManageSearch className="text-3xl hover:scale-110 md:text-3xl  hover:rotate-12" />
         </div>
       </div>
-      <div className="flex items-center border-2 border-[#F4DAFB] mx-3 rounded-2xl pl-6 px-3 w-full py-2 lg:hidden mt-12  ">
-        <FaSearch className="mr-2 text-2xl text-neutral-700" />
-        <input
-          type="text"
-          className="w-full p-2 bg-transparent  focus:outline-none"
-          placeholder="Search crypto for networks..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          onKeyDown={handleSearch} // ✅ Works when pressing Enter
-        />
+      <div className="flex items-center border-2 border-[#F4DAFB] justify-between w-[80vw] mx-auto  rounded-2xl pl-6 px-3  py-2 lg:hidden mt-12  ">
+        <div className="flex justify-center items-center gap-3">
+          <FaSearch className="mr-2 text-2xl text-neutral-700" />
+          <input
+            type="text"
+            className="w-full p-2 bg-transparent  focus:outline-none"
+            placeholder="Search crypto for networks..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onKeyDown={handleSearch} // ✅ Works when pressing Enter
+          />
+        </div>
         <button
           className="ml-2 px-4 py-2 bg-[#f4dafb]   text-[#d661e8] rounded-lg"
           onClick={searchCrypto} // ✅ Works when clicking the button
