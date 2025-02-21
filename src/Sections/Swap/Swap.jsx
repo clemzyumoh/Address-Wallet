@@ -30,6 +30,10 @@ import fx1 from "../../assets/fx1.png";
 import TokenAllocation from "../../Components/TokenAllocation";
 import TokenAllocationDashboard from "../../Components/TokenAllocation";
 import TokenAllocation3D from "../../Components/TokenAllocation";
+import Dashboard from "../../Components/DashBoard";
+import TokenAlloca from "../../Components/DashBoard";
+import TokenDashboard from "../../Components/DashBoard";
+import TokenlocationDashboard from "../../Components/DashBoard";
 
 const Swap = () => {
   const [fromCurrency, setFromCurrency] = useState("BTC");
@@ -227,7 +231,8 @@ const Swap = () => {
           ))}
         </div>
       </div>*/}
-      <TokenAllocation3D />
+      
+      <TokenlocationDashboard/>
     </motion.div>
   );
 };
