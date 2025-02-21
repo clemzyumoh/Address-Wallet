@@ -48,15 +48,14 @@ const SwapCrypto = () => {
   };
 
   return (
-    <div className="w-full py-8 px-2 lg:w-[40vw]">
-      
+    <div className="w-full  px-2  lg:w-[40vw]">
       <div className="flex justify-between my-5  items-center mx-4">
         <div className="flex items-center gap-2">
           <FaCreditCard className="text-xl" />
           <span className="text-lg">Buy</span>
         </div>
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2 py-2 px-3 rounded-lg bg-[#f4dafb]   text-[#d661e8]">
+          <div className="flex items-center gap-2 py-2 px-3 rounded-lg bg-[#f4dafb]  shadow text-[#d661e8]">
             <LuSettings2 className="text-xl" />
             <span className="">0.5%</span>
           </div>
@@ -124,7 +123,7 @@ const SwapCrypto = () => {
           </div>
 
           {/* Swap Icon (Rotates on Click) */}
-          <div className="flex absolute top-4/9 left-2/5 justify-center my-2">
+          <div className="flex absolute top-4/9 md:left-2/4 left-2/5 justify-center my-2">
             <button
               onClick={reverseSwap}
               className={`p-3 bg-[#f4dafb]  rounded-full hover:bg-gray-300 transition-transform ${
@@ -172,11 +171,11 @@ const SwapCrypto = () => {
 
         {/* Swap Button */}
         <button
-          className="w-full hover:scale-105 bg-[#f4dafb]   text-[#d661e8] font-bold p-2 rounded mt-5 transition"
+          className="w-full hover:scale-105  bg-gradient-to-bl to-[#f4dafb]  from-[#d8eafa] via-[#f4dafb]  hover:from-[#d8eafa] hover:to-[#f4dafb]  dark:text-[#d661e8]  font-bold p-2 rounded mt-5 transition"
           onClick={() =>
             alert(`Swapped ${amount} ${fromCurrency} to ${convertedAmount} DRC`)
           }>
-          Swap
+          Continue
         </button>
       </div>
     </div>

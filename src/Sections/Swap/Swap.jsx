@@ -27,6 +27,9 @@ import { BsArrow90DegRight } from "react-icons/bs";
 import { LuChartNoAxesColumn } from "react-icons/lu";
 import fx from "../../assets/fx.png";
 import fx1 from "../../assets/fx1.png";
+import TokenAllocation from "../../Components/TokenAllocation";
+import TokenAllocationDashboard from "../../Components/TokenAllocation";
+import TokenAllocation3D from "../../Components/TokenAllocation";
 
 const Swap = () => {
   const [fromCurrency, setFromCurrency] = useState("BTC");
@@ -63,11 +66,14 @@ const Swap = () => {
 
   return (
     <motion.div
-      className="md:p-6 p-2 mb-32 mt-8 lg:mt-20 w-full flex-col relative  flex items-center md:gap-10 lg:gap-10 justify-around rounded-lg   md:mx-auto"
+      className="md:p-6 p-2 mb-32  lg:mt-20 w-full flex-col relative dark:bg-gradient-to-bl dark:from-black dark:to-black dark:via-black bg-gradient-to-bl from-[#f4dafb] to-white   via-[#d8eafa]  flex items-center md:gap-10 lg:gap-10 justify-around rounded-lg   md:mx-auto"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}>
-      <div className="flex justify-between mx-4 mb-10 w-full lg:hidden px-2 items-center">
+      <h2 className="font-bold text-2xl text-transparent mt-4 dark:to-[#f4dafb] from-[#d661e8] via-[#d661e8] to-black bg-clip-text bg-gradient-to-l dark:from-[#A06CC7] md:text-3xl text-center">
+        SWAP
+      </h2>
+      <div className="flex absolute top-1 justify-between mx-4 mb- w-full lg:hidden px-2 items-center">
         <div className=" w-10 h-10">
           <img src={logo} alt="" className="" />
         </div>
@@ -92,7 +98,7 @@ const Swap = () => {
           </button>
         </div>
       </div>
-      <h2 className="font-bold text-2xl text-transparent mb-10 dark:to-[#f4dafb] from-[#d661e8] via-[#d661e8] to-black bg-clip-text bg-gradient-to-l dark:from-[#A06CC7] md:text-3xl text-center">Swap Token</h2>
+     
 
       <div className="flex justify-center items-center w-full gap-10 lg:flex-row flex-col">
         <div className="flex justify-between items-center w-full  flex-col">
@@ -221,6 +227,7 @@ const Swap = () => {
           ))}
         </div>
       </div>*/}
+      <TokenAllocation3D />
     </motion.div>
   );
 };

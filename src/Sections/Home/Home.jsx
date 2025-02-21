@@ -73,7 +73,7 @@ const Home = ({darkMode, setDarkMode}) => {
   };
 
   return (
-    <div className=" mb-28 md:px-3 relative pl-2 pr-2 lg:mt-16 px-6 ">
+    <div className=" mb-28 md:px-3 relative dark:bg-gradient-to-bl dark:from-black dark:to-black dark:via-black bg-gradient-to-bl from-[#f4dafb] to-[#d8eafa]   via-[#d8eafa] pl-2 pr-2 lg:mt-16 px-6 ">
       <div className="z-0 text-lg">
         <BlurEffect
           color="#F4DAFB"
@@ -86,7 +86,7 @@ const Home = ({darkMode, setDarkMode}) => {
           className="w-72 h-72 absolute top- lg:top-20 right-16 dark:hidden   bg-[#D8eafa] blur-[500px]  md:blur-[400px] md:dark:blur-[400px] dark:blur-[600px] rounded-full"
         />
       </div>
-      <div className="flex justify-between lg:hidden mt-8 px-2 items-center">
+      <div className="flex justify-between lg:hidden  px-2 items-center">
         <button className="  p-2  rounded-full bg-transparent">
           <NavLink to="/settings" className="flex items-center">
             <FaCog className="hover:scale-110 md:text-3xl text-2xl text- hover:rotate-90" />
@@ -96,12 +96,12 @@ const Home = ({darkMode, setDarkMode}) => {
           <MdOutlineManageSearch className="text-3xl hover:scale-110 md:text-3xl  hover:rotate-12" />
         </div>
       </div>
-      <div className="flex items-center border-2 border-[#F4DAFB] justify-between w-[80vw] mx-auto  rounded-2xl pl-6 px-3  py-2 lg:hidden mt-12  ">
+      <div className="flex items-center border-2 border-neutral-500 dark:border-[#F4DAFB] justify-between w-[80vw] mx-auto  rounded-2xl pl-6 px-2  py-1 lg:hidden mt-2  ">
         <div className="flex justify-center items-center gap-3">
           <FaSearch className="mr-2 text-2xl text-neutral-700" />
           <input
             type="text"
-            className="w-full p-2 bg-transparent  focus:outline-none"
+            className="w-full p- bg-transparent  focus:outline-none"
             placeholder="Search crypto for networks..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -109,7 +109,7 @@ const Home = ({darkMode, setDarkMode}) => {
           />
         </div>
         <button
-          className="ml-2 px-4 py-2 bg-[#f4dafb]   text-[#d661e8] rounded-lg"
+          className="ml-2 px-2 py-1 dark:bg-gradient-to-l shadow  from-[#f4dafb] to-[#d8eafa]  hover:scale-105 hover:from-[#d8eafa] hover:to-[#f4dafb] via-[#d8eafa]  dark:text-[#d661e8] rounded-lg"
           onClick={searchCrypto} // ✅ Works when clicking the button
         >
           Search
@@ -117,11 +117,11 @@ const Home = ({darkMode, setDarkMode}) => {
       </div>
 
       {/* Wallet Card */}
-      <div className=" mb-8  relative mt-10 md:p-6 px-6 flex justify-center items-center flex-col w-full ">
+      <div className=" mb-8  relative mt-6 md:p-6 px-6 flex justify-center items-center flex-col w-full ">
         {/* Wallet Selector */}
         <div className="flex justify-between w-full items-center">
           <select
-            className=" p-2 bg-[#f4dafb]   text-[#d661e8]  rounded-md focus:outline-none"
+            className=" p-2 dark:bg-gradient-to-l from-[#f4dafb] dark:border-none border to-[#d8eafa] hover:scale-105 hover:from-[#d8eafa] hover:to-[#f4dafb] via-[#d8eafa] dark:text-[#d661e8]  rounded-md focus:outline-none"
             value={selectedWallet}
             onChange={(e) => setSelectedWallet(e.target.value)}>
             <option>Main Wallet</option>
@@ -153,7 +153,7 @@ const Home = ({darkMode, setDarkMode}) => {
         </div>
 
         {/* Action Icons */}
-        <div className="flex justify-between w-full items-center  mt-10">
+        <div className="flex justify-between w-full  items-center  mt-10">
           <div className="flex flex-col items-center  hover:scale-110 ">
             <FaArrowUp className="text-2xl  mb-2" />{" "}
             <span className="text-sm ">Send</span>
