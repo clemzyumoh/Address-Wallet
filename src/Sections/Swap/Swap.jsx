@@ -92,7 +92,10 @@ const Swap = () => {
               </div>
 
               <div className="">
-                <h2> 24 HIGH 123,02</h2>
+                <h2>
+                  {" "}
+                  24 HIGH <span className="ml-2">123,02</span>
+                </h2>
               </div>
             </div>
             <div className="flex w-full justify-between items-center">
@@ -101,7 +104,11 @@ const Swap = () => {
               </div>
 
               <div className="">
-                <h2> 24 LOW 103,11</h2>
+                <h2>
+                  {" "}
+                  24 LOW
+                  <span className="ml-2">103,11</span>
+                </h2>
               </div>
             </div>
             <div className="flex w-full justify-between items-center">
@@ -110,7 +117,10 @@ const Swap = () => {
               </div>
 
               <div className="">
-                <h2> 24 VOL 200,1 M</h2>
+                <h2>
+                  {" "}
+                  24 VOL <span className="ml-2">200,1 M</span>
+                </h2>
               </div>
             </div>
           </div>
