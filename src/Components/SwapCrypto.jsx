@@ -43,7 +43,7 @@ const SwapCrypto = () => {
   };
 
   return (
-    <div className="w-full py-8 px-8 lg:w-[50vw]">
+    <div className="w-full py-8 px-2 lg:w-[50vw]">
       <h2 className="text-xl font-semibold lg:mb-10 mb-5">Swap Token</h2>
 
       {/* FROM Card */}
@@ -57,7 +57,7 @@ const SwapCrypto = () => {
           </button>
         </div>
 
-        <div className="flex items-center mt-2">
+        <div className="flex items-center w-full justify-between mt-2">
           <select
             value={fromCurrency}
             onChange={(e) => {
@@ -65,7 +65,7 @@ const SwapCrypto = () => {
               setAmount("");
               setConvertedAmount("");
             }}
-            className="w-1/3 p-2 bg-transparent text-xl font-bold">
+            className=" p-2 bg-transparent text-xl font-bold">
             <option className="text-black" value="USDT">USDT</option>
             <option className="text-black" value="USDC">USDC</option>
           </select>
@@ -73,7 +73,7 @@ const SwapCrypto = () => {
           <select
             value={amount}
             onChange={(e) => handleAmountChange(e.target.value)}
-            className="w-2/3 p-2 bg-transparent text-xl  font-bold">
+            className=" p-2 bg-transparent text-sm">
             <option className="text-black" value="">Select Package</option>
             {packages[fromCurrency].map((pkg) => (
               <option className="text-black" key={pkg} value={pkg}>
@@ -94,7 +94,7 @@ const SwapCrypto = () => {
           className={`p-3 bg-gray-200 rounded-full hover:bg-gray-300 transition-transform ${
             rotate ? "rotate-90" : "rotate-90"
           }`}>
-          <GoArrowSwitch className="text-gray-500 text-3xl " />
+          <GoArrowSwitch className="text-[#d661e8] text-3xl " />
         </button>
       </div>
 
@@ -104,9 +104,9 @@ const SwapCrypto = () => {
           <p className="text-gray-700 dark:text-gray-300 font-semibold">To</p>
         </div>
 
-        <div className="flex items-center mt-2">
+        <div className="flex justify-between w-full items-center mt-2">
           <select
-            className="w-1/3 p-2 bg-transparent text-xl mr-8 font-bold"
+            className="w-1/2 p-2 bg-transparent text-xl mr-8 font-bold"
             disabled>
             <option value="DRC">DRC</option>
           </select>
@@ -114,7 +114,7 @@ const SwapCrypto = () => {
           <input
             type="number"
             value={convertedAmount}
-            className="w-2/3 p-2 bg-transparent text-xl font-bold"
+            className=" w-1/3 p-2 bg-transparent text-xl font-bold"
             disabled
           />
         </div>

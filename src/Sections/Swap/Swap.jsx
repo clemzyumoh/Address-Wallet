@@ -17,6 +17,7 @@ import CryptoLiveChart from "../../Components/TradingStat";
 import img from "../../assets/Graph.png";
 import logo from "../../assets/logobg.png"
 import NotificationSlider from "../../Components/NotificationSlider";
+import BlurEffect from "../../Components/BlurEffect";
 
 const Swap = () => {
   const [fromCurrency, setFromCurrency] = useState("BTC");
@@ -53,19 +54,31 @@ const Swap = () => {
 
   return (
     <motion.div
-      className="md:p-6 p-2 mb-32 mt-8 lg:mt-20 w-full flex-col  flex items-center md:gap-10 lg:gap-10 justify-around rounded-lg   md:mx-auto"
+      className="md:p-6 p-2 mb-32 mt-8 lg:mt-20 w-full flex-col relative  flex items-center md:gap-10 lg:gap-10 justify-around rounded-lg   md:mx-auto"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}>
-      <div className="flex justify-between mx-4 mb-12 w-full px-2 items-center">
+      <div className="flex justify-between mx-4 mb-12 w-full lg:hidden px-2 items-center">
         <div className=" w-10 h-10">
           <img src={logo} alt="" className="" />
+        </div>
+        <div className="z-0 text-lg">
+          <BlurEffect
+            color="#DCEDF7"
+            className="w-72 h-50 absolute top-0 lg:top-20 right-0 dark:hidden   bg-[#DCEDF7] blur-[200px]  md:blur-[400px] md:dark:blur-[400px] dark:blur-[600px] rounded-full"
+          />
+        </div>
+        <div className="z-0 text-lg">
+          <BlurEffect
+            color="#DCEDF7"
+            className="w-72 h-72 absolute top-[500px] lg:top-20 right-0 dark:hidden   bg-[#DCEDF7] blur-[300px]  md:blur-[400px] md:dark:blur-[400px] dark:blur-[600px] rounded-full"
+          />
         </div>
 
         <div className="flex justify-center items-center lg:hidden gap-4">
           <button className="  p-2 w-full rounded-full ">
             <NavLink to="/settings" className="flex items-center">
-              <FaCog className="hover:scale-110 md:text-2xl text-xl dark:text-[#f4dafb] text-[#f68082] hover:rotate-90" />
+              <FaCog className="hover:scale-110 md:text-2xl text-xl dark:text-[#f4dafb] text-[#d661e8] hover:rotate-90" />
             </NavLink>
           </button>
         </div>
@@ -137,7 +150,7 @@ const Swap = () => {
           </div>
         </div>*/}
 
-        {/* Allocation Details *
+      {/* Allocation Details *
         <div className="mt-4 text-sm md:text-xl">
           {allocations.map((allocation, index) => (
             <div
