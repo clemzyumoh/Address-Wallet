@@ -77,7 +77,7 @@ const Home = ({darkMode, setDarkMode}) => {
       <div className="z-0 text-lg">
         <BlurEffect
           color="#F4DAFB"
-          className="w-72 h-72 absolute top-0 lg:top-20 right-0 dark:idden   bg-[#F4DAFB] blur-[500px]  md:blur-[400px] md:dark:blur-[400px] dark:blur-[500px] rounded-full"
+          className="w-32 h-32 absolute top-0 lg:top-20 hidden dark:hidden   bg-[#F4DAFB] blur-[00px]  md:blur-[400px] md:dark:blur-[400px] dark:blur-[500px] rounded-full"
         />
       </div>
       <div className="z-0 text-lg">
