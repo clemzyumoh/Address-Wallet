@@ -5,10 +5,18 @@ import { motion } from "framer-motion";
 import { FaArrowDown } from "react-icons/fa";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import AnimatedText from "../../Components/AnimationText";
+import AnimateItem from "../../Components/AnimationItem";
 import { IoIosNotifications } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { FaCog } from "react-icons/fa";
+import SwapCrypto from "../../Components/SwapCrypto";
+import TradingStats from "../../Components/TradingStat";
+import CryptoLiveChart from "../../Components/TradingStat";
+//import img from "../../assets/Rectangle 11.png"
+import img from "../../assets/Graph.png";
+import logo from "../../assets/logobg.png"
+import NotificationSlider from "../../Components/NotificationSlider";
 
 const Swap = () => {
   const [fromCurrency, setFromCurrency] = useState("BTC");
@@ -45,103 +53,65 @@ const Swap = () => {
 
   return (
     <motion.div
-      className="md:p-6 p-2 mb-32 mt-8 lg:mt-20 w-full flex-col lg:flex-row flex items-center md:gap-10 lg:gap-10 justify-around rounded-lg   md:mx-auto"
+      className="md:p-6 p-2 mb-32 mt-8 lg:mt-20 w-full flex-col  flex items-center md:gap-10 lg:gap-10 justify-around rounded-lg   md:mx-auto"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}>
-      <div className="flex justify-between mx-4 mb-12  items-center">
-        <AnimatedText
-          text="InnoFi"
-          animation="fade"
-          as="h1"
-          className="font-extrabold md:ml-5  leading-[40px] tracking-wider  lg:text-end lg:mt-20 text-5xl lg:leading-normal bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent"
-        />
+      <div className="flex justify-between mx-4 mb-12 w-full px-2 items-center">
+        <div className=" w-10 h-10">
+          <img src={logo} alt="" className="" />
+        </div>
+
         <div className="flex justify-center items-center lg:hidden gap-4">
-        
-          <button className="  p-2 w-full rounded-full  bg-[#fce2e2]">
+          <button className="  p-2 w-full rounded-full ">
             <NavLink to="/settings" className="flex items-center">
-              <FaCog className="hover:scale-110 md:text-2xl text-xl text-[#f68082] hover:rotate-90" />
+              <FaCog className="hover:scale-110 md:text-2xl text-xl dark:text-[#f4dafb] text-[#f68082] hover:rotate-90" />
             </NavLink>
           </button>
         </div>
       </div>
-      <div className="w-full shadow-2xl p-10 lg:w-[50vw]">
-        <h2 className="text-xl font-semibold lg:mb-20 mb-10">Swap Crypto</h2>
+      <div className="flex justify-center items-center w-full gap-10 lg:flex-row flex-col">
+        <div className="flex justify-between items-center w-full flex-col">
+          <div className="w-full flex justify-center px-4 gap-3 items-center mb-5 font-bold flex-col">
+            <div className="flex w-full justify-between items-center">
+              <div className="">
+                <h2>DRC/USDT </h2>
+              </div>
 
-        {/* From Currency Input */}
-        <div className="mb-4">
-          <label className="block text-gray-700 dark:text-gray-300">From</label>
-          <select
-            value={fromCurrency}
-            onChange={(e) => setFromCurrency(e.target.value)}
-            className="w-full p-2 border dark:text-neutral-200 rounded">
-            <option value="BTC" className="dark:text-neutral-900">
-              Bitcoin (BTC)
-            </option>
-            <option value="ETH" className="dark:text-neutral-900">
-              Ethereum (ETH)
-            </option>
-            <option value="USDT" className="dark:text-neutral-900">
-              Tether (USDT)
-            </option>
-          </select>
+              <div className="">
+                <h2> 24 HIGH 123,02</h2>
+              </div>
+            </div>
+            <div className="flex w-full justify-between items-center">
+              <div className="">
+                <h2>PRICE </h2>
+              </div>
+
+              <div className="">
+                <h2> 24 LOW 103,11</h2>
+              </div>
+            </div>
+            <div className="flex w-full justify-between items-center">
+              <div className="">
+                <h2>% </h2>
+              </div>
+
+              <div className="">
+                <h2> 24 VOL 200,1 M</h2>
+              </div>
+            </div>
+          </div>
+          <div className="bg-black rounded-2xl">
+            <img src={img} alt="" className="" />
+          </div>
         </div>
 
-        {/* Swap Icon */}
-        <div className="flex justify-center my-2">
-          <FaArrowDown className="text-gray-500 text-2xl" />
-        </div>
-
-        {/* To Currency Input */}
-        <div className="mb-4">
-          <label className="block text-gray-700 dark:text-gray-300">To</label>
-          <select
-            value={toCurrency}
-            onChange={(e) => setToCurrency(e.target.value)}
-            className="w-full p-2 border rounded">
-            <option value="BTC" className="dark:text-neutral-900">
-              Bitcoin (BTC)
-            </option>
-            <option value="ETH" className="dark:text-neutral-900">
-              Ethereum (ETH)
-            </option>
-            <option value="USDT" className="dark:text-neutral-900">
-              Tether (USDT)
-            </option>
-          </select>
-        </div>
-
-        {/* Amount Input */}
-        <div className="mb-4">
-          <label className="block text-gray-700 dark:text-gray-300">
-            Amount
-          </label>
-          <input
-            type="number"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            className="w-full p-2 border rounded"
-            placeholder="Enter amount"
-          />
-        </div>
-
-        {/* Converted Amount Display */}
-        {convertedAmount && (
-          <p className="text-green-600 text-sm mb-4">
-            Estimated: {convertedAmount} {toCurrency}
-          </p>
-        )}
-
-        {/* Swap Button */}
-        <button
-          className="w-full hover:scale-105 text-neutral-900 bg-neutral-300 font-bold p-2 rounded transition"
-          onClick={handleSwap}>
-          Swap
-        </button>
+        <SwapCrypto />
       </div>
+      <NotificationSlider />
 
-      <div className="w-full md:mb-20">
-        {/* Token Allocation Section */}
+      {/*<div className="w-full md:mb-20">
+        {/* Token Allocation Section *
         <h2 className="text-xl font-semibold my-6">Token Allocation</h2>
         <div className="flex relative justify-center">
           <ResponsiveContainer width="100%" height={250}>
@@ -165,9 +135,9 @@ const Swap = () => {
           <div className="absolute top-28 flex justify-center items-center text-lg font-bold">
             <span>{totalSupply.toLocaleString()}</span>
           </div>
-        </div>
+        </div>*/}
 
-        {/* Allocation Details */}
+        {/* Allocation Details *
         <div className="mt-4 text-sm md:text-xl">
           {allocations.map((allocation, index) => (
             <div
@@ -188,7 +158,7 @@ const Swap = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div>*/}
     </motion.div>
   );
 };

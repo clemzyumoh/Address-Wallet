@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { FaBell } from "react-icons/fa";
 
-
 const NotificationSlider = () => {
   const controls = useAnimation();
 
@@ -17,23 +16,23 @@ const NotificationSlider = () => {
     });
   }, [controls]);
 
-const notifications = [
-  {
-    icon: "🔥",
-    name: "Bitcoin Surge",
-    description: "Bitcoin just hit $50,000!",
-  },
-  {
-    icon: FaBell,
-    name: "New Alert",
-    description: "You have 5 unread messages.",
-  },
-  {
-    icon: "🎁",
-    name: "New Airdrop",
-    description: "Claim your DeWorld tokens now!",
-  },
-];
+  const notifications = [
+    {
+      icon: "🔥",
+      name: "Bitcoin Surge",
+      description: "Bitcoin just hit $50,000!",
+    },
+    {
+      icon: FaBell,
+      name: "New Alert",
+      description: "You have 5 unread messages.",
+    },
+    {
+      icon: "🎁",
+      name: "New Airdrop",
+      description: "Claim your DeWorld tokens now!",
+    },
+  ];
   return (
     <div className="overflow-hidden md:w-[80vw]  w-[80vw] my-10  lg:w-[70vw] md:ml-12 ml-8 text-neutral-900 dark:text-white py-3">
       <motion.div className="flex space-x-12 min-w-max" animate={controls}>
