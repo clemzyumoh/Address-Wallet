@@ -77,7 +77,13 @@ const Home = ({darkMode, setDarkMode}) => {
       <div className="z-0 text-lg">
         <BlurEffect
           color="#D661E8"
-          className="w-72 h-72 absolute top- lg:top-20 right-16    bg-[#D661E8] blur-[500px]  md:blur-[400px] md:dark:blur-[400px] dark:blur-[600px] rounded-full"
+          className="w-72 h-72 absolute top- lg:top-20 right-16 dark:hidden   bg-[#D661E8] blur-[500px]  md:blur-[400px] md:dark:blur-[400px] dark:blur-[600px] rounded-full"
+        />
+      </div>
+      <div className="z-0 text-lg">
+        <BlurEffect
+          color="#D8eafa"
+          className="w-72 h-72 absolute top- lg:top-20 right-16 dark:hidden   bg-[#D8eafa] blur-[500px]  md:blur-[400px] md:dark:blur-[400px] dark:blur-[600px] rounded-full"
         />
       </div>
       <div className="flex justify-between lg:hidden mt-8 px-2 items-center">
@@ -172,7 +178,13 @@ const Home = ({darkMode, setDarkMode}) => {
         <div className="z-0 text-lg">
           <BlurEffect
             color="#D8EAFA"
-            className="w-72 h-72 absolute bottom- dark:hidden left-16 md:dark:blur-[200px] lg:right-5 lg:bottom-0 dark:blur[400px]   bg-[#D8EAFA] md:blur-[100px] blur-[300px] rounded-full"
+            className="w-72 h-72 absolute dark:hidden bottom-0 left-16 md:dark:blur-[200px] lg:right-5 lg:bottom-0 dark:blur[400px]   bg-[#D8EAFA] md:blur-[100px] blur-[300px] rounded-full"
+          />
+        </div>
+        <div className="z-0 text-lg">
+          <BlurEffect
+            color="#D661E8"
+            className="w-72 h-72 absolute bottom-0 lg:top-20 left-16 dark:hidden   bg-[#D661E8] blur-[500px]  md:blur-[400px] md:dark:blur-[400px] dark:blur-[600px] rounded-full"
           />
         </div>
       </div>
@@ -184,7 +196,7 @@ const Home = ({darkMode, setDarkMode}) => {
         <div className="z-0 text-lg">
           <BlurEffect
             color="#D8EAFA"
-            className="w-72 h-72 absolute bottom-0 left-16 md:dark:blur-[350px] lg:right-5 lg:bottom-0 dark:blur[200px]   bg-[#D8EAFA] md:blur-[100px] blur-[300px] rounded-full"
+            className="w-72 h-72 absolute bottom-0 dark:hidden left-16 md:dark:blur-[350px] lg:right-5 lg:bottom-0 dark:blur[200px]   bg-[#D8EAFA] md:blur-[100px] blur-[300px] rounded-full"
           />
         </div>
         {["CRYPTO", "ASSET", "NFT"].map((tab) => (
