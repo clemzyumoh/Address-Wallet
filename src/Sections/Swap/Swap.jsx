@@ -1,5 +1,3 @@
-
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaArrowDown } from "react-icons/fa";
@@ -15,9 +13,20 @@ import TradingStats from "../../Components/TradingStat";
 import CryptoLiveChart from "../../Components/TradingStat";
 //import img from "../../assets/Rectangle 11.png"
 import img from "../../assets/Graph.png";
-import logo from "../../assets/logobg.png"
+import logo from "../../assets/logobg.png";
 import NotificationSlider from "../../Components/NotificationSlider";
 import BlurEffect from "../../Components/BlurEffect";
+import { GiChart } from "react-icons/gi";
+import { HiArrowTrendingUp } from "react-icons/hi2";
+import { LiaWalletSolid } from "react-icons/lia";
+import { MdOutlinePhotoCamera } from "react-icons/md";
+import { IoIosQrScanner } from "react-icons/io";
+import { RiSettingsLine } from "react-icons/ri";
+import { BsArrow90DegLeft } from "react-icons/bs";
+import { BsArrow90DegRight } from "react-icons/bs";
+import { LuChartNoAxesColumn } from "react-icons/lu";
+import fx from "../../assets/fx.png";
+import fx1 from "../../assets/fx1.png";
 
 const Swap = () => {
   const [fromCurrency, setFromCurrency] = useState("BTC");
@@ -58,7 +67,7 @@ const Swap = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}>
-      <div className="flex justify-between mx-4 mb-12 w-full lg:hidden px-2 items-center">
+      <div className="flex justify-between mx-4 mb-10 w-full lg:hidden px-2 items-center">
         <div className=" w-10 h-10">
           <img src={logo} alt="" className="" />
         </div>
@@ -83,19 +92,34 @@ const Swap = () => {
           </button>
         </div>
       </div>
+      <h2 className="font-bold text-2xl text-transparent mb-10 dark:to-[#f4dafb] from-[#d661e8] via-[#d661e8] to-black bg-clip-text bg-gradient-to-l dark:from-[#A06CC7] md:text-3xl text-center">Swap Token</h2>
+
       <div className="flex justify-center items-center w-full gap-10 lg:flex-row flex-col">
-        <div className="flex justify-between items-center w-full flex-col">
-          <div className="w-full flex justify-center px-4 gap-3 items-center mb-5 font-bold flex-col">
+        <div className="flex justify-between items-center w-full  flex-col">
+          <div className="flex justify-between w-full my-3 px-2 items-center">
+            <div className="flex items-center gap-5 bg-neutral-100 shadow dark:bg-gray-800 py-2 px-3  rounded-lg">
+              <LiaWalletSolid /> <span className="">-USDC</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="flex items-center bg-[#f4dafb]   text-[#d661e8] shadow py-2 px-3  rounded-lg gap-3">
+                <span className="">Chart</span>
+                <HiArrowTrendingUp />
+              </div>
+              <div className="flex items-center bg-neutral-100 shadow dark:bg-gray-800 py-2 px-3  rounded-lg gap-3">
+                <span className="">Trade</span>
+                <GiChart />
+              </div>
+            </div>
+          </div>
+          <div className="w-full flex justify-center px-4 gap-3 items-center mb-5  flex-col">
             <div className="flex w-full justify-between items-center">
               <div className="">
                 <h2>DRC/USDT </h2>
               </div>
 
-              <div className="">
-                <h2>
-                  {" "}
-                  24 HIGH <span className="ml-2">123,02</span>
-                </h2>
+              <div className=" flex items-center gap-2">
+                <h2 className="text-gray-500"> 24 HIGH</h2>
+                <span className="ml-2">123,02</span>
               </div>
             </div>
             <div className="flex w-full justify-between items-center">
@@ -103,12 +127,9 @@ const Swap = () => {
                 <h2>PRICE </h2>
               </div>
 
-              <div className="">
-                <h2>
-                  {" "}
-                  24 LOW
-                  <span className="ml-2">103,11</span>
-                </h2>
+              <div className="flex items-center gap-2">
+                <h2 className="text-gray-500"> 24 LOW</h2>
+                <span className="ml-2">103,11</span>
               </div>
             </div>
             <div className="flex w-full justify-between items-center">
@@ -116,14 +137,31 @@ const Swap = () => {
                 <h2>% </h2>
               </div>
 
-              <div className="">
-                <h2>
-                  {" "}
-                  24 VOL <span className="ml-2">200,1 M</span>
-                </h2>
+              <div className="flex gap-2 items-center">
+                <h2 className="text-gray-500"> 24 VOL</h2>
+                <span className="ml-2">200,1 M</span>
               </div>
             </div>
           </div>
+
+          <div className="flex items-center my-5 px-3 justify-between w-full">
+            <div className="flex text-xl items-center gap-3">
+              <p>15m</p>
+              <LuChartNoAxesColumn />
+              <img src={fx} alt="" className="w-7 h-7 dark:hidden" />
+              <img src={fx1} alt="" className="w-7 h-7 dark:flex hidden" />
+            </div>
+            <div className="flex items-center text-xl gap-3">
+              <BsArrow90DegLeft />
+              <BsArrow90DegRight />
+            </div>
+            <div className="flex  text-xl items-center gap-3">
+              <RiSettingsLine />
+              <IoIosQrScanner />
+              <MdOutlinePhotoCamera />
+            </div>
+          </div>
+
           <div className="bg-black rounded-2xl">
             <img src={img} alt="" className="" />
           </div>
@@ -131,6 +169,7 @@ const Swap = () => {
 
         <SwapCrypto />
       </div>
+
       <NotificationSlider />
 
       {/*<div className="w-full md:mb-20">
