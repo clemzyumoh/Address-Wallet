@@ -132,6 +132,22 @@ const Home = ({darkMode, setDarkMode}) => {
               <option>Wallet 4</option>
             </select>
           </div>
+        </div>
+
+        <div className="flex justify-between w-full items-center">
+          {/* Balance Section */}
+          <div className="flex justify-start w-full  items-center md:my-10 gap-3 ml-6">
+            <button onClick={() => setShowBalance(!showBalance)}>
+              {showBalance ? (
+                <FaEyeSlash className="text-gray-500 dark:text-neutral-200" />
+              ) : (
+                <FaEye className="text-gray-500 dark:text-neutral-200" />
+              )}
+            </button>
+            <span className="md:text-2xl text-lg font-bold  text-neutral-500 dark:text-white">
+              {showBalance ? "0.00$" : "••••"}
+            </span>
+          </div>
           <div className="flex justify-center items-center md:text-2xl text-lg gap-2">
             <FaRegCopy className="hover:scale-110 hover:rotate-12" />
             <RiQrScan2Line className="hover:scale-110 hover:rotate-12" />
@@ -139,20 +155,6 @@ const Home = ({darkMode, setDarkMode}) => {
               <IoIosNotifications className="hover:scale-110 hover:rotate-12" />
             </button>
           </div>
-        </div>
-
-        {/* Balance Section */}
-        <div className="flex justify-start w-full  items-center md:my-10 gap-3 ml-6">
-          <button onClick={() => setShowBalance(!showBalance)}>
-            {showBalance ? (
-              <FaEyeSlash className="text-gray-500 dark:text-neutral-200" />
-            ) : (
-              <FaEye className="text-gray-500 dark:text-neutral-200" />
-            )}
-          </button>
-          <span className="md:text-2xl text-lg font-bold  text-neutral-500 dark:text-white">
-            {showBalance ? "0.00$" : "••••"}
-          </span>
         </div>
 
         {/* Action Icons */}
