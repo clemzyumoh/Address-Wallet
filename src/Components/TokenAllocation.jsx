@@ -168,23 +168,19 @@ import { motion } from "framer-motion";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
 const data = [
-  { name: "Distributed Over 41 years", value: 60, color: "#4CAF50" },
-  { name: "Vesting 3-5 years team", value: 20, color: "#FF9800" },
+  { name: "Distributed Over 41 years", value: 60, color: "#9b6afc" },
+  { name: "Vesting 3-5 years team", value: 20, color: "#B0E6F8" },
   { name: "Development & Innovation", value: 8, color: "#2196F3" },
   { name: "Seed & Private Rounds", value: 4, color: "#9C27B0" },
   { name: "Marketing & Partnership", value: 3, color: "#F44336" },
   { name: "Ecosystem Growth", value: 2, color: "#00BCD4" },
-  { name: "Exchange Listing (2026)", value: 1, color: "#8BC34A" },
-  { name: "Foundation Rewards", value: 1, color: "#FFEB3B" },
-  { name: "One year ICO", value: 0.5, color: "#d661e8" },
-  { name: "GameFi & Education Rewards", value: 0.5, color: "#E91E63" },
 ];
 
 const totalSupply = 100;
 
 const AllocationCard = ({ name, value, color }) => {
   return (
-    <motion.div className="flex items-center justify-between p-4 bg-white  dark:bg-neutral-900 shadow-md rounded-lg transform hover:scale-105 transition duration-300">
+    <motion.div className="flex items-center justify-between p-4 bg-[#E8EBFF] shadow-[2px_2px_2px_#B0E6F8,-2px_-2px_2px_#9a6afc] dark:bg-neutral-900  rounded-lg transform hover:scale-105 transition duration-300">
       {/* Left Side - Color Indicator & Name */}
       <div className="flex items-center space-x-4">
         <div
@@ -197,22 +193,25 @@ const AllocationCard = ({ name, value, color }) => {
       </div>
 
       {/* Right Side - Token Allocation */}
-      <p className="text-gray-600 dark:text-gray-400 ml-8 font-semibold">{value}M</p>
+      <p className="text-gray-600 dark:text-gray-400 ml-8 font-semibold">
+        {value}M
+      </p>
     </motion.div>
   );
 };
 
 const TokenAllocation = () => {
   return (
-    <div className="flex flex-col items-center border-[#b0e6f8] shadow dark:lg:border-2 rounded-2xl lg:p-5 space-y-8">
+    <div className="flex flex-col items-center border-[#9b6afc] md:w-[70vw] lg:w-[50vw] px-2 md:p-8 py-5 shadow  border-2 rounded-2xl lg:p-5 space-y-8">
       {/* Total Supply Heading */}
       <h2 className="text-3xl font-bold text-center">Total Supply</h2>
 
       {/* Hollow Pie Chart (Doughnut Chart) */}
-      <div className="relative w-64 h-64 flex items-center justify-center">
+      <div className="relative w-64 h-64 flex items-center  justify-center">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie
+              className="shadow"
               data={data}
               dataKey="value"
               cx="50%"
@@ -231,13 +230,13 @@ const TokenAllocation = () => {
 
         {/* Centered Text inside the Hollow Pie Chart */}
         <div className="absolute text-xl text-center font-bold text-gray-800 dark:text-white">
-          100M <br /> 
+          100M <br />
           <p className="text-neutral-500 text-sm">Total Supply</p>
         </div>
       </div>
 
       {/* Allocation Cards */}
-      <div className="w-full  grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-x-8 space-y-4">
+      <div className="w-full  grid grid-cols-1  gap-5 md:gap-x-8 space-y-4">
         {data.map((item) => (
           <AllocationCard key={item.name} {...item} />
         ))}
