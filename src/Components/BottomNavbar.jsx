@@ -37,7 +37,7 @@ import { FaVoteYea } from "react-icons/fa";
 
 const BottomNavbar = () => {
   return (
-    <nav className="fixed bottom-0 left-0 w-full  z-40 bg-gray-200 border-none border-[#040f4c] dark:bg-black shadow-lg  pt-2 pb-6 flex justify-around lg:hidden">
+    <nav className="fixed bottom-0 left-0 w-full  z-40 dark:bg-gradient-to-bl dark:from-black dark:to-black dark:via-black bg-gradient-to-bl from-[#E8EBFF] to-white   via-[#EBF2FD] border-none border-[#040f4c] dark:bg-black shadow-lg  pt-2 pb-6 flex justify-around lg:hidden">
       {[
         {
           to: "/",
@@ -71,8 +71,8 @@ const BottomNavbar = () => {
           className={({ isActive }) =>
             `flex flex-col items-center text-sm p-2 rounded transition ${
               isActive
-                ? " hover:scale-110  text-[#d661e8]"
-                : " hover:scale-105 dark:text-neutral-300 "
+                ? " hover:scale-110 text-black dark:text-[#B0E6F8] border-t-2 dark:border-[#B0e6f8] "
+                : " hover:scale-105 dark:text-neutral-300 text-neutral-500 "
             }`
           }>
           {item.icon}

@@ -137,12 +137,12 @@ const Header = ({ darkMode, setDarkMode }) => {
      }
    };
   return (
-    <motion.div className="hidden lg:flex fixed top-0 justify-between dark:bg-black bg-[#FCF9FC] lg:justify-around items-center w-full z-40 lg:w-[80vw]  text-black dark:text-white p-4 ">
+    <motion.div className="hidden lg:flex fixed top-0 justify-between dark:bg-gradient-to-bl dark:from-black dark:to-black dark:via-black bg-gradient-to-bl from-[#E8EBFF] to-[#ebf2fd]   via-[#EBF2FD] border-none border-[#040f4c] dark:bg-black lg:justify-around items-center w-full z-40 lg:w-[80vw]  text-black dark:text-white p-4 ">
       {/* Large Screen: Search Bar */}
-      <h1 className="font-bold text-3xl lg:block hidden  dark:to-[#f4dafb] from-[#d661e8] via-[#d661e8] to-black  bg-gradient-to-l dark:from-[#A06CC7] bg-clip-text text-transparent mr-5 lg:mr-52">
+      <h1 className="font-bold text-3xl lg:block hidden    mr-5 lg:mr-52">
         Dashboard
       </h1>
-      <div className="hidden lg:flex items-center border-[#f4dafb] border-2 p-2 rounded flex-1">
+      <div className="hidden lg:flex items-center border-[#EBF2FD] shadow border-2 p-2 rounded flex-1">
         <FaSearch className="text-neutral-400 mr-2" />
         <input
           type="text"
@@ -182,7 +182,7 @@ const Header = ({ darkMode, setDarkMode }) => {
           onClick={() => setDarkMode(!darkMode)}
           className="w-[24px]">
           {darkMode ? (
-            <Sun size={24} className="dark:text-[#d661e8]" />
+            <Sun size={24} className="dark:text-[#b0e6f8]" />
           ) : (
             <Moon size={24} className="" />
           )}

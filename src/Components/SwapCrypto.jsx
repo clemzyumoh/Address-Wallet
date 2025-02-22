@@ -51,22 +51,22 @@ const SwapCrypto = () => {
     <div className="w-full  px-2  lg:w-[40vw]">
       <div className="flex justify-between my-5  items-center mx-4">
         <div className="flex items-center gap-2">
-          <FaCreditCard className="text-xl" />
-          <span className="text-lg">Buy</span>
+          <FaCreditCard className="text-sm" />
+          <span className="text-">Buy</span>
         </div>
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2 py-2 px-3 rounded-lg bg-[#f4dafb]  shadow text-[#d661e8]">
-            <LuSettings2 className="text-xl" />
+          <div className="flex items-center gap-2 py-2 px-3 rounded-lg bg-[#]  shadow ">
+            <LuSettings2 className="text-sm" />
             <span className="">0.5%</span>
           </div>
-          <IoIosLink className="text-xl" />
-          <LuChartColumnDecreasing className="text-xl" />
+          <IoIosLink className="text-sm" />
+          <LuChartColumnDecreasing className="text-sm" />
         </div>
       </div>
-      <div className="bg-gray-800  p-3 lg:m-5 rounded-md">
+      <div className="dark:bg-gray-800 shadow bg-white p-3 lg:m-5 rounded-md">
         {/* FROM Card */}
-        <div className="relative w-full ">
-          <div className=" bg-gray-900 text-white py-5 rounded-lg mb-6">
+        <div className="relative w-full flex items-center justify-center flex-col ">
+          <div className=" dark:bg-gray-900 shadow dark:text-white py-5 flex flex-col w-full rounded-lg mb-6">
             <div className="flex justify-between mx-3 items-center  ">
               <p className="text-gray-400 dark:text-gray-300 font-semibold">
                 From
@@ -75,17 +75,17 @@ const SwapCrypto = () => {
                 <LiaWalletSolid className="text-xl" />
                 <button
                   onClick={() => handleAmountChange(userBalances[fromCurrency])}
-                  className="px-2 text-sm py-1 bg-gray-300 text-gray-800 rounded hover:bg-gray-400">
+                  className="px-2 text-sm py-1 dark:bg-gray-300 shadow text-gray-800 rounded hover:bg-gray-400">
                   Max
                 </button>
-                <div className="flex items-center gap-2 py-1 px-2 text-sm  bg-gray-300 text-gray-800 rounded hover:bg-gray-400">
+                <div className="flex items-center gap-2 py-1 px-2 text-sm shadow dark:bg-gray-300 text-gray-800 rounded hover:bg-gray-400">
                   <span className="">50%</span>
                 </div>
               </div>
             </div>
 
-            <div className="flex text-white items-center py-4 px-3 rounded-2xl mt-8 bg-black w-full justify-between ">
-              <div className=" bg-gray-800  rounded-2xl px-2 py-1">
+            <div className="flex dark:text-[#B0E6F8] items-center py-4 px-3 rounded-2xl mt-8 bg-[#E8EBFF] shadow dark:bg-black dark:border border-[#B0E6F8] w-full justify-between ">
+              <div className=" dark:bg-gray-800 bg-white rounded-2xl px-2 py-1">
                 <select
                   value={fromCurrency}
                   onChange={(e) => {
@@ -117,24 +117,24 @@ const SwapCrypto = () => {
                 ))}
               </select>
             </div>
-            <p className="text-xs mx-3 text-gray-200 mt-1">
+            <p className="text-xs mx-3 dark:text-gray-200 mt-1">
               Balance: {userBalances[fromCurrency]} {fromCurrency}
             </p>
           </div>
 
           {/* Swap Icon (Rotates on Click) */}
-          <div className="flex absolute top-4/9 md:left-2/4 left-2/5 justify-center my-2">
+          <div className=" absolute mb-12 mr-12 ">
             <button
               onClick={reverseSwap}
-              className={`p-3 bg-[#f4dafb]  rounded-full hover:bg-gray-300 transition-transform ${
+              className={`p-3 dark:bg-black shadow bg-[#EBF2FD] absolute rounded-full hover:bg-gray-300 transition-transform ${
                 rotate ? "rotate-90" : "rotate-90"
               }`}>
-              <GoArrowSwitch className="text-[#d661e8] text-3xl " />
+              <GoArrowSwitch className="dark:text-[#B0E6F8]  text-3xl " />
             </button>
           </div>
 
           {/* TO Card */}
-          <div className="bg-gray-900 text-white pt-5 rounded-lg">
+          <div className="dark:bg-gray-900 shadow flex w-full flex-col  dark:text-white py-5 rounded-lg">
             <div className="flex justify-between mx-4 mb-8 items-center">
               <p className="text-gray-400 dark:text-gray-300 font-semibold">
                 To
@@ -143,18 +143,20 @@ const SwapCrypto = () => {
                 <LiaWalletSolid className="text-xl" />
                 <button
                   onClick={() => handleAmountChange(userBalances[fromCurrency])}
-                  className="px-2 text-sm py-1 bg-gray-300 text-gray-800 rounded hover:bg-gray-400">
+                  className="px-2 text-sm py-1 shadow dark:bg-gray-300 text-gray-800 rounded hover:bg-gray-400">
                   Max
                 </button>
-                <div className="flex items-center  py-1 px-2 text-sm bg-gray-300 text-gray-800 rounded hover:bg-gray-400">
+                <div className="flex items-center  py-1 px-2 text-sm shadow dark:bg-gray-300 text-gray-800 rounded hover:bg-gray-400">
                   <span className="">50%</span>
                 </div>
               </div>
             </div>
 
-            <div className="flex rounded-2xl py-5 px-4 gap-5 justify-between w-full bg-black items-center mt-2">
-              <div className="w-[30vw]   bg-gray-800 rounded-2xl  text-xl p-3 ">
-                <select className=" px-3 font-bold" disabled>
+            <div className="flex rounded-2xl py-5 px-4 gap-5 justify-between w-full bg-[#E8EBFF] dark:bg-black dark:border border-[#B0E6F8] items-center mt-2">
+              <div className="w bg-white  dark:bg-gray-800 rounded-2xl  text-xl p-3 ">
+                <select
+                  className=" dark:text-[#B0E6F8] px-3 font-bold"
+                  disabled>
                   <option value="DRC">DRC</option>
                 </select>
               </div>
@@ -171,7 +173,7 @@ const SwapCrypto = () => {
 
         {/* Swap Button */}
         <button
-          className="w-full hover:scale-105  bg-gradient-to-bl to-[#f4dafb]  from-[#d8eafa] via-[#f4dafb]  hover:from-[#d8eafa] hover:to-[#f4dafb]  dark:text-[#d661e8]  font-bold p-2 rounded mt-5 transition"
+          className="w-full hover:scale-105 shadow bg-[#E8EBFF]  dark:bg-black dark:hover:border hover:border-[#b0e6f8] dark:text-[#B0E6F8]  font-bold p-2 rounded mt-5 transition"
           onClick={() =>
             alert(`Swapped ${amount} ${fromCurrency} to ${convertedAmount} DRC`)
           }>

@@ -73,7 +73,7 @@ const Home = ({darkMode, setDarkMode}) => {
   };
 
   return (
-    <div className=" mb-28 md:px-3 relative dark:bg-gradient-to-bl dark:from-black dark:to-black dark:via-black bg-gradient-to-bl from-[#f4dafb] to-[#d8eafa]   via-[#d8eafa] pl-2 pr-2 lg:mt-16 px-6 ">
+    <div className=" mb-28  flex flex-col items-center justify-center w-full relative dark:bg-gradient-to-bl dark:from-black dark:to-black dark:via-black bg-gradient-to-bl from-[#E8EBFF] to-white   via-[#EBF2FD] lg:mt-16 ">
       <div className="z-0 text-lg">
         <BlurEffect
           color="#F4DAFB"
@@ -83,20 +83,21 @@ const Home = ({darkMode, setDarkMode}) => {
       <div className="z-0 text-lg">
         <BlurEffect
           color="#D8eafa"
-          className="w-72 h-72 absolute top- lg:top-20 right-16 dark:hidden   bg-[#D8eafa] blur-[500px]  md:blur-[400px] md:dark:blur-[400px] dark:blur-[600px] rounded-full"
+          className="w-72 h-72 absolute top- lg:top-20 hidden   bg-[#D8eafa] blur-[500px]  md:blur-[400px] md:dark:blur-[400px] dark:blur-[600px] rounded-full"
         />
       </div>
-      <div className="flex justify-between lg:hidden  px-2 items-center">
+      <div className="flex justify-between lg:hidden w-full px-2 items-center">
         <button className="  p-2  rounded-full bg-transparent">
           <NavLink to="/settings" className="flex items-center">
             <FaCog className="hover:scale-110 md:text-3xl text-2xl text- hover:rotate-90" />
           </NavLink>
         </button>
+        <h1 className="">Home</h1>
         <div className="p-2  rounded-full ">
           <MdOutlineManageSearch className="text-3xl hover:scale-110 md:text-3xl  hover:rotate-12" />
         </div>
       </div>
-      <div className="flex items-center border-2 border-neutral-500 dark:border-[#F4DAFB] justify-between w-[80vw] mx-auto  rounded-2xl pl-6 px-2  py-1 lg:hidden mt-2  ">
+      <div className="flex items-center dark:border-2 border-neutral-500 w-[90vw] shadow dark:border-[#B0E6F8]/80 justify-between   rounded-2xl pl-3 px-2  py-1 lg:hidden mt-2  ">
         <div className="flex justify-center items-center gap-3">
           <FaSearch className="mr-2 text-2xl text-neutral-700" />
           <input
@@ -109,7 +110,7 @@ const Home = ({darkMode, setDarkMode}) => {
           />
         </div>
         <button
-          className="ml-2 px-2 py-1 dark:bg-gradient-to-l shadow  from-[#f4dafb] to-[#d8eafa]  hover:scale-105 hover:from-[#d8eafa] hover:to-[#f4dafb] via-[#d8eafa]  dark:text-[#d661e8] rounded-lg"
+          className="ml-2 px-2 py-1 bg-[#E8EBFF] dark:bg-transparent dark:text-[#b0e6f8] shadow  hover:scale-105   rounded-lg"
           onClick={searchCrypto} // ✅ Works when clicking the button
         >
           Search
@@ -117,19 +118,21 @@ const Home = ({darkMode, setDarkMode}) => {
       </div>
 
       {/* Wallet Card */}
-      <div className=" mb-8  relative mt-6 md:p-6 px-6 flex justify-center items-center flex-col w-full ">
+      <div className=" mb-8  relative mt-6 md:p-6 lg:w-[60vw] px-3  flex justify-between  items-center flex-col w-full ">
         {/* Wallet Selector */}
-        <div className="flex justify-between w-full items-center">
-          <select
-            className=" p-2 dark:bg-gradient-to-l from-[#f4dafb] dark:border-none border to-[#d8eafa] hover:scale-105 hover:from-[#d8eafa] hover:to-[#f4dafb] via-[#d8eafa] dark:text-[#d661e8]  rounded-md focus:outline-none"
-            value={selectedWallet}
-            onChange={(e) => setSelectedWallet(e.target.value)}>
-            <option>Main Wallet</option>
-            <option>Wallet 2</option>
-            <option>Wallet 3</option>
-            <option>Wallet 4</option>
-          </select>
-          <div className="flex justify-center items-center md:text-2xl text-xl md:gap-6 gap-4">
+        <div className="flex w-full justify-between">
+          <div className="flex w-full j items-center">
+            <select
+              className=" p-2  hover:scale-105 font-bold  flex  rounded-md focus:outline-none"
+              value={selectedWallet}
+              onChange={(e) => setSelectedWallet(e.target.value)}>
+              <option>Main Wallet</option>
+              <option>Wallet 2</option>
+              <option>Wallet 3</option>
+              <option>Wallet 4</option>
+            </select>
+          </div>
+          <div className="flex justify-center items-center md:text-2xl text-xl md:gap-6 lg:ml-[550px] md:ml-96 ml-24 gap-2 w-full">
             <FaRegCopy className="hover:scale-110 hover:rotate-12" />
             <RiQrScan2Line className="hover:scale-110 hover:rotate-12" />
             <button onClick={() => navigate("/notifications")}>
@@ -139,7 +142,7 @@ const Home = ({darkMode, setDarkMode}) => {
         </div>
 
         {/* Balance Section */}
-        <div className="flex justify-start w-full mt-8 items-center md:my-10 my-4">
+        <div className="flex justify-start w-full  items-center md:my-10 ml-6">
           <span className="text-2xl font-bold mr-5 text-neutral-500 dark:text-white">
             {showBalance ? "0.00$" : "••••"}
           </span>
@@ -153,25 +156,35 @@ const Home = ({darkMode, setDarkMode}) => {
         </div>
 
         {/* Action Icons */}
-        <div className="flex justify-between w-full  items-center  mt-10">
+        <div className="flex justify-between w-full  items-center  mt-5 px-2">
           <div className="flex flex-col items-center  hover:scale-110 ">
-            <FaArrowUp className="text-2xl  mb-2" />{" "}
+            <div className="flex justify-center items-center p-3 mb-2  shadow dark:-2 dark:border-[#B0E6F8] bg-[#E8EBFF] dark:bg-transparent rounded-full ">
+              <FaPaperPlane className="text-xl  md:text-2xl " />
+            </div>{" "}
             <span className="text-sm ">Send</span>
           </div>
           <button className="flex flex-col items-center  hover:scale-110 ">
-            <FaArrowDown className="text-2xl mb-2" />{" "}
+            <div className="flex justify-center items-center p-3 mb-2 shadow dark:brder-2 dark:border-[#B0E6F8] bg-[#E8EBFF] dark:bg-transparent rounded-full ">
+              <FaDownload className="text-xl md:text-2xl " />
+            </div>{" "}
             <span className="text-sm">Receive</span>
           </button>
           <button className="flex flex-col items-center  hover:scale-110 ">
-            <FaCreditCard className="text-2xl mb-2" />{" "}
+            <div className="flex justify-center items-center p-3 mb-2 shadow dark:-2 dark:border-[#B0E6F8] bg-[#E8EBFF] dark:bg-transparent rounded-full ">
+              <FaCreditCard className="text-xl md:text-2xl  " />
+            </div>{" "}
             <span className="text-sm">Buy</span>
           </button>
           <button className="flex flex-col items-center  hover:scale-110 ">
-            <BsCashCoin className="text-2xl mb-2" />{" "}
+            <div className="flex justify-center items-center p-3 mb-2 shadow dark:boder-2 dark:border-[#B0E6F8] bg-[#E8EBFF] dark:bg-transparent rounded-full ">
+              <BsCashCoin className="text-xl md:text-2xl  " />
+            </div>{" "}
             <span className="text-sm">Sell</span>
           </button>
           <button className="flex flex-col items-center hover:scale-110 ">
-            <FaHistory className="text-2xl mb-2" />{" "}
+            <div className="flex justify-center items-center p-3 dar dark:border-[#B0E6F8] mb-2 shadow bg-[#E8EBFF] dark:bg-transparent rounded-full ">
+              <FaHistory className="text-xl md:text-2xl  " />
+            </div>{" "}
             <span className="text-sm">History</span>
           </button>
         </div>
@@ -202,9 +215,9 @@ const Home = ({darkMode, setDarkMode}) => {
         {["CRYPTO", "ASSET", "NFT"].map((tab) => (
           <button
             key={tab}
-            className={`px-8 py-3 rounded ${
+            className={`px-8 py-3 w-full rounded ${
               activeTab === tab
-                ? " text-[#d661e8] dark:text-[#D8EAFA] cursor-pointer"
+                ? " text-black dark:text-[#B0E6F8] cursor-pointer"
                 : " text-neutral-400 cursor-pointer "
             }`}
             onClick={() => dispatch(setActiveTab(tab))}>
@@ -214,13 +227,13 @@ const Home = ({darkMode, setDarkMode}) => {
       </div>
 
       {/* Content */}
-      <div className=" md:p-4 rounded    text-black dark:text-white">
+      <div className=" md:p-4 rounded    text-black dark:text-white lg:w-[70vw] w-full">
         {activeTab === "CRYPTO" && <Crypto />}
         {activeTab === "ASSET" && <Asset />}
         {activeTab === "NFT" && <NFT />}
       </div>
       <a href="/#" className="">
-        <h2 className="font-bold text-2xl text-transparent dark:to-[#f4dafb] from-[#d661e8] via-[#d661e8] to-black bg-clip-text bg-gradient-to-l dark:from-[#A06CC7] md:text-3xl text-center my-16">
+        <h2 className="font-bold text-2xl text-transparent dark:to-[#f4dafb] from-[#CA98D9] via to-[#26282E] bg-clip-text bg-gradient-to-l dark:from-[#B0E6F8] md:text-3xl text-center my-16">
           ADD & MANAGE CRYPTO
         </h2>
       </a>

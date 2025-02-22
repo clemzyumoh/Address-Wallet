@@ -70,11 +70,11 @@ const Swap = () => {
 
   return (
     <motion.div
-      className="md:p-6 p-2 mb-32  lg:mt-20 w-full flex-col relative dark:bg-gradient-to-bl dark:from-black dark:to-black dark:via-black bg-gradient-to-bl from-[#f4dafb] to-white   via-[#d8eafa]  flex items-center md:gap-10 lg:gap-10 justify-around rounded-lg   md:mx-auto"
+      className="md:p-6 p-2 mb-32  lg:mt-20 w-full flex-col relative dark:bg-gradient-to-bl dark:from-black dark:to-black dark:via-black bg-gradient-to-bl from-[#E8EBFF] to-white   via-[#EBF2FD]  flex items-center md:gap-10 lg:gap-10 justify-around rounded-lg   md:mx-auto"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}>
-      <h2 className="font-bold text-2xl text-transparent mt-4 dark:to-[#f4dafb] from-[#d661e8] via-[#d661e8] to-black bg-clip-text bg-gradient-to-l dark:from-[#A06CC7] md:text-3xl text-center">
+      <h2 className="font-bold text-2xl text-transparent mt-4 dark:to-[#f4dafb] from-[#CA98D9] via to-[#26282E] bg-clip-text bg-gradient-to-l dark:from-[#B0E6F8] md:text-3xl text-center">
         SWAP
       </h2>
       <div className="flex absolute top-1 justify-between mx-4 mb- w-full lg:hidden px-2 items-center">
@@ -97,86 +97,85 @@ const Swap = () => {
         <div className="flex justify-center items-center lg:hidden gap-4">
           <button className="  p-2 w-full rounded-full ">
             <NavLink to="/settings" className="flex items-center">
-              <FaCog className="hover:scale-110 md:text-2xl text-xl dark:text-[#f4dafb] text-[#d661e8] hover:rotate-90" />
+              <FaCog className="hover:scale-110 md:text-2xl text-xl  hover:rotate-90" />
             </NavLink>
           </button>
         </div>
       </div>
-     
 
-      <div className="flex justify-center items-center w-full gap-10 lg:flex-row flex-col">
-        <div className="flex justify-between items-center w-full  flex-col">
-          <div className="flex justify-between w-full my-3 px-2 items-center">
-            <div className="flex items-center gap-5 bg-neutral-100 shadow dark:bg-gray-800 py-2 px-3  rounded-lg">
-              <LiaWalletSolid /> <span className="">-USDC</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="flex items-center bg-[#f4dafb]   text-[#d661e8] shadow py-2 px-3  rounded-lg gap-3">
-                <span className="">Chart</span>
-                <HiArrowTrendingUp />
+      <div className="flex justify-center items-center w-full gap-1 lg:flex-row flex-col">
+        <div className="flex items-center justify-center flex-col gap-2">
+          <div className="flex justify-between items-center w-full bg-white dark:bg-transparent shadow rounded-2xl py-3 flex-col">
+            <div className="flex justify-between w-full mb-2 px-2 items-center">
+              <div className="flex items-center gap-5 bg-[#EBF2FD] shadow dark:bg-gray-800 py-2 px-3  rounded-lg">
+                <LiaWalletSolid /> <span className="">-USDC</span>
               </div>
-              <div className="flex items-center bg-neutral-100 shadow dark:bg-gray-800 py-2 px-3  rounded-lg gap-3">
-                <span className="">Trade</span>
-                <GiChart />
+              <div className="flex items-center gap-3">
+                <div className="flex items-center bg-[#EBF2FD] dark:bg-gray-800   shadow py-2 px-3  rounded-lg gap-3">
+                  <span className="">Chart</span>
+                  <HiArrowTrendingUp />
+                </div>
+                <div className="flex items-center bg-[#EBF2FD] shadow dark:bg-gray-800 py-2 px-3  rounded-lg gap-3">
+                  <span className="">Trade</span>
+                  <GiChart />
+                </div>
+              </div>
+            </div>
+            <div className="w-full flex justify-center px-4 gap-3 items-center mb-5 text-sm flex-col">
+              <div className="flex w-full text-sm justify-between items-center">
+                <div className="">
+                  <h2>DRC/USDT </h2>
+                </div>
+
+                <div className=" flex items-center gap-2">
+                  <h2 className="text-gray-500 "> 24 HIGH</h2>
+                  <span className="ml-2">123,02</span>
+                </div>
+              </div>
+              <div className="flex w-full justify-between items-center">
+                <div className="">
+                  <h2>PRICE </h2>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <h2 className="text-gray-500"> 24 LOW</h2>
+                  <span className="ml-2">103,11</span>
+                </div>
+              </div>
+              <div className="flex w-full justify-between items-center">
+                <div className="">
+                  <h2>% </h2>
+                </div>
+
+                <div className="flex gap-2 items-center">
+                  <h2 className="text-gray-500"> 24 VOL</h2>
+                  <span className="ml-2">200,1 M</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center  px-3 justify-between w-full">
+              <div className="flex text-md items-center gap-3">
+                <p>15m</p>
+                <LuChartNoAxesColumn />
+                <img src={fx} alt="" className="w-5 h-5 dark:hidden" />
+                <img src={fx1} alt="" className="w-5 h-5 dark:flex hidden" />
+              </div>
+              <div className="flex items-center text-md gap-3">
+                <BsArrow90DegLeft />
+                <BsArrow90DegRight />
+              </div>
+              <div className="flex  text-md items-center gap-3">
+                <RiSettingsLine />
+                <IoIosQrScanner />
+                <MdOutlinePhotoCamera />
               </div>
             </div>
           </div>
-          <div className="w-full flex justify-center px-4 gap-3 items-center mb-5  flex-col">
-            <div className="flex w-full justify-between items-center">
-              <div className="">
-                <h2>DRC/USDT </h2>
-              </div>
-
-              <div className=" flex items-center gap-2">
-                <h2 className="text-gray-500"> 24 HIGH</h2>
-                <span className="ml-2">123,02</span>
-              </div>
-            </div>
-            <div className="flex w-full justify-between items-center">
-              <div className="">
-                <h2>PRICE </h2>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <h2 className="text-gray-500"> 24 LOW</h2>
-                <span className="ml-2">103,11</span>
-              </div>
-            </div>
-            <div className="flex w-full justify-between items-center">
-              <div className="">
-                <h2>% </h2>
-              </div>
-
-              <div className="flex gap-2 items-center">
-                <h2 className="text-gray-500"> 24 VOL</h2>
-                <span className="ml-2">200,1 M</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center my-5 px-3 justify-between w-full">
-            <div className="flex text-xl items-center gap-3">
-              <p>15m</p>
-              <LuChartNoAxesColumn />
-              <img src={fx} alt="" className="w-7 h-7 dark:hidden" />
-              <img src={fx1} alt="" className="w-7 h-7 dark:flex hidden" />
-            </div>
-            <div className="flex items-center text-xl gap-3">
-              <BsArrow90DegLeft />
-              <BsArrow90DegRight />
-            </div>
-            <div className="flex  text-xl items-center gap-3">
-              <RiSettingsLine />
-              <IoIosQrScanner />
-              <MdOutlinePhotoCamera />
-            </div>
-          </div>
-
-          <div className="bg-black rounded-2xl">
+          <div className="bg-black  rounded-2xl">
             <img src={img} alt="" className="" />
           </div>
         </div>
-
         <SwapCrypto />
       </div>
 
@@ -231,8 +230,7 @@ const Swap = () => {
           ))}
         </div>
       </div>*/}
-      
-      <TokenlocationDashboard/>
+      <TokenAllocation />
     </motion.div>
   );
 };

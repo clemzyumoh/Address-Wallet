@@ -34,7 +34,7 @@ const NotificationSlider = () => {
     },
   ];
   return (
-    <div className="overflow-hidden md:w-[80vw]  w-[80vw] my-10  lg:w-[70vw] md:ml-12 ml-8 text-neutral-900 dark:text-white py-3">
+    <div className="overflow-hidden md:w-[80vw]  w-[80vw] my-5  lg:w-[70vw] md:ml-12 ml-8 text-neutral-900 dark:text-white py-3">
       <motion.div className="flex space-x-12 min-w-max" animate={controls}>
         {[...notifications, ...notifications].map((notif, index) => (
           <div

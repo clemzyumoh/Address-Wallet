@@ -79,8 +79,8 @@ const Sidebar = () => {
             className={({ isActive }) =>
               `block p-2 rounded transition ${
                 isActive
-                  ? " hover:scale-105 text-[#d661e8]"
-                  : " hover:scale-105  text-neutral-900 dark:text-gray-100 "
+                  ? " hover:scale-105 dark:text-[#b0e6f8] dark:border-r-2 dark:border-[#b0e6f8] border-r-3 "
+                  : " hover:scale-105  text-neutral-400 dark:text-gray-400 "
               }`
             }>
             {item.label}
@@ -95,13 +95,13 @@ const Sidebar = () => {
           className={({ isActive }) =>
             `flex items-center space-x-2 py-4 px-8 rounded transition ${
               isActive
-                ? " hover:scale-105   text-[#d661e8]   "
-                : " bg-transparent text-neutral-900 dark:text-neutral-300 "
+                ? " hover:scale-105   dark:text-[#b0e6f8] dark:border-r-2 dark:border-[#b0e6f8] border-r-3"
+                : " bg-transparent text-neutral-400 dark:text-neutral-400 "
             }`
           }>
           <FaCog /> <span>Settings</span>
         </NavLink>
-        <button className="flex items-center space-x-2 py-4 px-8 rounded text-neutral-900 dark:text-gray-100  hover:scale-105 ">
+        <button className="flex items-center space-x-2 py-4 px-8 rounded text-neutral-400 dark:text-gray-400  hover:scale-105 ">
           <FaSignOutAlt /> <span>Logout</span>
         </button>
       </div>
