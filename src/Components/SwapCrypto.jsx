@@ -48,7 +48,7 @@ const SwapCrypto = () => {
   };
 
   return (
-    <div className="w-full  px-2  lg:w-[40vw]">
+    <div className="w-full  px-2 md:w-[70vw] lg:w-[40vw]">
       <div className="flex justify-between my-5  items-center mx-4">
         <div className="flex items-center gap-2">
           <FaCreditCard className="text-sm" />

@@ -132,7 +132,7 @@ const Home = ({darkMode, setDarkMode}) => {
               <option>Wallet 4</option>
             </select>
           </div>
-          <div className="flex justify-center items-center md:text-2xl text-xl md:gap-6 lg:ml-[550px] md:ml-96 ml-24 gap-2 w-full">
+          <div className="flex justify-center items-center md:text-2xl text-lg gap-2">
             <FaRegCopy className="hover:scale-110 hover:rotate-12" />
             <RiQrScan2Line className="hover:scale-110 hover:rotate-12" />
             <button onClick={() => navigate("/notifications")}>
@@ -142,10 +142,7 @@ const Home = ({darkMode, setDarkMode}) => {
         </div>
 
         {/* Balance Section */}
-        <div className="flex justify-start w-full  items-center md:my-10 ml-6">
-          <span className="text-2xl font-bold mr-5 text-neutral-500 dark:text-white">
-            {showBalance ? "0.00$" : "••••"}
-          </span>
+        <div className="flex justify-start w-full  items-center md:my-10 gap-3 ml-6">
           <button onClick={() => setShowBalance(!showBalance)}>
             {showBalance ? (
               <FaEyeSlash className="text-gray-500 dark:text-neutral-200" />
@@ -153,6 +150,9 @@ const Home = ({darkMode, setDarkMode}) => {
               <FaEye className="text-gray-500 dark:text-neutral-200" />
             )}
           </button>
+          <span className="md:text-2xl text-lg font-bold  text-neutral-500 dark:text-white">
+            {showBalance ? "0.00$" : "••••"}
+          </span>
         </div>
 
         {/* Action Icons */}
