@@ -72,12 +72,12 @@ const Foundation = () => {
         </button>
       </div>
 
-      {/* <FoundationRewards /> */}
-      {/* <FoundationBenefits />
+      <FoundationRewards /> 
+      <FoundationBenefits />
 
       <Section4 />
 
-      <Section3 /> */}
+      <Section3 /> 
     </div>
   );
 };
