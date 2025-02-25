@@ -187,7 +187,7 @@ const AllocationCard = ({ name, value, color }) => {
           className="w-4 h-4 rounded-full"
           style={{ backgroundColor: color }}
         />
-        <h3 className="md:text-lg text-sm font-semibold text-gray-800 dark:text-white">
+        <h3 className="md:text-lg text-[12px] font-semibold text-gray-800 dark:text-white">
           {name}
         </h3>
       </div>

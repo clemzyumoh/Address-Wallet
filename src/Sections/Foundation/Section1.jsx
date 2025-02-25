@@ -104,7 +104,7 @@ const FoundationRewards = () => {
           text="Foundation  Rewards"
           animation="fade"
           as="h1"
-          className="text-3xl font-bold text-center tracking-wider bg-gradient-to-l from-[#9C61C1] to-[#1E1164] dark:to-[#B0e6f8] bg-clip-text text-transparent"
+          className="text-3xl font-bold text-center tracking-wider bg-gradient-to-l from-[#a97ffb] to-[#1E1164] dark:to-[#B0e6f8] bg-clip-text text-transparent"
         />
       </div>
 

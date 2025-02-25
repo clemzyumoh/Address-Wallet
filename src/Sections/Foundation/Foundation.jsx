@@ -71,7 +71,7 @@ const Foundation = () => {
           as="h1"
           className="font-bold md:ml-5 text-2xl lg:text-4xl leading-[40px] tracking-wider  lg:text-end lg:mt-20 md:text-lg lg:leading-normal dark:frm-[#9b6afc] from-[#9C61C1]  dark:to-[#B0e6f8] to-[#1E1164]  bg-gradient-to-l bg-clip-text font-orbitron text-transparent"
         />
-        <img src={img1} alt="" className="hiddark:block w-[80vw] " />
+        <img src={img1} alt="" className="hiddark:block w-[80vw] lg:w-[70vw] " />
 
         <div className=" rounded-4xl bg-[#bfc7f8] dark:bg-gray-800  flex w-[90vw] md:w-[70vw] mt-3 flex-col lg:w-[60vw] justify-center items-center ">
           <img src={img1} alt="" className=" hidden w-[80vw] " />

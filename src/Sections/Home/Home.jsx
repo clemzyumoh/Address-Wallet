@@ -144,7 +144,7 @@ const Home = ({darkMode, setDarkMode}) => {
                 <FaEye className="text-gray-500 dark:text-neutral-200" />
               )}
             </button>
-            <span className="md:text-2xl text-lg font-bold  text-neutral-500 dark:text-white">
+            <span className="md:text-2xl text-lg font-bold  text-neutral-500 dark:text-neutral-300">
               {showBalance ? "0.00$" : "••••"}
             </span>
           </div>
@@ -229,7 +229,7 @@ const Home = ({darkMode, setDarkMode}) => {
       </div>
 
       {/* Content */}
-      <div className=" md:p-4 rounded    text-black dark:text-white lg:w-[70vw] w-[85vw]">
+      <div className=" md:p-4 rounded    text-black dark:text-white lg:w-[70vw] w-[90vw]">
         {activeTab === "CRYPTO" && <Crypto />}
         {activeTab === "ASSET" && <Asset />}
         {activeTab === "NFT" && <NFT />}
