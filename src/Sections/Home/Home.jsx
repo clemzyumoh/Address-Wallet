@@ -89,7 +89,7 @@ const Home = ({darkMode, setDarkMode}) => {
       <div className="flex justify-between lg:hidden w-full px-2 items-center">
         <button className="  p-2  rounded-full bg-transparent">
           <NavLink to="/settings" className="flex items-center">
-            <FaCog className="hover:scale-110 md:text-3xl text-2xl text- hover:rotate-90" />
+            <FaCog className="hover:scale-110 md:text-3xl text-xl  hover:rotate-90" />
           </NavLink>
         </button>
         <h1 className="">Home</h1>
@@ -229,7 +229,7 @@ const Home = ({darkMode, setDarkMode}) => {
       </div>
 
       {/* Content */}
-      <div className=" md:p-4 rounded    text-black dark:text-white lg:w-[70vw] w-full">
+      <div className=" md:p-4 rounded    text-black dark:text-white lg:w-[70vw] w-[85vw]">
         {activeTab === "CRYPTO" && <Crypto />}
         {activeTab === "ASSET" && <Asset />}
         {activeTab === "NFT" && <NFT />}

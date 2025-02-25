@@ -202,7 +202,7 @@ const AllocationCard = ({ name, value, color }) => {
 
 const TokenAllocation = () => {
   return (
-    <div className="flex flex-col items-center shadow-[2px_2px_2px_#B0E6F8,-2px_-2px_2px_#bf9fff] md:w-[70vw] w-full lg:w-[50vw] px-3 mx-5 md:p-8 py-5  rounded-2xl lg:p-5 md:space-y-8">
+    <div className="flex flex-col items-center shadow-[2px_2px_2px_#B0E6F8,-2px_-2px_2px_#bf9fff] md:w-[70vw] w-[85vw] lg:w-[50vw] px-3 mx-5 md:p-8 py-5  rounded-2xl lg:p-5 md:space-y-8">
       {/* Total Supply Heading */}
       <h2 className="text-3xl font-bold text-center">Total Supply</h2>
 

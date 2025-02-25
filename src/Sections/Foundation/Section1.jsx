@@ -4,7 +4,7 @@ import img from "../../assets/logobg.png";
 
 
 import React, { useState } from "react";
-
+import AnimateItem from "../../Components/AnimationItem";
 import AnimatedText from "../../Components/AnimationText";
 
 
@@ -98,69 +98,75 @@ const FoundationRewards = () => {
   const visibleSections = showMore ? sections : sections.slice(0, 5);
 
   return (
-    <section className="md:mb-20 w-full mt-16 mb-28 px-2 md:p-6">
+    <section className="md:mb-20 w-full mt-16 mb-28 px-2 md:p-6 flex flex-col justify-center items-center">
       <div className="flex justify-center">
         <AnimatedText
-          text="Foundation Activation Rewards"
+          text="Foundation  Rewards"
           animation="fade"
           as="h1"
           className="text-3xl font-bold text-center tracking-wider bg-gradient-to-l from-[#9C61C1] to-[#1E1164] dark:to-[#B0e6f8] bg-clip-text text-transparent"
         />
       </div>
 
-      {/* Card */}
-      <div className="bg-transparent  dark:bg w-full rounded-2xl shadow-lg py-10 md:p-6">
-        {/* Card Header */}
+      <AnimateItem delay={0.2} direction="left">
+        {/* Card */}
+        <div className="rounded-4xl bg-[#bfc7f8]    w-[90vw] md:px-8 px-4 md:w-[70vw] mt-3  lg:w-[60vw] flex flex-col items-center justify-center  shadow-lg py-10 md:p-6">
+          {/* Card Header */}
 
-        <div className="grid grid-cols-[2fr_1fr_1fr] gap-4 px-3 mb-6 text-sm w-full font-semibold text-gray-700 dark:text-gray-300">
-          <div className="text-left">Projects</div>
-          <div className="text-center">Progress</div>
-          <div className="text-right">Rewards</div>
+          <div className="grid grid-cols-[2fr_1fr_1fr] gap-4 px-3 mb- text-[10px] md:text-sm w-full font-bold text-gray-700 d">
+            <div className="text-left">Projects</div>
+            <div className="text-center">Progress</div>
+            <div className="text-right ml-">Rewards</div>
+          </div>
+
+          {/* Sections */}
+
+          <div className="space-y-4 w-full">
+            {visibleSections.map((section) => (
+              <div
+                key={section.id}
+                className="grid grid-cols-[2fr_1fr_1fr] gap-4 items-center mb-4 text-sm py-3 px-2 w-full rounded-2xl shadow-md bg-white dark:bg-gray-900">
+                {/* Project - Icon and Name */}
+                <div className="flex items-center space-x-2">
+                  <img
+                    src={img}
+                    alt={section.project}
+                    className="md:w-10 md:h-10 w-7 h-7 rounded-full"
+                  />
+                  <span className="text-gray-900 dark:text-gray-100 text-sm md:text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">
+                    {section.project}
+                  </span>
+                </div>
+
+                {/* Progress */}
+                <div className="text-center">
+                  <span className="block text-gray-600 dark:text-gray-400">
+                    {section.progress}
+                  </span>
+                </div>
+
+                {/* Rewards */}
+                <div className="text-right">
+                  <span className="font-bold text-[#3cba54]">
+                    {section.rewards}
+                  </span>
+                </div>
+              </div>
+              // <AnimateItem delay={0.2} direction="top">
+
+              // </AnimateItem>
+            ))}
+          </div>
+          <div className="flex justify-center items-start w-full">
+            {/* Show More / Show Less Button */}
+            <button
+              onClick={() => setShowMore(!showMore)}
+              className="mt-4  mx-5 hover:underline text-gray-700 ">
+              {showMore ? "Show Less" : "Show More"}
+            </button>
+          </div>
         </div>
-
-        {/* Sections */}
-
-        <div className="space-y-4 w-full">
-          {visibleSections.map((section) => (
-            <div
-              key={section.id}
-              className="grid grid-cols-[2fr_1fr_1fr] gap-4 items-center mb-4 text-sm py-3 px-2 w-full rounded-lg shadow-md bg-white dark:bg-gray-800">
-              {/* Project - Icon and Name */}
-              <div className="flex items-center space-x-2">
-                <img
-                  src={img}
-                  alt={section.project}
-                  className="md:w-10 md:h-10 w-7 h-7 rounded-full"
-                />
-                <span className="text-gray-900 dark:text-gray-100 text-sm md:text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">
-                  {section.project}
-                </span>
-              </div>
-
-              {/* Progress */}
-              <div className="text-center">
-                <span className="block text-gray-600 dark:text-gray-400">
-                  {section.progress}
-                </span>
-              </div>
-
-              {/* Rewards */}
-              <div className="text-right">
-                <span className="font-bold text-[#3cba54]">
-                  {section.rewards}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Show More / Show Less Button */}
-        <button
-          onClick={() => setShowMore(!showMore)}
-          className="mt-4  mx-5 hover:underline">
-          {showMore ? "Show Less" : "Show More"}
-        </button>
-      </div>
+      </AnimateItem>
     </section>
   );
 };
