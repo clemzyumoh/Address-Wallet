@@ -76,12 +76,36 @@ import AnimatedText from "../../Components/AnimationText";
 import AnimateItem from "../../Components/AnimationItem";
 
 const packages = [
-  { amount: "1 Coin", name: "LEAF SEED" },
-  { amount: "50 Coins", name: "TWIG SEED" },
-  { amount: "100 Coins", name: "BRANCH SEED" },
-  { amount: "1,000 Coins", name: "TRUNK SEED" },
-  { amount: "5,000 Coins", name: "ROOT SEED" },
-  { amount: "10,000 Coins", name: "DEEP ROOT SEED" },
+  {
+    amount: "1 Coin",
+    name: "LEAF SEED",
+    des: "Avaliable Packages and Coin to be earned",
+  },
+  {
+    amount: "50 Coins",
+    name: "TWIG SEED",
+    des: "Avaliable Packages and Coin to be earned",
+  },
+  {
+    amount: "100 Coins",
+    name: "BRANCH SEED",
+    des: "Avaliable Packages and Coin to be earned",
+  },
+  {
+    amount: "1,000 Coins",
+    name: "TRUNK SEED",
+    des: "Avaliable Packages and Coin to be earned",
+  },
+  {
+    amount: "5,000 Coins",
+    name: "ROOT SEED",
+    des: "Avaliable Packages and Coin to be earned",
+  },
+  {
+    amount: "10,000 Coins",
+    name: "DEEP ROOT SEED",
+    des: "Avaliable Packages and Coin to be earned",
+  },
 ];
 
 const Section4 = () => {
@@ -113,16 +137,19 @@ const Section4 = () => {
               delay={index * 0.1}>
               <li
                 key={index}
-                className="relative flex dark:shadow-[3px_3px_10px_rgba(0,0,0,0.6),-8px_-8px_10px_rgba(255,255,255,0.1)] items-center p-2 border-l-4 border-[#a97ffb] dark:border-[#B0E6F8] bg-white dark:bg-gray-800 rounded-3xl shadow-md">
-                {/* Rectangle */}
-                <div className="flex-grow px-4 py-3 text-left shadow-[-2px_+2px_2px_#B0E6F8,-2px_-2px_2px_#a97ffb] font-semibold md:text-lg text-sm   rounded-l-2xl">
-                  {pkg.name}
-                </div>
+                className="relative flex flex-col  dark:shadow-[3px_3px_10px_rgba(0,0,0,0.6),-8px_-8px_10px_rgba(255,255,255,0.1)] items-center p-2 border-l-4 border-[#a97ffb] dark:border-[#B0E6F8] bg-white dark:bg-gray-800 rounded-3xl shadow-md">
+                <div className="flex justify-center w-full items-center">
+                  {/* Rectangle */}
+                  <div className="flex-grow px-4 py-3 text-left shadow-[-2px_+2px_2px_#B0E6F8,-2px_-2px_2px_#a97ffb] font-semibold md:text-lg text-sm   rounded-l-2xl">
+                    {pkg.name}
+                  </div>
 
-                {/* Circle */}
-                <div className="ml-[-10px] relative w-20 h-20 text-center flex shadow-[2px_2px_2px_#B0E6F8,-2px_-2px_2px_#a97ffb] justify-center items-center rounded-full   font-bold  text-[12px]">
-                  <div className="absolute">{pkg.amount}</div>
+                  {/* Circle */}
+                  <div className="ml-[-10px] relative w-20 h-20 text-center flex shadow-[2px_2px_2px_#B0E6F8,-2px_-2px_2px_#a97ffb] justify-center items-center rounded-full   font-bold  text-[12px]">
+                    <div className="absolute">{pkg.amount}</div>
+                  </div>
                 </div>
+                <p className="my-4 text-[12px] md:text-lg ">{pkg.des}</p>
               </li>
             </AnimateItem>
           ))}

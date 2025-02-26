@@ -146,7 +146,7 @@ const CryptoSection = () => {
     : cryptocurrencies.slice(0, 5);
 
   return (
-    <section className=" md:mb-20 w-full relative mb-28 px-2 md:p-6">
+    <section className=" md:mb-20 w-full  relative mb-28 px-2 md:p-6">
     
 
       <div className="hidden items-center justify-between px-3 gap-3 mb-6 text-sm w-full font-semibold text-gray-700 dark:text-gray-300">
@@ -155,43 +155,13 @@ const CryptoSection = () => {
         <div className="md:w-1/3 text-right">24H Change</div>
       </div>
 
-      {/* {displayedCryptos.map((crypto) => (
-        <div
-          key={crypto.id}
-          className="flex justify-between  items-center mb-4 text-sm py-3 px-2 w-full rounded-lg shadow-md bg-white dark:bg-gray-800">
-          <div className="flex w-1/3 items-center">
-            <img
-              src={crypto.logo}
-              alt={crypto.name}
-              className="w-10 h-10 rounded mr-2 md:mr-4"
-            />
-            <div>
-              <div className="text-gray-900 dark:text-gray-100 font-semibold">
-                {crypto.name}
-              </div>
-              <div className="text-gray-600 dark:text-gray-400">
-                {crypto.turnover24h}
-              </div>
-            </div>
-          </div>
-          <div className="text-gray-900 w-1/3 dark:text-gray-100">
-            {crypto.price}
-          </div>
-          <div
-            className={`font-semibold ${
-              crypto.change24h.startsWith("+")
-                ? "text-green-600 w-1/3"
-                : "text-red-600 w-1/3"
-            }`}>
-            {crypto.change24h}
-          </div>
-        </div>
-      ))} */}
+        
+    
       <div className="w-full">
         {displayedCryptos.map((crypto) => (
           <div
             key={crypto.id}
-            className="flex justify-between items-center mb-4 text-sm py-3 px-2 w-full rounded-lg shadow-md bg-white dark:bg-gray-800">
+            className="flex justify-between items-center mb-4  text-sm py-3 px-3 w-full rounded-2xl shadow-md bg-white dark:bg-gray-800">
             {/* Crypto Column */}
             <div className="flex items-center flex-1">
               <img

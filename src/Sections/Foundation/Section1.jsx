@@ -6,6 +6,7 @@ import img from "../../assets/logobg.png";
 import React, { useState } from "react";
 import AnimateItem from "../../Components/AnimationItem";
 import AnimatedText from "../../Components/AnimationText";
+import img1 from "../../assets/globebg.png"
 
 
 
@@ -99,21 +100,28 @@ const FoundationRewards = () => {
 
   return (
     <section className="md:mb-20 w-full mt-16 mb-28 px-2 md:p-6 flex flex-col justify-center items-center">
-      <div className="flex justify-center">
+      {/* <div className="flex justify-center">
         <AnimatedText
           text="Foundation  Rewards"
           animation="fade"
           as="h1"
           className="text-3xl font-bold text-center tracking-wider bg-gradient-to-l from-[#a97ffb] to-[#1E1164] dark:to-[#B0e6f8] bg-clip-text text-transparent"
         />
-      </div>
+      </div> */}
 
       <AnimateItem delay={0.2} direction="left">
         {/* Card */}
-        <div className="rounded-4xl bg-[#bfc7f8]    w-[90vw] md:px-8 px-4 md:w-[70vw] mt-3  lg:w-[60vw] flex flex-col items-center justify-center  shadow-lg py-10 md:p-6">
+        <div className="rounded-4xl bg-[#bfc7f8]  dark:bg-gray-800  w-[90vw] md:px-8 px-4 md:w-[70vw] mt-3  lg:w-[60vw] flex flex-col items-center justify-center  shadow-lg py-10 md:p-6">
+          <div className="flex  justify-between md:flex-row flex-col mb-5 items-center w-full rounded-2xl py-5 dark:bg-gray-800 px-5 bg-[#bfc7f8]">
+            <h1 className="text-2xl md:text-3xl font-bold text-center shadow-[2px_2px_3px_rgba(0,0,0,0.6),-8px_-8px_10px_rgba(255,255,255,0.1)]  dark:shadow-[3px_3px_10px_rgba(0,0,0,0.6),-8px_-8px_10px_rgba(255,255,255,0.1)] tracking-wider bg-[#e3e6f9] dark:bg-transparent dark:text-gray-200 px-4 py-4 rounded-3xl">
+              Foundation Rewards
+            </h1>
+            <img src={img1} alt="" className="md:w-[10vw] w-[50vw] hover:rotate-y-180" />
+          </div>
+
           {/* Card Header */}
 
-          <div className="grid grid-cols-[2fr_1fr_1fr] gap-4 px-3 mb- text-[10px] md:text-sm w-full font-bold text-gray-700 d">
+          <div className="grid grid-cols-[2fr_1fr_1fr] gap-4 px-3 mb-3 text-[10px] md:text-sm w-full font-bold tet-gray-700 d">
             <div className="text-left">Projects</div>
             <div className="text-center">Progress</div>
             <div className="text-right ml-">Rewards</div>
@@ -125,14 +133,14 @@ const FoundationRewards = () => {
             {visibleSections.map((section) => (
               <div
                 key={section.id}
-                className="grid grid-cols-[2fr_1fr_1fr] gap-4 items-center mb-4 text-sm py-3 px-2 w-full rounded-2xl shadow-md bg-white dark:bg-gray-900">
+                className="grid grid-cols-[2fr_1fr_1fr] gap-4 items-center mb-4 text-sm py-3 px-3 w-full rounded-xl  bg-white dark:bg-gray-800 shadow-[2px_2px_5px_rgba(0,0,0,0.2),-1px_-1px_5px_rgba(0,0,0,0.2)] dark:shadow-[3px_3px_10px_rgba(0,0,0,0.6),-8px_-8px_10px_rgba(255,255,255,0.1)]">
                 {/* Project - Icon and Name */}
                 <div className="flex items-center space-x-2">
-                  <img
+                  {/* <img
                     src={img}
                     alt={section.project}
                     className="md:w-10 md:h-10 w-7 h-7 rounded-full"
-                  />
+                  /> */}
                   <span className="text-gray-900 dark:text-gray-100 text-sm md:text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">
                     {section.project}
                   </span>
@@ -161,7 +169,7 @@ const FoundationRewards = () => {
             {/* Show More / Show Less Button */}
             <button
               onClick={() => setShowMore(!showMore)}
-              className="mt-4  mx-5 hover:underline text-gray-700 ">
+              className="mt-4  mx-5 hover:underline  ">
               {showMore ? "Show Less" : "Show More"}
             </button>
           </div>

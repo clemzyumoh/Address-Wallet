@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import img from "../assets/logobg.png";
 import BlurEffect from "./BlurEffect";
-
+import AnimateItem from "./AnimationItem";
 const assets = [
   {
     name: "Deeproots",
@@ -29,7 +29,7 @@ const AssetSection = () => {
 
   return (
     <section
-      className="md:p-6 bg-gray-300 dark:bg-transparent relative w-full px-2 
+      className="md:p-6  relative py-8 rounded-3xl bg-[#bfc7f8] dark:bg-gray-800 w-full px-2 
     ">
       <div className="z-0 text-lg">
         <BlurEffect
@@ -38,100 +38,55 @@ const AssetSection = () => {
         />
       </div>
 
-      {/* <div className="flex justify-center items-center flex-col w-full gap-4">
-        <div className="flex justify-between items-center w-full text-gray-500 font-semibold mb-2">
-          <p>Crypto</p>
-          <p className="ml-16">Price</p>
-          <p>Assets</p>
-        </div>
-        {visibleAssets.map((asset, index) => (
-          <div
-            key={index}
-            className="flex justify-between  items-center bg-white md:p-4 p-2 rounded-lg w-full dark:bg-gray-800">
-            <div className="flex items-center md:space-x-4 space-x-2">
-              <img
-                src={asset.image}
-                alt={asset.name}
-                className="w-10 h-10 rounded-full shadow-[2px_2px_5px_#ecb705,-2px_-2px_5px_#040f4c] dark:shadow-[2px_2px_2px_#040F4C,-2px_-2px_2px_#ecb705]"
-              />
-              <div>
-                <p className="text-gray-900 font-bold dark:text-gray-100">
-                  {asset.name}
-                </p>
-              </div>
-            </div>
-            <div className="">
-              <p className="text-gray-900 text-center font-semibold dark:text-gray-100">
-                {asset.price}
-              </p>
-            </div>
-
-            <div className="">
-              <p className="text-gray-900 font-semibold dark:text-gray-100">
-                {asset.usd}
-              </p>
-              <p className="text-gray-600 text-sm dark:text-gray-400">
-                {asset.piece}
-              </p>
-            </div>
-          </div>
-        ))}
-        <button
-          onClick={() => setShowAll(!showAll)}
-          className="mt-4 text-green-600 hover:underline flex items-center justify-center">
-          {showAll ? "Show Less" : "Show More"}
-          {showAll ? (
-            <FiChevronUp className="text-3xl" />
-          ) : (
-            <FiChevronDown className="text-3xl" />
-          )}
-        </button>
-      </div> */}
       <div className="flex justify-center items-center flex-col w-full gap-4">
         <div className=" hidden justify-between items-center w-full text-gray-500 font-semibold mb-2">
           <p className="w-1/3 text-left">Crypto</p>
           <p className="w-1/3 ml-10 md:ml-0 text-center">Price</p>
           <p className="w-1/3 text-right">Assets</p>
         </div>
-        {visibleAssets.map((asset, index) => (
-          <div
-            key={index}
-            className="flex justify-between items-center  md:p-4 p-2 rounded-lg w-full bg-gray-800">
-            {/* Crypto Column */}
-            <div className="w-1/3 flex items-center space-x-2 md:space-x-4">
-              <img
+      
+
+        <div className="w-full flex flex-col gap-4">
+          {visibleAssets.map((asset, index) => (
+            <AnimateItem key={index} delay={0.2} direction="top">
+              <div
+                className="bg-white shadow-[2px_2px_5px_rgba(0,0,0,0.2),-1px_-1px_5px_rgba(0,0,0,0.2)] dark:shadow-[3px_3px_10px_rgba(0,0,0,0.6),-8px_-8px_10px_rgba(255,255,255,0.1)]  
+        md:p-4 p-2 rounded-xl w-full flex items-center dark:bg-gray-800">
+                {/* Crypto Column */}
+                <div className="w-1/3 flex items-center space-x-2 md:space-x-4">
+                  {/* <img
                 src={asset.image}
                 alt={asset.name}
                 className="w-8 h-8 md:w-10 md:h-10 rounded-full shadow-[2px_2px_5px_#ecb705,-2px_-2px_5px_#040f4c] dark:shadow-[2px_2px_2px_#040F4C,-2px_-2px_2px_#ecb705]"
-              />
-              <div>
-                <p className=" font-bold text-gray-100">{asset.name}</p>
+              /> */}
+                  <div>
+                    <p className=" font-bold ">{asset.name}</p>
+                  </div>
+                </div>
+
+                {/* Price Column */}
+                <div className="w-1/3 ml-10 md:ml-0 text-center">
+                  <p className="font-semibold dark:text-gray-100">
+                    {asset.price}
+                  </p>
+                </div>
+
+                {/* Assets Column */}
+                <div className="w-1/3 text-right">
+                  <p className=" font-semibold dark:text-gray-100">
+                    {asset.usd}
+                  </p>
+                  <p className=" text-sm dark:text-gray-400">{asset.piece}</p>
+                </div>
               </div>
-            </div>
-
-            {/* Price Column */}
-            <div className="w-1/3 ml-10 md:ml-0 text-center">
-              <p className="text-gray-100 font-semibold dark:text-gray-100">
-                {asset.price}
-              </p>
-            </div>
-
-            {/* Assets Column */}
-            <div className="w-1/3 text-right">
-              <p className="text-gray-100 font-semibold dark:text-gray-100">
-                {asset.usd}
-              </p>
-              <p className="text-gray-100 text-sm dark:text-gray-400">
-                {asset.piece}
-              </p>
-            </div>
-          </div>
-        ))}
+            </AnimateItem>
+          ))}
+        </div>
 
         {/* Show More / Less Button */}
         <button
           onClick={() => setShowAll(!showAll)}
-          className="mt-4  hover:underline flex items-center justify-center">
+          className="mt-4  hover:underline flex items-center  justify-center">
           {showAll ? "Show Less" : "Show More"}
           {showAll ? (
             <FiChevronUp className="text-3xl" />

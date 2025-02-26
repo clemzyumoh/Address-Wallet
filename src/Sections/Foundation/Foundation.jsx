@@ -13,7 +13,9 @@ import { BsShareFill } from "react-icons/bs";
 import AnimateItem from "../../Components/AnimationItem";
 import banner from "../../assets/pink2.png";
 import FoundationBenefits from "./Section2";
-import img1 from "../../assets/Section3 img.png"
+import img1 from "../../assets/active.jpg"
+//import img2 from "../../assets/active-removebg-preview.png";
+import { FaPowerOff } from "react-icons/fa";
 const Foundation = () => {
   return (
     <div className=" lg:pb-3 md:pb-40 pb-32 flex w-full  flex-col justify-center items-center dark:bg-gradient-to-bl dark:from-black dark:to-black dark:via-black bg-gradient-to-bl from-[#E8EBFF] to-white   via-[#EBF2FD] ">
@@ -42,7 +44,7 @@ const Foundation = () => {
       </div> */}
 
       <div className="flex flex-col justify-center items-center  w-full lg:mt-8">
-        <div className="w-full flex justify-center items-center ">
+        <div className="w-full flex justify-center bg-black rounded-b-4xl items-center ">
           <AnimateItem delay={0.2} direction="left">
             <img
               src={banner}
@@ -69,9 +71,15 @@ const Foundation = () => {
           text="ACTIVATE"
           animation="fade"
           as="h1"
-          className="font-bold md:ml-5 text-2xl lg:text-4xl leading-[40px] tracking-wider  lg:text-end lg:mt-20 md:text-lg lg:leading-normal dark:frm-[#9b6afc] from-[#9C61C1]  dark:to-[#B0e6f8] to-[#1E1164]  bg-gradient-to-l bg-clip-text font-orbitron text-transparent"
+          className="font-bold md:ml-5 text-2xl hidden lg:text-4xl leading-[40px] tracking-wider  lg:text-end lg:mt-20 md:text-lg lg:leading-normal dark:frm-[#9b6afc] from-[#9C61C1]  dark:to-[#B0e6f8] to-[#1E1164]  bg-gradient-to-l bg-clip-text font-orbitron text-transparent"
         />
-        <img src={img1} alt="" className="hiddark:block w-[80vw] lg:w-[70vw] " />
+        <img
+          src={img1}
+          alt=""
+          className=" rounded-4xl  w-[80vw] lg:w-[70vw] "
+        />
+        <FaPowerOff className="hidden  text-9xl"/>
+     
 
         <div className=" rounded-4xl bg-[#bfc7f8] dark:bg-gray-800  flex w-[90vw] md:w-[70vw] mt-3 flex-col lg:w-[60vw] justify-center items-center ">
           <img src={img1} alt="" className=" hidden w-[80vw] " />
@@ -96,7 +104,6 @@ const Foundation = () => {
           </div>
           <AnimateItem delay={0.2} direction="top">
             <div className="p-6 bg-white my-5 dark:bg-gray-800 flex items-center gap-10 px-10 rounded-4xl shadow-[2px_2px_5px_rgba(0,0,0,0.2),-1px_-1px_5px_rgba(0,0,0,0.2)] dark:shadow-[3px_3px_10px_rgba(0,0,0,0.6),-8px_-8px_10px_rgba(255,255,255,0.1)]">
-            
               <div className="flex justify-center items-center p-3 rounded-full shadow-[2px_2px_2px_#B0E6F8,-2px_-2px_2px_#a97ffb]">
                 <BsShareFill className="text-3xl " />
               </div>

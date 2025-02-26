@@ -103,21 +103,21 @@ const Swap = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center w-full gap-1 lg:flex-row flex-col">
+      <div className="flex justify-center items-center w-[90vw] md:w-full gap-1 lg:flex-row flex-col">
         <div className="flex items-center justify-center  lg:w-full flex-col gap-2">
           <div className="flex justify-between items-center w-full bg-white dark:bg-transparent shadow rounded-2xl py-3 flex-col">
             <div className="flex justify-between w-full mb-2 px-2 items-center">
               <div className="flex items-center gap-5 bg-[#EBF2FD] shadow dark:bg-gray-900 py-2 px-3  rounded-lg">
-                <LiaWalletSolid /> <span className="">-USDC</span>
+                <span className="text-[12px]">DRC/USDT</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex items-center bg-[#EBF2FD] dark:bg-gray-900   shadow py-2 px-3  rounded-lg gap-3">
+                <div className="flex items-center bg-[#EBF2FD] dark:bg-gray-900 text-[12px]  shadow py-2 px-3  rounded-lg gap-3">
                   <span className="">Chart</span>
-                  <HiArrowTrendingUp />
+                  <HiArrowTrendingUp className="text-sm"/>
                 </div>
-                <div className="flex items-center bg-[#EBF2FD] shadow dark:bg-gray-900 py-2 px-3  rounded-lg gap-3">
+                <div className="flex items-center bg-[#EBF2FD] text-[12px] shadow dark:bg-gray-900 py-2 px-3  rounded-lg gap-3">
                   <span className="">Trade</span>
-                  <GiChart />
+                  <GiChart className="text-sm" />
                 </div>
               </div>
             </div>
